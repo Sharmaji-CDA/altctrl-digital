@@ -16,7 +16,7 @@ const Navbar = () => {
   /* SCROLL EFFECT */
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 30);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -26,11 +26,7 @@ const Navbar = () => {
 
   /* PREVENT BODY SCROLL */
   useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = mobileOpen ? "hidden" : "auto";
 
     return () => {
       document.body.style.overflow = "auto";
@@ -39,100 +35,140 @@ const Navbar = () => {
 
   return (
     <>
+      {/* NAVBAR */}
       <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
-        <div className={`mx-auto flex h-[78px] max-w-[1400px] items-center justify-between rounded-2xl border border-white/10 px-6 sm:px-8 lg:px-10 transition-all duration-300 ${
-          scrolled
-            ? "bg-black/75 shadow-[0_10px_40px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
-            : "bg-black/40 backdrop-blur-xl"
-        }`}>
+        
+        <motion.div
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className={`relative mx-auto flex max-w-[1400px] items-center justify-between overflow-hidden rounded-[30px] border border-white/10 px-6 transition-all duration-500 ease-out sm:px-8 lg:px-10 ${
+            scrolled
+              ? "h-[78px] bg-black/75 shadow-[0_15px_50px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
+              : "h-[88px] bg-black/40 backdrop-blur-xl"
+          }`}
+        >
           
+          {/* CINEMATIC GRADIENT */}
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(236,28,36,0.08),transparent,rgba(6,182,212,0.06))]" />
+
+          {/* GLOW */}
+          <div className="absolute left-0 top-0 h-32 w-32 rounded-full bg-[#EC1C24]/10 blur-[80px]" />
+
+          <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-cyan-500/10 blur-[80px]" />
+
           {/* LOGO */}
-          <a href="#" className="relative z-50 flex items-center">
-            <h1 className="text-2xl font-black tracking-tight sm:text-3xl">
+          <a
+            href="#"
+            className="relative z-20 flex items-center"
+          >
+            <h1 className="text-[32px] font-black leading-none tracking-[-2px]">
               
-              <span className="text-white">gini</span>
+              <span className="text-white">
+                gini
+              </span>
 
               <span className="relative text-[#EC1C24]">
                 iris
 
-                <span className="absolute -bottom-1 left-0 h-[2px] w-full bg-[#EC1C24]" />
+                <span className="absolute -bottom-1 left-0 h-[2px] w-full rounded-full bg-[#EC1C24]" />
               </span>
             </h1>
           </a>
 
           {/* DESKTOP NAV */}
-          <nav className="hidden items-center gap-12 xl:gap-14 lg:flex">
+          <nav className="relative z-20 hidden items-center gap-12 lg:flex xl:gap-14">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="group relative text-sm font-medium uppercase tracking-[2px] text-gray-300 transition duration-300 hover:text-white"
+                className="group relative text-sm font-medium uppercase tracking-[3px] text-gray-300 transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_12px_rgba(236,28,36,0.5)]"
               >
                 {link.name}
 
-                <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[#EC1C24] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-2 left-0 h-[2px] w-0 rounded-full bg-[#EC1C24] transition-all duration-500 group-hover:w-full" />
               </a>
             ))}
           </nav>
 
-          {/* DESKTOP BUTTON */}
-          <div className="hidden lg:block">
-            <button className="group relative overflow-hidden rounded-full bg-[#EC1C24] px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(236,28,36,0.45)]">
+          {/* RIGHT SIDE */}
+          <div className="relative z-20 flex items-center gap-4">
+            
+            {/* DESKTOP CTA */}
+            <button className="group relative hidden overflow-hidden rounded-full border border-white/10 bg-[#EC1C24] px-7 py-3 text-sm font-semibold uppercase tracking-[2px] text-white transition-all duration-500 hover:scale-105 hover:shadow-[0_0_45px_rgba(236,28,36,0.45)] lg:block">
               
+              {/* MULTI COLOR GRADIENT */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#EC1C24] via-[#ff4d55] to-cyan-500 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+              {/* LIGHT EFFECT */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.35),transparent_60%)] opacity-70" />
+
+              {/* BUTTON TEXT */}
               <span className="relative z-10">
                 Get Started
               </span>
+            </button>
 
-              <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-700 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            {/* MOBILE MENU BUTTON */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="relative flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white backdrop-blur-xl transition-all duration-300 hover:bg-white/10 lg:hidden"
+            >
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
-
-          {/* MOBILE BUTTON */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="relative z-50 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white backdrop-blur-xl transition hover:bg-white/10 lg:hidden"
-          >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
-        </div>
+        </motion.div>
       </header>
 
       {/* MOBILE MENU */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -40 }}
+            initial={{ opacity: 0, y: -80 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -40 }}
-            transition={{ duration: 0.35 }}
-            className="fixed inset-0 z-40 flex min-h-screen flex-col bg-black/95 px-6 pt-32 backdrop-blur-3xl lg:hidden"
+            exit={{ opacity: 0, y: -80 }}
+            transition={{ duration: 0.5 }}
+            className="fixed inset-0 z-40 bg-black/85 backdrop-blur-[30px] lg:hidden"
           >
             
-            <div className="flex flex-col gap-8">
-              {navLinks.map((link, index) => (
-                <motion.a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.08 }}
-                  className="border-b border-white/10 pb-4 text-3xl font-semibold text-white transition hover:text-[#EC1C24]"
-                >
-                  {link.name}
-                </motion.a>
-              ))}
-            </div>
+            {/* BACKGROUND GLOW */}
+            <div className="absolute left-[-100px] top-[120px] h-[300px] w-[300px] rounded-full bg-[#EC1C24]/20 blur-[120px]" />
 
-            {/* MOBILE CTA */}
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="mt-10 rounded-full bg-[#EC1C24] px-7 py-4 text-base font-semibold text-white shadow-[0_0_30px_rgba(236,28,36,0.45)] transition hover:scale-[1.02]"
-            >
-              Start Your Project
-            </motion.button>
+            <div className="absolute bottom-[-100px] right-[-100px] h-[300px] w-[300px] rounded-full bg-cyan-500/10 blur-[120px]" />
+
+            <div className="flex min-h-screen flex-col px-8 pt-36">
+              
+              {/* LINKS */}
+              <div className="flex flex-col gap-8">
+                {navLinks.map((link, index) => (
+                  <motion.a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    initial={{ opacity: 0, x: -40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{
+                      delay: index * 0.08,
+                    }}
+                    className="group relative border-b border-white/10 pb-5 text-3xl font-semibold text-white transition-all duration-300 hover:text-[#EC1C24]"
+                  >
+                    {link.name}
+
+                    <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#EC1C24] transition-all duration-500 group-hover:w-full" />
+                  </motion.a>
+                ))}
+              </div>
+
+              {/* MOBILE CTA */}
+              <motion.button
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35 }}
+                className="mt-12 rounded-full bg-gradient-to-r from-[#EC1C24] via-[#ff4d55] to-[#8B5CF6] px-8 py-4 text-base font-semibold uppercase tracking-[2px] text-white shadow-[0_0_40px_rgba(236,28,36,0.45)] transition-all duration-500 hover:scale-[1.02]"
+              >
+                Start Your Project
+              </motion.button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
