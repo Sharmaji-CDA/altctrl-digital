@@ -82,7 +82,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="group relative text-sm font-medium uppercase tracking-[3px] text-gray-300 transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_12px_rgba(236,28,36,0.5)]"
+                className="group relative text-[12px] font-sm uppercase tracking-[3px] text-gray-300 transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_12px_rgba(236,28,36,0.5)]"
               >
                 {link.name}
 
@@ -93,6 +93,11 @@ const Navbar = () => {
 
           {/* RIGHT SIDE */}
           <div className="relative z-20 flex items-center gap-4">
+
+            {/* LOGIN BUTTON */}
+            <button className="hidden rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-[11px] font-medium uppercase tracking-[2px] text-gray-300 backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06] hover:text-white lg:block">
+              Login
+            </button>
             
             {/* DESKTOP CTA */}
             <button className="group relative hidden overflow-hidden rounded-full border border-white/10 bg-[#EC1C24] px-7 py-3 text-sm font-semibold uppercase tracking-[2px] text-white transition-all duration-500 hover:scale-105 hover:shadow-[0_0_45px_rgba(236,28,36,0.45)] lg:block">
@@ -105,7 +110,7 @@ const Navbar = () => {
 
               {/* BUTTON TEXT */}
               <span className="relative z-10">
-                Get Started
+                Book a Demo
               </span>
             </button>
 
