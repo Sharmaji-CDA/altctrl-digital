@@ -4,11 +4,9 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 
 import CTA from "./components/CTA";
-import Features from "./components/BusinessFocus";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import Services from "./components/PricingScale";
 import OperationsSection from "./components/OperationSection";
 import IntelligenceCore from "./components/IntelligenceCore";
 import OrchestrationFlow from "./components/OrchestrationFlow";
@@ -19,7 +17,6 @@ import IndustryKernels from "./components/IndustryKernels";
 import DataSphereProtocol from "./components/DataSphereProtocol";
 import BusinessFocus from "./components/BusinessFocus";
 import PricingScale from "./components/PricingScale";
-import { TbArrowAutofitContent } from "react-icons/tb";
 import AiContent from "./components/AiContent";
 
 function App() {
