@@ -1,4 +1,11 @@
-import { Cpu, Layers3, Target } from "lucide-react";
+"use client";
+
+import {
+  Cpu,
+  Layers3,
+  Target,
+} from "lucide-react";
+
 import { motion } from "framer-motion";
 
 const cards = [
@@ -35,66 +42,72 @@ const cards = [
 
 export default function BusinessFocus() {
   return (
-    <section className="relative overflow-hidden bg-black px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-24">
+    <section className="relative overflow-hidden bg-black px-4 py-14 text-white sm:px-6 lg:px-8 lg:py-18">
 
-      {/* BACKGROUND */}
+      {/* BG */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.08),transparent_40%)]" />
 
       {/* LEFT GLOW */}
-      <motion.div
-        animate={{
-          opacity: [0.08, 0.18, 0.08],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-        }}
-        className="absolute left-[-120px] top-[100px] h-[260px] w-[260px] rounded-full bg-[#EC1C24]/15 blur-[120px]"
-      />
+      <div className="absolute left-[-100px] top-[80px] h-[240px] w-[240px] rounded-full bg-[#EC1C24]/10 blur-[110px]" />
 
       {/* RIGHT GLOW */}
-      <motion.div
-        animate={{
-          opacity: [0.08, 0.15, 0.08],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-        }}
-        className="absolute right-[-100px] bottom-[100px] h-[260px] w-[260px] rounded-full bg-blue-500/10 blur-[120px]"
-      />
+      <div className="absolute right-[-80px] bottom-[60px] h-[240px] w-[240px] rounded-full bg-blue-500/10 blur-[110px]" />
 
       {/* ANGLED BG */}
-      <div className="absolute right-[-200px] top-0 hidden h-full w-[45%] rotate-[-10deg] bg-white/[0.02] blur-3xl lg:block" />
+      <div className="absolute right-[-180px] top-0 hidden h-full w-[40%] rotate-[-10deg] bg-white/[0.02] blur-3xl lg:block" />
 
-      <div className="relative z-10 mx-auto max-w-[1200px]">
+      <div className="relative z-10 mx-auto max-w-[1180px]">
 
         {/* TOP */}
-        <div className="mx-auto max-w-[900px] text-center">
+        <div className="mx-auto max-w-[850px] text-center">
 
           {/* BADGE */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 backdrop-blur-xl"
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: false,
+              amount: 0.4,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 backdrop-blur-xl"
           >
-            <div className="h-2 w-2 rounded-full bg-blue-400" />
 
-            <span className="text-[10px] uppercase tracking-[3px] text-blue-300">
+            <div className="h-1.5 w-1.5 rounded-full bg-blue-400" />
+
+            <span className="text-[9px] uppercase tracking-[3px] text-blue-300">
               Abstraction Layer
             </span>
           </motion.div>
 
           {/* HEADING */}
           <motion.h2
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-            viewport={{ once: true }}
-            className="text-[38px] font-black leading-[0.95] tracking-[-2px] sm:text-[54px] lg:text-[82px]"
+            initial={{
+              opacity: 0,
+              y: 35,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: false,
+              amount: 0.3,
+            }}
+            transition={{
+              duration: 0.8,
+            }}
+            className="text-[34px] font-black leading-[0.95] tracking-[-2px] sm:text-[48px] lg:text-[64px]"
           >
+
             Focus on Business,
             <br />
 
@@ -103,14 +116,26 @@ export default function BusinessFocus() {
             </span>
           </motion.h2>
 
-          {/* DESCRIPTION */}
+          {/* DESC */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="mx-auto mt-8 max-w-[920px] text-[15px] leading-9 text-slate-400 sm:text-[16px]"
+            initial={{
+              opacity: 0,
+              y: 25,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: false,
+              amount: 0.3,
+            }}
+            transition={{
+              duration: 0.9,
+            }}
+            className="mx-auto mt-6 max-w-[760px] text-[14px] leading-8 text-slate-400 sm:text-[15px]"
           >
+
             The AI landscape moves at lightspeed.
             We handle the{" "}
 
@@ -133,7 +158,7 @@ export default function BusinessFocus() {
         </div>
 
         {/* CARDS */}
-        <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
 
           {cards.map((card, index) => {
             const Icon = card.icon;
@@ -143,84 +168,75 @@ export default function BusinessFocus() {
                 key={index}
                 initial={{
                   opacity: 0,
-                  y: 40,
+                  y: 35,
                 }}
                 whileInView={{
                   opacity: 1,
                   y: 0,
                 }}
+                viewport={{
+                  once: false,
+                  amount: 0.2,
+                }}
                 transition={{
-                  duration: 0.7,
-                  delay: index * 0.08,
+                  duration: 0.6,
+                  delay: index * 0.06,
                 }}
-                viewport={{ once: true }}
                 whileHover={{
-                  y: -8,
+                  y: -5,
                 }}
-                className={`group relative overflow-hidden rounded-[36px] border bg-white/[0.03] p-10 backdrop-blur-2xl transition-all duration-500 hover:bg-white/[0.05] hover:shadow-[0_0_50px_rgba(255,255,255,0.05)] ${card.border}`}
+                className={`group relative overflow-hidden rounded-[28px] border bg-white/[0.03] p-7 backdrop-blur-xl transition-all duration-300 hover:bg-white/[0.05] hover:shadow-[0_0_40px_rgba(255,255,255,0.03)] ${card.border}`}
               >
 
                 {/* BG GLOW */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${card.glow} opacity-0 transition-all duration-500 group-hover:opacity-100`}
+                  className={`absolute inset-0 bg-gradient-to-br ${card.glow} opacity-0 transition-opacity duration-300 group-hover:opacity-100`}
                 />
 
-                {/* RUNNING LIGHT */}
+                {/* LIGHT SWEEP */}
                 <motion.div
                   animate={{
                     x: ["-120%", "220%"],
                   }}
                   transition={{
-                    duration: 4,
+                    duration: 5,
                     repeat: Infinity,
                     ease: "linear",
-                    delay: index * 0.3,
+                    delay: index * 0.25,
                   }}
-                  className="absolute top-0 h-full w-[90px] rotate-[20deg] bg-white/[0.04] blur-2xl"
+                  className="absolute top-0 h-full w-[70px] rotate-[20deg] bg-white/[0.03] blur-lg"
                 />
 
                 {/* ICON */}
-                <motion.div
-                  animate={{
-                    boxShadow: [
-                      "0 0 0px currentColor",
-                      "0 0 18px currentColor",
-                      "0 0 0px currentColor",
-                    ],
-                  }}
-                  transition={{
-                    duration: 2.5,
-                    repeat: Infinity,
-                    delay: index * 0.2,
-                  }}
-                  className={`relative z-10 flex h-24 w-24 items-center justify-center rounded-[28px] border border-white/10 ${card.bg} ${card.color} transition-all duration-500 group-hover:shadow-[0_0_40px_currentColor]`}
+                <div
+                  className={`relative z-10 flex h-16 w-16 items-center justify-center rounded-[22px] border border-white/10 ${card.bg} ${card.color}`}
                 >
 
-                  {/* EXTRA GLOW */}
+                  {/* INNER GLOW */}
                   <div
-                    className={`absolute inset-0 rounded-[28px] bg-gradient-to-br ${card.glow} opacity-0 blur-2xl transition-all duration-500 group-hover:opacity-100`}
+                    className={`absolute inset-0 rounded-[22px] bg-gradient-to-br ${card.glow} opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100`}
                   />
 
                   <Icon
-                    size={40}
-                    className="relative z-10 transition-all duration-500 group-hover:scale-110"
+                    size={28}
+                    className="relative z-10 transition-transform duration-300 group-hover:scale-110"
                   />
-                </motion.div>
+                </div>
 
                 {/* CONTENT */}
                 <div className="relative z-10">
 
-                  <h3 className="mt-10 text-[34px] font-bold leading-tight text-white">
+                  <h3 className="mt-7 text-[24px] font-bold leading-tight text-white">
                     {card.title}
                   </h3>
 
-                  <p className="mt-4 text-[11px] font-semibold uppercase tracking-[3px] text-slate-500">
+                  <p className="mt-3 text-[10px] font-semibold uppercase tracking-[2.5px] text-slate-500">
                     {card.subtitle}
                   </p>
                 </div>
 
                 {/* BOTTOM LIGHT */}
-                <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 transition-all duration-500 group-hover:opacity-100" />
+                <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </motion.div>
             );
           })}

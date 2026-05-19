@@ -19,6 +19,8 @@ import IndustryKernels from "./components/IndustryKernels";
 import DataSphereProtocol from "./components/DataSphereProtocol";
 import BusinessFocus from "./components/BusinessFocus";
 import PricingScale from "./components/PricingScale";
+import { TbArrowAutofitContent } from "react-icons/tb";
+import AiContent from "./components/AiContent";
 
 function App() {
 
@@ -73,6 +75,7 @@ function App() {
       {/* CTA */}
       <section className="relative z-30 bg-black">
         <CTA />
+        <AiContent />
       </section>
 
       {/* FOOTER */}

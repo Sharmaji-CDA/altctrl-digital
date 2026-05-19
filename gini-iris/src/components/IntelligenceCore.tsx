@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ShieldCheck,
   Zap,
@@ -17,6 +19,7 @@ const features = [
     color: "from-emerald-500/20 to-emerald-500/5",
     iconColor: "text-emerald-400",
   },
+
   {
     icon: Zap,
     title: "Sub-200ms Latency",
@@ -24,6 +27,7 @@ const features = [
     color: "from-blue-500/20 to-blue-500/5",
     iconColor: "text-blue-400",
   },
+
   {
     icon: Cpu,
     title: "Multi-LLM Arbitration",
@@ -31,6 +35,7 @@ const features = [
     color: "from-violet-500/20 to-violet-500/5",
     iconColor: "text-violet-400",
   },
+
   {
     icon: Search,
     title: "Contextual RAG",
@@ -38,6 +43,7 @@ const features = [
     color: "from-indigo-500/20 to-indigo-500/5",
     iconColor: "text-indigo-400",
   },
+
   {
     icon: Smile,
     title: "Empathy Detection",
@@ -45,6 +51,7 @@ const features = [
     color: "from-pink-500/20 to-pink-500/5",
     iconColor: "text-pink-400",
   },
+
   {
     icon: Lock,
     title: "PII Scrubbing",
@@ -56,34 +63,16 @@ const features = [
 
 export default function IntelligenceCore() {
   return (
-    <section className="relative overflow-hidden bg-[#020617] px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-24">
+    <section className="relative overflow-hidden bg-[#020617] px-4 py-14 text-white sm:px-6 lg:px-8 lg:py-18">
 
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.12),transparent_45%)]" />
+      {/* BG */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.10),transparent_45%)]" />
 
       {/* LEFT GLOW */}
-      <motion.div
-        animate={{
-          opacity: [0.15, 0.3, 0.15],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-        }}
-        className="absolute left-[-200px] top-[100px] h-[350px] w-[350px] rounded-full bg-blue-500/20 blur-[120px]"
-      />
+      <div className="absolute left-[-180px] top-[80px] h-[300px] w-[300px] rounded-full bg-blue-500/15 blur-[110px]" />
 
       {/* RIGHT GLOW */}
-      <motion.div
-        animate={{
-          opacity: [0.1, 0.25, 0.1],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-        }}
-        className="absolute right-[-200px] top-[250px] h-[350px] w-[350px] rounded-full bg-violet-500/20 blur-[120px]"
-      />
+      <div className="absolute right-[-180px] top-[220px] h-[300px] w-[300px] rounded-full bg-violet-500/15 blur-[110px]" />
 
       <div className="relative z-10 mx-auto max-w-[1280px]">
 
@@ -92,12 +81,24 @@ export default function IntelligenceCore() {
 
           {/* BADGE */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: false,
+              amount: 0.4,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
             className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 backdrop-blur-xl"
           >
+
             <div className="h-2 w-2 rounded-full bg-blue-400" />
 
             <span className="text-[10px] uppercase tracking-[3px] text-blue-300">
@@ -107,30 +108,57 @@ export default function IntelligenceCore() {
 
           {/* HEADING */}
           <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-            viewport={{ once: true }}
-            className="text-[28px] font-black leading-[1] tracking-[-1px] sm:text-[32px] lg:text-[36px]"
+            initial={{
+              opacity: 0,
+              y: 35,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: false,
+              amount: 0.3,
+            }}
+            transition={{
+              duration: 0.8,
+            }}
+            className="text-[28px] font-black leading-[1] tracking-[-1px] sm:text-[34px] lg:text-[40px]"
           >
+
             The{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+
+            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Intelligence
             </span>{" "}
+
             Core.
           </motion.h2>
 
           {/* DESC */}
           <motion.p
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="mx-auto mt-5 max-w-[620px] text-[12px] leading-6 text-slate-400 sm:text-[13px] lg:text-[14px]"
+            initial={{
+              opacity: 0,
+              y: 25,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: false,
+              amount: 0.3,
+            }}
+            transition={{
+              duration: 0.9,
+            }}
+            className="mx-auto mt-5 max-w-[620px] text-[13px] leading-7 text-slate-400 sm:text-[14px]"
           >
-            We've moved beyond generic wrappers. AltCtrl is built on a
-            specialized infrastructure layer designed to handle the multi-modal
-            cognitive load of global enterprise operations.
+
+            We&apos;ve moved beyond generic wrappers.
+            AltCtrl is built on a specialized infrastructure
+            layer designed to handle the multi-modal cognitive
+            load of global enterprise operations.
           </motion.p>
         </div>
 
@@ -143,46 +171,69 @@ export default function IntelligenceCore() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{
+                  opacity: 0,
+                  y: 40,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: false,
+                  amount: 0.2,
+                }}
                 transition={{
-                  duration: 0.7,
-                  delay: index * 0.08,
+                  duration: 0.6,
+                  delay: index * 0.05,
                 }}
-                viewport={{ once: true }}
                 whileHover={{
-                  y: -6,
+                  y: -5,
                 }}
-                className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[#071124]/80 p-5 backdrop-blur-2xl transition-all duration-500 hover:border-blue-500/30 hover:bg-[#0A162E]"
+                className="group relative overflow-hidden rounded-[24px] border border-white/10 bg-[#071124]/80 p-5 backdrop-blur-xl transition-all duration-300 hover:border-blue-500/30 hover:bg-[#0A162E]"
               >
 
-                {/* CARD GLOW */}
+                {/* HOVER GLOW */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
+                  className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 transition-opacity duration-300 group-hover:opacity-100`}
+                />
+
+                {/* LIGHT SWEEP */}
+                <motion.div
+                  animate={{
+                    x: ["-120%", "220%"],
+                  }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "linear",
+                    delay: index * 0.25,
+                  }}
+                  className="absolute top-0 h-full w-[70px] rotate-[20deg] bg-white/[0.03] blur-lg"
                 />
 
                 <div className="relative z-10">
 
                   {/* ICON */}
                   <div
-                    className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-white/[0.04] ${item.iconColor}`}
+                    className={`flex h-11 w-11 items-center justify-center rounded-2xl bg-white/[0.04] ${item.iconColor}`}
                   >
-                    <Icon size={20} />
+                    <Icon size={18} />
                   </div>
 
                   {/* TITLE */}
-                  <h3 className="mt-6 text-[18px] font-bold leading-tight text-white">
+                  <h3 className="mt-5 text-[17px] font-bold leading-tight text-white">
                     {item.title}
                   </h3>
 
                   {/* DESC */}
-                  <p className="mt-4 text-[12px] leading-6 text-slate-400 sm:text-[13px]">
+                  <p className="mt-3 text-[12px] leading-6 text-slate-400 sm:text-[13px]">
                     {item.desc}
                   </p>
                 </div>
 
-                {/* BORDER LIGHT */}
-                <div className="absolute inset-0 rounded-[28px] border border-white/[0.04]" />
+                {/* BORDER */}
+                <div className="absolute inset-0 rounded-[24px] border border-white/[0.04]" />
               </motion.div>
             );
           })}

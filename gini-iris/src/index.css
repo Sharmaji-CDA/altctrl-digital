@@ -76,33 +76,28 @@ img {
   color: white;
 }
 
-/* FIX NESTED SCROLL WITH LENIS */
 .pricing-scroll {
-  flex: 1;
-  min-height: 0;
-
+  height: 260px;
   overflow-y: auto;
   overflow-x: hidden;
 
+  scroll-behavior: smooth;
   overscroll-behavior: contain;
-
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-
   -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.15) transparent;
 }
 
 .pricing-scroll::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
-}
-
-/* SHOW SCROLL ONLY WHILE HOVERING */
-.pricing-scroll:hover::-webkit-scrollbar {
   width: 4px;
 }
 
-.pricing-scroll:hover::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.14);
+.pricing-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.15);
   border-radius: 999px;
+}
+
+.pricing-scroll::-webkit-scrollbar-track {
+  background: transparent;
 }

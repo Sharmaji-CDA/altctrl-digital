@@ -1,74 +1,267 @@
+"use client";
+
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import {
+  Rocket,
+  Globe,
+ ShieldCheck,
+  Zap,
+} from "lucide-react";
 
-const CTA = () => {
+export default function CTA() {
   return (
-    <section className="relative overflow-hidden px-6 py-12 lg:px-8">
-      
-      {/* BACKGROUND GLOW */}
-      <div className="absolute left-1/2 top-1/2 h-[250px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#EC1C24]/20 blur-[140px]" />
+    <section className="relative overflow-hidden bg-black px-12 py-16 lg:py-24">
 
-      <div className="relative mx-auto max-w-[1400px]">
-        
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.18),transparent_30%)]" />
+
+      <div className="absolute right-0 top-0 h-[320px] w-[320px] rounded-full bg-blue-500/10 blur-3xl" />
+
+      <div className="absolute bottom-0 left-0 h-[320px] w-[320px] rounded-full bg-cyan-500/10 blur-3xl" />
+
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
+
+        {/* LEFT */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          initial={{
+            opacity: 0,
+            x: -40,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-[#EC1C24] via-[#d3151d] to-[#8b0c11] px-8 py-20 text-center shadow-[0_30px_100px_rgba(236,28,36,0.25)] sm:px-12 lg:px-20"
+          className="max-w-xl"
         >
-          
-          {/* OVERLAY */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_55%)]" />
 
-          {/* FLOATING LIGHT */}
-          <div className="absolute right-[-80px] top-[-80px] h-[220px] w-[220px] rounded-full bg-white/10 blur-[100px]" />
+          {/* BADGE */}
+          <div className="inline-flex items-center rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-[10px] font-semibold uppercase tracking-[2px] text-blue-300 backdrop-blur-xl">
 
-          <div className="absolute bottom-[-80px] left-[-80px] h-[220px] w-[220px] rounded-full bg-black/20 blur-[100px]" />
+            Scale Now
+          </div>
 
-          {/* CONTENT */}
-          <div className="relative mx-auto max-w-4xl">
-            
-            {/* LABEL */}
-            <span className="mb-6 inline-block rounded-full border border-white/20 bg-white/10 px-5 py-2 text-xs font-medium uppercase tracking-[3px] text-white backdrop-blur-xl">
-              Start Your Journey
+          {/* HEADING */}
+          <h2 className="mt-6 text-4xl font-black leading-[0.92] tracking-[-2px] text-white sm:text-5xl lg:text-6xl">
+
+            Ready to turn on
+            <br />
+
+            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              the machine?
             </span>
+          </h2>
 
-            {/* HEADING */}
-            <h2 className="text-4xl font-black leading-tight tracking-[-2px] text-white sm:text-5xl lg:text-6xl">
-              Let’s Build Something Incredible
-            </h2>
+          {/* DESC */}
+          <p className="mt-6 text-base leading-8 text-slate-400 sm:text-lg">
+            Join 500+ enterprises already automating
+            high-complexity workflows with AI infrastructure.
+          </p>
 
-            {/* DESCRIPTION */}
-            <p className="mx-auto mt-8 max-w-2xl text-base leading-8 text-white/85 sm:text-lg">
-              Modern digital products engineered for performance,
-              scalability, and next-generation user experiences.
-            </p>
+          {/* FEATURES */}
+          <div className="mt-10 space-y-4">
 
-            {/* BUTTONS */}
-            <div className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
-              
-              {/* PRIMARY BUTTON */}
-              <button className="group flex items-center justify-center gap-3 rounded-full bg-black px-8 py-4 text-sm font-semibold uppercase tracking-[2px] text-white transition-all duration-300 hover:scale-105 hover:bg-white hover:text-black">
-                
-                Start Project
+            {/* ITEM */}
+            <motion.div
+              whileHover={{ x: 6 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+              }}
+              className="group flex items-center gap-4"
+            >
 
-                <ArrowRight
+              <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] transition-all duration-300 group-hover:border-blue-500/30 group-hover:bg-blue-500/10">
+
+                <Rocket
                   size={18}
-                  className="transition-transform duration-300 group-hover:translate-x-1"
+                  className="text-blue-400"
                 />
-              </button>
+              </div>
 
-              {/* SECONDARY BUTTON */}
-              <button className="rounded-full border border-white/20 bg-white/10 px-8 py-4 text-sm font-semibold uppercase tracking-[2px] text-white backdrop-blur-xl transition-all duration-300 hover:bg-white hover:text-black">
-                Contact Us
-              </button>
-            </div>
+              <p className="text-sm font-bold uppercase tracking-[1.5px] text-slate-200">
+                Deployment in under 24 hours
+              </p>
+            </motion.div>
+
+            {/* ITEM */}
+            <motion.div
+              whileHover={{ x: 6 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+              }}
+              className="group flex items-center gap-4"
+            >
+
+              <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] transition-all duration-300 group-hover:border-blue-500/30 group-hover:bg-blue-500/10">
+
+                <Globe
+                  size={18}
+                  className="text-cyan-400"
+                />
+              </div>
+
+              <p className="text-sm font-bold uppercase tracking-[1.5px] text-slate-200">
+                Global region availability
+              </p>
+            </motion.div>
+
+            {/* ITEM */}
+            <motion.div
+              whileHover={{ x: 6 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+              }}
+              className="group flex items-center gap-4"
+            >
+
+              <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] transition-all duration-300 group-hover:border-blue-500/30 group-hover:bg-blue-500/10">
+
+                <ShieldCheck
+                  size={18}
+                  className="text-violet-400"
+                />
+              </div>
+
+              <p className="text-sm font-bold uppercase tracking-[1.5px] text-slate-200">
+                Deterministic logic gating
+              </p>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* RIGHT */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+          viewport={{ once: true }}
+          className="relative"
+        >
+
+          {/* FLOAT ICON */}
+          <motion.div
+            animate={{
+              y: [0, -5, 0],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+            }}
+            className="absolute -top-8 left-1 z-20 flex h-14 w-14 items-center justify-center rounded-3xl border border-white/10 bg-black shadow-[0_0_30px_rgba(37,99,235,0.18)]"
+          >
+
+            <Zap
+              size={22}
+              className="text-blue-400"
+            />
+          </motion.div>
+
+          {/* FORM */}
+          <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-2xl shadow-[0_0_60px_rgba(37,99,235,0.08)] sm:p-7">
+
+            <form className="space-y-4">
+
+              {/* ROW */}
+              <div className="grid gap-4 md:grid-cols-2">
+
+                <div>
+                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[1px] text-slate-300">
+                    First Name
+                  </label>
+
+                  <input
+                    type="text"
+                    placeholder="John"
+                    className="h-11 w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 text-sm text-white outline-none transition-all duration-300 placeholder:text-slate-500 focus:border-blue-500/40 focus:bg-blue-500/[0.03]"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[1px] text-slate-300">
+                    Last Name
+                  </label>
+
+                  <input
+                    type="text"
+                    placeholder="Doe"
+                    className="h-11 w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 text-sm text-white outline-none transition-all duration-300 placeholder:text-slate-500 focus:border-blue-500/40 focus:bg-blue-500/[0.03]"
+                  />
+                </div>
+              </div>
+
+              {/* ROW */}
+              <div className="grid gap-4 md:grid-cols-2">
+
+                <div>
+                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[1px] text-slate-300">
+                    Email
+                  </label>
+
+                  <input
+                    type="email"
+                    placeholder="john@example.com"
+                    className="h-11 w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 text-sm text-white outline-none transition-all duration-300 placeholder:text-slate-500 focus:border-blue-500/40 focus:bg-blue-500/[0.03]"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-xs font-semibold uppercase tracking-[1px] text-slate-300">
+                    Phone
+                  </label>
+
+                  <input
+                    type="text"
+                    placeholder="+1 555 000 000"
+                    className="h-11 w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 text-sm text-white outline-none transition-all duration-300 placeholder:text-slate-500 focus:border-blue-500/40 focus:bg-blue-500/[0.03]"
+                  />
+                </div>
+              </div>
+
+              {/* MESSAGE */}
+              <div>
+                <label className="mb-2 block text-xs font-semibold uppercase tracking-[1px] text-slate-300">
+                  Message
+                </label>
+
+                <textarea
+                  rows={4}
+                  placeholder="Tell us about your workflow..."
+                  className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white outline-none transition-all duration-300 placeholder:text-slate-500 focus:border-blue-500/40 focus:bg-blue-500/[0.03]"
+                />
+              </div>
+
+              {/* BUTTON */}
+              <motion.button
+                whileHover={{
+                  scale: 1.01,
+                }}
+                whileTap={{
+                  scale: 0.98,
+                }}
+                type="submit"
+                className="flex h-11 w-full items-center justify-center rounded-xl bg-gradient-to-r from-pink-600 to-orange-500 text-sm font-bold text-white shadow-[0_0_30px_rgba(37,99,235,0.35)] transition-all duration-300 hover:shadow-[0_0_40px_rgba(37,99,235,0.5)]"
+              >
+
+                Request Demo
+              </motion.button>
+            </form>
           </div>
         </motion.div>
       </div>
     </section>
   );
-};
-
-export default CTA;
+}

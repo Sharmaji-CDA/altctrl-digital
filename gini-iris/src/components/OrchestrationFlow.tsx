@@ -1,3 +1,5 @@
+"use client";
+
 import {
   AudioWaveform,
   Cpu,
@@ -103,55 +105,61 @@ const phases = [
 
 export default function OrchestrationFlow() {
   return (
-    <section className="relative overflow-hidden bg-[#020617] px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-24">
+    <section className="relative overflow-hidden bg-[#020617] px-4 py-14 text-white sm:px-6 lg:px-8 lg:py-18">
 
       {/* BG */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.08),transparent_45%)]" />
 
-      {/* GLOW LEFT */}
-      <motion.div
-        animate={{
-          opacity: [0.12, 0.28, 0.12],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-        }}
-        className="absolute left-[-180px] top-[200px] h-[320px] w-[320px] rounded-full bg-blue-500/20 blur-[120px]"
-      />
+      {/* LEFT GLOW */}
+      <div className="absolute left-[-180px] top-[200px] h-[260px] w-[260px] rounded-full bg-blue-500/15 blur-[110px]" />
 
-      {/* GLOW RIGHT */}
-      <motion.div
-        animate={{
-          opacity: [0.08, 0.2, 0.08],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-        }}
-        className="absolute right-[-180px] top-[400px] h-[320px] w-[320px] rounded-full bg-violet-500/20 blur-[120px]"
-      />
+      {/* RIGHT GLOW */}
+      <div className="absolute right-[-180px] top-[400px] h-[260px] w-[260px] rounded-full bg-violet-500/15 blur-[110px]" />
 
       <div className="relative z-10 mx-auto max-w-[980px]">
 
         {/* TOP */}
         <div className="text-center">
 
+          {/* BADGE */}
           <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
+            initial={{
+              opacity: 0,
+              y: 15,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: false,
+              amount: 0.4,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
             className="text-[10px] uppercase tracking-[4px] text-blue-400"
           >
             The Customer Journey
           </motion.p>
 
+          {/* HEADING */}
           <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-            viewport={{ once: true }}
+            initial={{
+              opacity: 0,
+              y: 35,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: false,
+              amount: 0.3,
+            }}
+            transition={{
+              duration: 0.8,
+            }}
             className="mt-4 text-[28px] font-black leading-[1] tracking-[-1px] sm:text-[32px] lg:text-[36px]"
           >
             The Multi-Layer Orchestration.
@@ -162,7 +170,7 @@ export default function OrchestrationFlow() {
         <div className="relative mt-14">
 
           {/* CENTER LINE */}
-          <div className="absolute left-1/2 top-0 hidden h-full w-[2px] -translate-x-1/2 bg-gradient-to-b from-blue-500/40 via-violet-500/40 to-emerald-500/40 lg:block" />
+          <div className="absolute left-1/2 top-0 hidden h-full w-[2px] -translate-x-1/2 bg-gradient-to-b from-blue-500/30 via-violet-500/30 to-emerald-500/30 lg:block" />
 
           <div className="space-y-10">
 
@@ -172,23 +180,49 @@ export default function OrchestrationFlow() {
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.8,
-                    delay: index * 0.1,
+                  initial={{
+                    opacity: 0,
+                    y: 45,
                   }}
-                  viewport={{ once: true }}
-                  className={`relative overflow-hidden rounded-[28px] border bg-[#071124]/80 p-5 backdrop-blur-2xl sm:p-6 lg:p-7 ${item.color}`}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{
+                    once: false,
+                    amount: 0.15,
+                  }}
+                  transition={{
+                    duration: 0.7,
+                    delay: index * 0.08,
+                  }}
+                  whileHover={{
+                    y: -4,
+                  }}
+                  className={`group relative overflow-hidden rounded-[28px] border bg-[#071124]/80 p-5 backdrop-blur-xl transition-all duration-300 hover:bg-[#0A162E] sm:p-6 lg:p-7 ${item.color}`}
                 >
 
                   {/* CARD GLOW */}
                   <div
-                    className={`absolute inset-0 ${item.glow} opacity-[0.06]`}
+                    className={`absolute inset-0 ${item.glow} opacity-[0.05]`}
+                  />
+
+                  {/* LIGHT SWEEP */}
+                  <motion.div
+                    animate={{
+                      x: ["-120%", "220%"],
+                    }}
+                    transition={{
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "linear",
+                      delay: index * 0.4,
+                    }}
+                    className="absolute top-0 h-full w-[80px] rotate-[20deg] bg-white/[0.03] blur-xl"
                   />
 
                   {/* NODE */}
-                  <div className="absolute left-1/2 top-[-8px] hidden h-4 w-4 -translate-x-1/2 rounded-full bg-white shadow-[0_0_20px_white] lg:block" />
+                  <div className="absolute left-1/2 top-[-8px] hidden h-4 w-4 -translate-x-1/2 rounded-full bg-white shadow-[0_0_18px_white] lg:block" />
 
                   <div className="relative z-10 grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_0.9fr]">
 
@@ -205,6 +239,7 @@ export default function OrchestrationFlow() {
                         </div>
 
                         <div>
+
                           <p className="text-[9px] uppercase tracking-[3px] text-slate-500">
                             {item.phase}
                           </p>
@@ -216,7 +251,13 @@ export default function OrchestrationFlow() {
                       </div>
 
                       {/* PAIN */}
-                      <div className="mt-6 rounded-[20px] border border-rose-500/10 bg-rose-500/[0.04] p-4">
+                      <motion.div
+                        whileHover={{
+                          y: -2,
+                        }}
+                        className="mt-6 rounded-[20px] border border-rose-500/10 bg-rose-500/[0.04] p-4"
+                      >
+
                         <p className="text-[9px] uppercase tracking-[3px] text-rose-400">
                           This Customer Pain
                         </p>
@@ -224,10 +265,16 @@ export default function OrchestrationFlow() {
                         <p className="mt-3 text-[12px] leading-6 text-slate-400">
                           {item.pain}
                         </p>
-                      </div>
+                      </motion.div>
 
                       {/* SOLUTION */}
-                      <div className="mt-4 rounded-[20px] border border-emerald-500/10 bg-emerald-500/[0.04] p-4">
+                      <motion.div
+                        whileHover={{
+                          y: -2,
+                        }}
+                        className="mt-4 rounded-[20px] border border-emerald-500/10 bg-emerald-500/[0.04] p-4"
+                      >
+
                         <p className="text-[9px] uppercase tracking-[3px] text-emerald-400">
                           The AltCtrl Solution
                         </p>
@@ -235,7 +282,7 @@ export default function OrchestrationFlow() {
                         <p className="mt-3 text-[12px] leading-6 text-slate-300">
                           {item.solution}
                         </p>
-                      </div>
+                      </motion.div>
                     </div>
 
                     {/* RIGHT */}
@@ -256,14 +303,19 @@ export default function OrchestrationFlow() {
                               whileHover={{
                                 x: 4,
                               }}
-                              className="flex items-center gap-4 rounded-[18px] border border-white/5 bg-black/20 px-4 py-4 transition-all duration-300 hover:border-white/10"
+                              transition={{
+                                duration: 0.2,
+                              }}
+                              className="group/item flex items-center gap-4 rounded-[18px] border border-white/5 bg-black/20 px-4 py-4 transition-all duration-300 hover:border-white/10 hover:bg-white/[0.03]"
                             >
 
-                              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/[0.03] text-slate-300">
+                              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/[0.03] text-slate-300 transition-all duration-300 group-hover/item:scale-105">
+
                                 <ArchIcon size={16} />
                               </div>
 
                               <div>
+
                                 <p className="text-[8px] uppercase tracking-[2px] text-slate-500">
                                   Infrastructure
                                 </p>

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Layers3,
   Database,
@@ -23,7 +25,7 @@ const architecture = [
   {
     icon: Workflow,
     title: "Application Layer",
-    desc: "Contains business logic, orchestration, and server-side operations.",
+    desc: "Contains business logic and orchestration workflows.",
   },
 
   {
@@ -35,13 +37,13 @@ const architecture = [
   {
     icon: Database,
     title: "Data Layer",
-    desc: "Ensures structured persistence, retrieval, and data consistency.",
+    desc: "Ensures structured persistence and data consistency.",
   },
 
   {
     icon: GitBranch,
     title: "Integration Layer",
-    desc: "Connects third-party APIs and enterprise data systems.",
+    desc: "Connects APIs and enterprise data systems.",
   },
 ];
 
@@ -69,74 +71,102 @@ const features = [
 
 export default function DataSphereProtocol() {
   return (
-    <section className="relative overflow-hidden bg-black px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-24">
+    <section className="relative overflow-hidden bg-black px-4 py-14 text-white sm:px-6 lg:px-8 lg:py-18">
 
       {/* BG */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(249,115,22,0.08),transparent_45%)]" />
 
-      {/* ORANGE GLOW */}
-      <motion.div
-        animate={{
-          opacity: [0.08, 0.16, 0.08],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-        }}
-        className="absolute left-[-120px] top-[100px] h-[280px] w-[280px] rounded-full bg-orange-500/20 blur-[120px]"
-      />
+      {/* LEFT GLOW */}
+      <div className="absolute left-[-120px] top-[80px] h-[240px] w-[240px] rounded-full bg-orange-500/10 blur-[110px]" />
 
-      {/* RED GLOW */}
-      <motion.div
-        animate={{
-          opacity: [0.08, 0.18, 0.08],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-        }}
-        className="absolute right-[-100px] bottom-[100px] h-[260px] w-[260px] rounded-full bg-[#EC1C24]/10 blur-[120px]"
-      />
+      {/* RIGHT GLOW */}
+      <div className="absolute right-[-120px] bottom-[60px] h-[240px] w-[240px] rounded-full bg-[#EC1C24]/10 blur-[110px]" />
 
-      <div className="relative z-10 mx-auto max-w-[1300px]">
+      {/* ANGLED BG */}
+      <div className="absolute right-[-180px] top-0 hidden h-full w-[40%] rotate-[-10deg] bg-white/[0.02] blur-3xl lg:block" />
 
-        <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+      <div className="relative z-10 mx-auto max-w-[1180px]">
 
-          {/* LEFT PANEL */}
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center xl:gap-14">
+
+          {/* LEFT */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9 }}
-            viewport={{ once: true }}
+            initial={{
+              opacity: 0,
+              x: -30,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: false,
+              amount: 0.2,
+            }}
+            transition={{
+              duration: 0.7,
+            }}
             className="relative"
           >
 
-            {/* MAIN PANEL */}
-            <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-white/[0.03] p-6 backdrop-blur-2xl sm:p-8">
+            {/* PANEL */}
+            <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl sm:p-6">
 
               {/* PANEL GLOW */}
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/[0.04] to-transparent" />
 
-              {/* TITLE */}
-              <div className="relative z-10 flex items-center gap-3">
+              {/* LIGHT SWEEP */}
+              <motion.div
+                animate={{
+                  x: ["-120%", "220%"],
+                }}
+                transition={{
+                  duration: 7,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="absolute top-0 h-full w-[90px] rotate-[20deg] bg-white/[0.03] blur-xl"
+              />
 
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-orange-500/20 bg-orange-500/10 text-orange-400">
-                  <Layers3 size={22} />
+              {/* TITLE */}
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: false,
+                  amount: 0.4,
+                }}
+                transition={{
+                  duration: 0.6,
+                }}
+                className="relative z-10 flex items-center gap-3"
+              >
+
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-orange-500/20 bg-orange-500/10 text-orange-400">
+
+                  <Layers3 size={18} />
                 </div>
 
                 <div>
-                  <h3 className="text-[26px] font-bold">
+
+                  <h3 className="text-[20px] font-bold">
                     Multi-Layered Architecture
                   </h3>
 
-                  <p className="mt-1 text-[13px] text-slate-400">
+                  <p className="mt-1 text-[11px] text-slate-400">
                     Scalable, secure, and maintainable by design.
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* STACK */}
-              <div className="relative z-10 mt-8 space-y-4">
+              <div className="relative z-10 mt-6 space-y-3">
 
                 {architecture.map((item, index) => {
                   const Icon = item.icon;
@@ -144,10 +174,26 @@ export default function DataSphereProtocol() {
                   return (
                     <motion.div
                       key={index}
+                      initial={{
+                        opacity: 0,
+                        y: 25,
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                      }}
+                      viewport={{
+                        once: false,
+                        amount: 0.2,
+                      }}
+                      transition={{
+                        duration: 0.55,
+                        delay: index * 0.05,
+                      }}
                       whileHover={{
                         y: -3,
                       }}
-                      className="group relative overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03] p-5 transition-all duration-500 hover:border-orange-500/20 hover:bg-white/[0.05]"
+                      className="group relative overflow-hidden rounded-[20px] border border-white/10 bg-white/[0.03] p-4 transition-all duration-300 hover:border-orange-500/20 hover:bg-white/[0.05]"
                     >
 
                       {/* RUNNING LIGHT */}
@@ -156,43 +202,30 @@ export default function DataSphereProtocol() {
                           x: ["-120%", "220%"],
                         }}
                         transition={{
-                          duration: 4,
+                          duration: 5,
                           repeat: Infinity,
                           ease: "linear",
                           delay: index * 0.3,
                         }}
-                        className="absolute top-0 h-full w-[70px] rotate-[20deg] bg-white/[0.04] blur-xl"
+                        className="absolute top-0 h-full w-[60px] rotate-[20deg] bg-white/[0.03] blur-lg"
                       />
 
-                      <div className="relative z-10 flex items-start gap-4">
+                      <div className="relative z-10 flex items-start gap-3">
 
                         {/* ICON */}
-                        <motion.div
-                          animate={{
-                            boxShadow: [
-                              "0 0 0px currentColor",
-                              "0 0 16px currentColor",
-                              "0 0 0px currentColor",
-                            ],
-                          }}
-                          transition={{
-                            duration: 2.5,
-                            repeat: Infinity,
-                            delay: index * 0.2,
-                          }}
-                          className="flex h-11 w-11 items-center justify-center rounded-xl border border-orange-500/20 bg-orange-500/10 text-orange-400 group-hover:shadow-[0_0_25px_currentColor]"
-                        >
-                          <Icon size={18} />
-                        </motion.div>
+                        <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-orange-500/20 bg-orange-500/10 text-orange-400">
+
+                          <Icon size={15} />
+                        </div>
 
                         {/* CONTENT */}
                         <div>
 
-                          <h4 className="text-[16px] font-semibold text-white">
+                          <h4 className="text-[14px] font-semibold text-white">
                             {item.title}
                           </h4>
 
-                          <p className="mt-2 text-[12px] leading-6 text-slate-400">
+                          <p className="mt-1 text-[11px] leading-5 text-slate-400">
                             {item.desc}
                           </p>
                         </div>
@@ -203,17 +236,36 @@ export default function DataSphereProtocol() {
               </div>
 
               {/* ADVANTAGES */}
-              <div className="relative z-10 mt-8 flex flex-wrap gap-6 border-t border-white/10 pt-6">
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: false,
+                  amount: 0.4,
+                }}
+                transition={{
+                  duration: 0.7,
+                }}
+                className="relative z-10 mt-6 flex flex-wrap gap-4 border-t border-white/10 pt-5"
+              >
 
                 {[
                   {
                     icon: ArrowUpRight,
                     text: "Scalability",
                   },
+
                   {
                     icon: Wrench,
                     text: "Maintainability",
                   },
+
                   {
                     icon: Shield,
                     text: "Security",
@@ -222,68 +274,128 @@ export default function DataSphereProtocol() {
                   const Icon = advantage.icon;
 
                   return (
-                    <div
+                    <motion.div
                       key={index}
-                      className="flex items-center gap-3 text-[13px] font-medium text-slate-300"
+                      whileHover={{
+                        y: -2,
+                      }}
+                      className="flex items-center gap-2 text-[12px] font-medium text-slate-300"
                     >
+
                       <Icon
-                        size={15}
+                        size={14}
                         className="text-orange-400"
                       />
 
                       {advantage.text}
-                    </div>
+                    </motion.div>
                   );
                 })}
-              </div>
+              </motion.div>
             </div>
 
             {/* FLOATING BADGE */}
             <motion.div
-              animate={{
-                y: [0, -10, 0],
+              initial={{
+                opacity: 0,
+                scale: 0.8,
+              }}
+              whileInView={{
+                opacity: 1,
+                scale: 1,
+              }}
+              viewport={{
+                once: false,
+                amount: 0.4,
               }}
               transition={{
-                duration: 4,
-                repeat: Infinity,
+                duration: 0.6,
               }}
-              className="absolute bottom-[-25px] right-[-10px] rounded-[30px] border border-orange-500/20 bg-gradient-to-r from-orange-500 to-[#ff7b1a] px-7 py-5 shadow-[0_0_45px_rgba(249,115,22,0.35)]"
+              animate={{
+                y: [0, -6, 0],
+              }}
+              className="absolute bottom-[-18px] right-[-5px] rounded-[22px] border border-orange-500/20 bg-gradient-to-r from-orange-500 to-[#ff7b1a] px-5 py-4 shadow-[0_0_35px_rgba(249,115,22,0.25)]"
             >
 
-              <p className="text-[10px] font-bold uppercase tracking-[2px] text-white/80">
+              <p className="text-[9px] font-bold uppercase tracking-[2px] text-white/80">
                 Live Schema
               </p>
 
-              <h3 className="mt-2 text-[38px] font-black leading-none">
+              <h3 className="mt-1 text-[28px] font-black leading-none">
                 99.9%
               </h3>
 
-              <p className="mt-1 text-[16px] font-semibold">
+              <p className="mt-1 text-[13px] font-semibold">
                 Match
               </p>
             </motion.div>
           </motion.div>
 
-          {/* RIGHT CONTENT */}
+          {/* RIGHT */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9 }}
-            viewport={{ once: true }}
+            initial={{
+              opacity: 0,
+              x: 30,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: false,
+              amount: 0.2,
+            }}
+            transition={{
+              duration: 0.7,
+            }}
           >
 
             {/* BADGE */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-orange-500/10 px-4 py-2 backdrop-blur-xl">
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: false,
+                amount: 0.4,
+              }}
+              transition={{
+                duration: 0.6,
+              }}
+              className="inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-orange-500/10 px-4 py-2 backdrop-blur-xl"
+            >
 
-              <div className="h-2 w-2 rounded-full bg-orange-400" />
+              <div className="h-1.5 w-1.5 rounded-full bg-orange-400" />
 
-              <span className="text-[10px] uppercase tracking-[3px] text-orange-300">
+              <span className="text-[9px] uppercase tracking-[3px] text-orange-300">
                 The DataSphere Protocol
               </span>
-            </div>
+            </motion.div>
 
             {/* HEADING */}
-            <h2 className="mt-8 text-[40px] font-black leading-[0.95] tracking-[-2px] sm:text-[54px] lg:text-[72px]">
+            <motion.h2
+              initial={{
+                opacity: 0,
+                y: 35,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: false,
+                amount: 0.3,
+              }}
+              transition={{
+                duration: 0.8,
+              }}
+              className="mt-6 text-[32px] font-black leading-[0.95] tracking-[-2px] sm:text-[46px] lg:text-[58px]"
+            >
 
               Build your own CRM.
               <br />
@@ -293,17 +405,35 @@ export default function DataSphereProtocol() {
                 <br />
                 our scale.
               </span>
-            </h2>
+            </motion.h2>
 
             {/* DESC */}
-            <p className="mt-8 max-w-[620px] text-[15px] leading-9 text-slate-400">
+            <motion.p
+              initial={{
+                opacity: 0,
+                y: 25,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: false,
+                amount: 0.3,
+              }}
+              transition={{
+                duration: 0.9,
+              }}
+              className="mt-6 max-w-[620px] text-[14px] leading-7 text-slate-400"
+            >
+
               Stop fitting your business into rigid database rows.
               Design your own custom data models and relationship graphs.
               Our AI interprets your schema natively with zero-code mapping.
-            </p>
+            </motion.p>
 
             {/* FEATURES */}
-            <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            <div className="mt-7 grid gap-4 sm:grid-cols-2">
 
               {features.map((feature, index) => {
                 const Icon = feature.icon;
@@ -311,38 +441,55 @@ export default function DataSphereProtocol() {
                 return (
                   <motion.div
                     key={index}
-                    whileHover={{
-                      y: -5,
+                    initial={{
+                      opacity: 0,
+                      y: 30,
                     }}
-                    className="group relative overflow-hidden rounded-[26px] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-2xl transition-all duration-500 hover:border-orange-500/20 hover:bg-white/[0.05]"
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    viewport={{
+                      once: false,
+                      amount: 0.2,
+                    }}
+                    transition={{
+                      duration: 0.55,
+                      delay: index * 0.05,
+                    }}
+                    whileHover={{
+                      y: -4,
+                    }}
+                    className="group relative overflow-hidden rounded-[20px] border border-white/10 bg-white/[0.03] p-4 backdrop-blur-xl transition-all duration-300 hover:border-orange-500/20 hover:bg-white/[0.05]"
                   >
 
                     {/* GLOW */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/[0.08] to-transparent opacity-0 transition-all duration-500 group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/[0.08] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                    <div className="relative z-10 flex items-center gap-4">
+                    {/* LIGHT */}
+                    <motion.div
+                      animate={{
+                        x: ["-120%", "220%"],
+                      }}
+                      transition={{
+                        duration: 5,
+                        repeat: Infinity,
+                        ease: "linear",
+                        delay: index * 0.25,
+                      }}
+                      className="absolute top-0 h-full w-[60px] rotate-[20deg] bg-white/[0.03] blur-lg"
+                    />
+
+                    <div className="relative z-10 flex items-center gap-3">
 
                       {/* ICON */}
-                      <motion.div
-                        animate={{
-                          boxShadow: [
-                            "0 0 0px currentColor",
-                            "0 0 14px currentColor",
-                            "0 0 0px currentColor",
-                          ],
-                        }}
-                        transition={{
-                          duration: 2.5,
-                          repeat: Infinity,
-                          delay: index * 0.2,
-                        }}
-                        className="flex h-12 w-12 items-center justify-center rounded-2xl border border-orange-500/20 bg-orange-500/10 text-orange-400 group-hover:shadow-[0_0_25px_currentColor]"
-                      >
-                        <Icon size={20} />
-                      </motion.div>
+                      <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-orange-500/20 bg-orange-500/10 text-orange-400">
+
+                        <Icon size={16} />
+                      </div>
 
                       {/* TEXT */}
-                      <h4 className="text-[15px] font-semibold leading-6 text-white">
+                      <h4 className="text-[13px] font-semibold leading-5 text-white">
                         {feature.title}
                       </h4>
                     </div>

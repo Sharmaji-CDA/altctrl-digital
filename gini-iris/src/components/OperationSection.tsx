@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Bot,
   Database,
@@ -16,26 +18,31 @@ const workflowNodes = [
     title: "CX Resolution Agent",
     desc: "Customer problem solving",
   },
+
   {
     icon: Database,
     title: "Data Architect",
     desc: "CRM schema management",
   },
+
   {
     icon: Workflow,
     title: "Ops Automator",
     desc: "Workflow execution",
   },
+
   {
     icon: ShieldCheck,
     title: "Quality Supervisor",
     desc: "Audit & reporting",
   },
+
   {
     icon: Languages,
     title: "Multilingual Expert",
     desc: "Localized CX",
   },
+
   {
     icon: PlugZap,
     title: "Integration Engineer",
@@ -51,6 +58,7 @@ const metrics = [
     latency: "420ms",
     interactions: "12.4k",
   },
+
   {
     title: "Ops Automator",
     eff: "96.5%",
@@ -58,6 +66,7 @@ const metrics = [
     latency: "1.1s",
     interactions: "35.8k",
   },
+
   {
     title: "Quality Supervisor",
     eff: "100%",
@@ -75,27 +84,9 @@ export default function OperationsSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.04),transparent_40%)]" />
 
       {/* GLOWS */}
-      <motion.div
-        animate={{
-          opacity: [0.15, 0.35, 0.15],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-        }}
-        className="absolute left-[-180px] top-[100px] h-[320px] w-[320px] rounded-full bg-[#EC1C24]/20 blur-[120px]"
-      />
+      <div className="absolute left-[-180px] top-[100px] h-[260px] w-[260px] rounded-full bg-[#EC1C24]/15 blur-[110px]" />
 
-      <motion.div
-        animate={{
-          opacity: [0.1, 0.3, 0.1],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-        }}
-        className="absolute right-[-180px] top-[180px] h-[320px] w-[320px] rounded-full bg-[#8B5CF6]/20 blur-[120px]"
-      />
+      <div className="absolute right-[-180px] top-[180px] h-[260px] w-[260px] rounded-full bg-[#8B5CF6]/15 blur-[110px]" />
 
       <div className="relative z-10 mx-auto grid max-w-[1350px] grid-cols-1 gap-10 lg:grid-cols-[0.75fr_1.25fr]">
 
@@ -104,12 +95,24 @@ export default function OperationsSection() {
 
           {/* LABEL */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: false,
+              amount: 0.4,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
             className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-2 backdrop-blur-xl"
           >
+
             <div className="h-2 w-2 rounded-full bg-[#EC1C24]" />
 
             <span className="text-[9px] uppercase tracking-[3px] text-gray-300">
@@ -119,10 +122,21 @@ export default function OperationsSection() {
 
           {/* HEADING */}
           <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-            viewport={{ once: true }}
+            initial={{
+              opacity: 0,
+              y: 35,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: false,
+              amount: 0.3,
+            }}
+            transition={{
+              duration: 0.8,
+            }}
             className="max-w-[420px] text-[28px] font-black leading-[0.92] tracking-[-1px] sm:text-[32px] lg:text-[36px]"
           >
             Build Autonomous Operations Infrastructure.
@@ -130,10 +144,21 @@ export default function OperationsSection() {
 
           {/* DESC */}
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
+            initial={{
+              opacity: 0,
+              y: 25,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: false,
+              amount: 0.3,
+            }}
+            transition={{
+              duration: 0.9,
+            }}
             className="mt-4 max-w-[420px] text-[12px] leading-6 text-gray-400 sm:text-[13px] lg:text-[14px]"
           >
             Deploy AI-powered operational agents trained on your business
@@ -150,7 +175,7 @@ export default function OperationsSection() {
             {/* NODE */}
             <motion.div
               animate={{
-                scale: [1, 1.1, 1],
+                scale: [1, 1.08, 1],
               }}
               transition={{
                 duration: 2,
@@ -161,19 +186,33 @@ export default function OperationsSection() {
 
             {/* TOP BAR */}
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              initial={{
+                opacity: 0,
+                x: -35,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              viewport={{
+                once: false,
+                amount: 0.3,
+              }}
+              transition={{
+                duration: 0.7,
+              }}
               className="ml-10 rounded-[18px] border border-blue-500/30 bg-gradient-to-r from-[#2563EB] to-[#3B82F6] px-4 py-4"
             >
+
               <div className="flex items-center gap-3">
 
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-[#2563EB]">
+
                   <Activity size={18} />
                 </div>
 
                 <div>
+
                   <p className="text-[9px] uppercase tracking-[2px] text-white/70">
                     Core AI Infrastructure
                   </p>
@@ -194,13 +233,22 @@ export default function OperationsSection() {
                 return (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{
-                      duration: 0.7,
-                      delay: index * 0.08,
+                    initial={{
+                      opacity: 0,
+                      x: -40,
                     }}
-                    viewport={{ once: true }}
+                    whileInView={{
+                      opacity: 1,
+                      x: 0,
+                    }}
+                    viewport={{
+                      once: false,
+                      amount: 0.2,
+                    }}
+                    transition={{
+                      duration: 0.6,
+                      delay: index * 0.05,
+                    }}
                     className="relative ml-10"
                   >
 
@@ -212,16 +260,21 @@ export default function OperationsSection() {
                       whileHover={{
                         y: -2,
                       }}
-                      className="flex flex-col gap-3 rounded-[18px] border border-white/10 bg-white/[0.03] p-3 backdrop-blur-2xl transition-all duration-500 hover:border-[#8B5CF6]/30 sm:flex-row sm:items-center sm:justify-between"
+                      transition={{
+                        duration: 0.2,
+                      }}
+                      className="group flex flex-col gap-3 rounded-[18px] border border-white/10 bg-white/[0.03] p-3 backdrop-blur-xl transition-all duration-300 hover:border-[#8B5CF6]/30 hover:bg-white/[0.05] sm:flex-row sm:items-center sm:justify-between"
                     >
 
                       <div className="flex items-center gap-3">
 
-                        <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-[#8B5CF6]">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-[#8B5CF6] transition-transform duration-300 group-hover:scale-105">
+
                           <Icon size={18} />
                         </div>
 
                         <div>
+
                           <h4 className="text-sm font-bold">
                             {item.title}
                           </h4>
@@ -245,13 +298,24 @@ export default function OperationsSection() {
 
         {/* RIGHT */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
+          initial={{
+            opacity: 0,
+            y: 45,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: false,
+            amount: 0.2,
+          }}
+          transition={{
+            duration: 0.8,
+          }}
         >
 
-          <div className="overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03] p-4 backdrop-blur-2xl sm:p-5 lg:p-6">
+          <div className="overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03] p-4 backdrop-blur-xl sm:p-5 lg:p-6">
 
             {/* HEADER */}
             <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
@@ -259,10 +323,12 @@ export default function OperationsSection() {
               <div className="flex items-center gap-3">
 
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#EC1C24] to-[#8B5CF6]">
+
                   <Bot size={20} />
                 </div>
 
                 <div>
+
                   <h3 className="text-xl font-bold sm:text-2xl">
                     Deployment Console
                   </h3>
@@ -274,7 +340,9 @@ export default function OperationsSection() {
               </div>
 
               <div className="sm:text-right">
+
                 <div className="flex items-center gap-2 sm:justify-end">
+
                   <div className="h-2 w-2 rounded-full bg-emerald-400" />
 
                   <span className="text-xs font-semibold">
@@ -294,25 +362,39 @@ export default function OperationsSection() {
               {metrics.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.7,
-                    delay: index * 0.08,
+                  initial={{
+                    opacity: 0,
+                    x: 40,
                   }}
-                  viewport={{ once: true }}
-                  className="rounded-[20px] border border-white/10 bg-black/20 p-4"
+                  whileInView={{
+                    opacity: 1,
+                    x: 0,
+                  }}
+                  viewport={{
+                    once: false,
+                    amount: 0.2,
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.05,
+                  }}
+                  whileHover={{
+                    y: -3,
+                  }}
+                  className="rounded-[20px] border border-white/10 bg-black/20 p-4 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.03]"
                 >
 
                   <div className="flex flex-col gap-4">
 
                     <div>
+
                       <h4 className="text-base font-bold sm:text-lg">
                         {item.title}
                       </h4>
 
                       <p className="mt-1 text-[11px] text-gray-500">
                         Active •{" "}
+
                         <span className="text-emerald-400">
                           {item.eff} Eff.
                         </span>
@@ -322,6 +404,7 @@ export default function OperationsSection() {
                     <div className="grid grid-cols-3 gap-4">
 
                       <div>
+
                         <p className="text-[9px] uppercase tracking-[2px] text-gray-500">
                           Drift
                         </p>
@@ -332,6 +415,7 @@ export default function OperationsSection() {
                       </div>
 
                       <div>
+
                         <p className="text-[9px] uppercase tracking-[2px] text-gray-500">
                           Latency
                         </p>
@@ -342,6 +426,7 @@ export default function OperationsSection() {
                       </div>
 
                       <div>
+
                         <p className="text-[9px] uppercase tracking-[2px] text-gray-500">
                           Interactions
                         </p>
@@ -353,14 +438,23 @@ export default function OperationsSection() {
                     </div>
                   </div>
 
+                  {/* PROGRESS */}
                   <div className="mt-4 h-[2px] overflow-hidden rounded-full bg-white/5">
+
                     <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "80%" }}
-                      transition={{
-                        duration: 1.2,
+                      initial={{
+                        width: 0,
                       }}
-                      viewport={{ once: true }}
+                      whileInView={{
+                        width: "80%",
+                      }}
+                      viewport={{
+                        once: false,
+                        amount: 0.5,
+                      }}
+                      transition={{
+                        duration: 1,
+                      }}
                       className="h-full rounded-full bg-gradient-to-r from-[#EC1C24] to-[#8B5CF6]"
                     />
                   </div>
