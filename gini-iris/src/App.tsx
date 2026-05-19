@@ -18,7 +18,6 @@ import DataSphereProtocol from "./components/DataSphereProtocol";
 import BusinessFocus from "./components/BusinessFocus";
 import PricingScale from "./components/PricingScale";
 import AiContent from "./components/AiContent";
-import { Server } from "lucide-react";
 import ServiceModule from "./components/ServiceModule";
 import DataModule from "./components/DataModule";
 
