@@ -13,8 +13,8 @@ import {
   Bot,
   Database,
   Globe,
-  Layers3,
-  Cpu,
+  // Layers3,
+  // Cpu,
 } from "lucide-react";
 
 import { motion } from "framer-motion";
