@@ -155,6 +155,41 @@ export default function PricingScale() {
                 // REMOVED: hover:-translate-y-2 (it competed with Framer Motion and broke mouse tracking)
                 className={`group relative flex h-[680px] flex-col overflow-hidden rounded-[28px] border bg-white/[0.03] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/20 ${plan.border}`}
               >
+
+                {/* TOP RIGHT BRAND ARC */}
+                <motion.div
+                  animate={{
+                    y: [0, -8, 0],
+                    rotate: [0, 4, 0],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className={`
+                    pointer-events-none
+                    absolute
+                    -right-24
+                    -top-12
+                    z-0
+                    rotate-[245deg]
+                    ${plan.popular ? "opacity-[1.0]" : "opacity-[0.58]"}
+                  `}
+                >
+                  <img
+                    src="/iris-bg.png"
+                    alt=""
+                    className="
+                      w-[220px]
+                      object-contain
+                      select-none
+                      contrast-125
+                      saturation-150
+                    "
+                  />
+                </motion.div>
+
                 {/* HOVER GLOW */}
                 <div className="absolute inset-0 opacity-0 transition-all duration-500 group-hover:opacity-100 pointer-events-none">
                   <div className={`absolute inset-0 bg-gradient-to-br ${plan.glow}`} />
@@ -186,7 +221,7 @@ export default function PricingScale() {
                 )}
 
                 {/* Main Content Wrap */}
-                <div className="relative z-10 flex h-full h-full flex-col p-5">
+                <div className="relative z-20 flex h-full h-full flex-col p-5">
                   
                   {/* ICON */}
                   <motion.div

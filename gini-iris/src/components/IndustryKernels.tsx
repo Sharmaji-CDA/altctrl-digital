@@ -30,7 +30,57 @@ export default function IndustryKernels() {
       {/* RIGHT GLOW */}
       <div className="absolute right-[-120px] bottom-[100px] h-[240px] w-[240px] rounded-full bg-cyan-500/10 blur-[110px]" />
 
-      <div className="relative z-10 mx-auto max-w-[1200px]">
+      {/* BRAND ARC BACKGROUND */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          right-[-260px]
+          top-1/2
+          z-0
+          -translate-y-1/2
+          opacity-[0.14]
+        "
+      >
+        <img
+          src="/iris-bg.png"
+          alt=""
+          className="
+            w-[900px]
+            object-contain
+            rotate-[145deg]
+            select-none
+            saturate-150
+            contrast-125
+          "
+        />
+      </div>
+
+      {/* SECOND ARC */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-[-220px]
+          bottom-[-180px]
+          z-0
+          opacity-[0.08]
+        "
+      >
+        <img
+          src="/iris-bg.png"
+          alt=""
+          className="
+            w-[620px]
+            object-contain
+            -rotate-[35deg]
+            select-none
+            saturate-150
+          "
+        />
+      </div>
+
+      <div className="relative z-20 mx-auto max-w-[1200px]">
 
         {/* TOP */}
         <div className="mx-auto max-w-[820px] text-center">
@@ -149,20 +199,6 @@ export default function IndustryKernels() {
 
               {/* BG GLOW */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#EC1C24]/10 via-transparent to-cyan-500/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-              {/* LIGHT SWEEP */}
-              <motion.div
-                animate={{
-                  x: ["-120%", "220%"],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "linear",
-                  delay: index * 0.25,
-                }}
-                className="absolute top-0 h-full w-[70px] rotate-[20deg] bg-white/[0.04] blur-lg"
-              />
 
               {/* TEXT */}
               <span className="relative z-10">

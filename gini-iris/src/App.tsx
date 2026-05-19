@@ -57,7 +57,7 @@ function App() {
       <EnterpriseTrust />
 
       {/* SERVICES */}
-      <section className="relative z-20 -mt-[10vh] bg-black rounded-t-[60px]">
+      <section className="relative z-20 -mt-[1vh] bg-black rounded-t-[60px]">
         <PlatformModules />
         <IndustryKernels />
         <DataSphereProtocol />

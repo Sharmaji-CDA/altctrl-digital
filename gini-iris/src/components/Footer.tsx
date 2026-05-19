@@ -52,21 +52,25 @@ export default function Footer() {
           <div>
 
             {/* LOGO */}
-            <motion.div
-              whileHover={{
-                scale: 1.02,
-              }}
-              className="inline-flex items-center gap-1"
+            <a
+              href="#"
+              className="relative z-20 inline-flex items-center"
             >
+              <img
+                src="/logo.png"
+                alt="Gini Iris"
+                className="
+                  h-[52px]
+                  w-auto
+                  object-contain
+                  transition-all
+                  duration-300
 
-              <span className="text-[44px] font-light tracking-[-3px] text-white">
-                gini
-              </span>
-
-              <span className="rounded-full bg-[#EC1C24] px-3 py-1 text-[28px] font-semibold leading-none text-white">
-                iris
-              </span>
-            </motion.div>
+                  sm:h-[60px]
+                  lg:h-[68px]
+                "
+              />
+            </a>
 
             {/* DESC */}
             <p className="mt-5 max-w-[320px] text-[13px] leading-7 text-slate-400">

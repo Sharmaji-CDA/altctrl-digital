@@ -12,12 +12,96 @@ export default function CTA() {
   return (
     <section className="relative overflow-hidden bg-black px-12 py-16 lg:py-24">
 
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.18),transparent_30%)]" />
+      {/* MAIN BACKGROUND */}
+      <div className="absolute inset-0" />
 
-      <div className="absolute right-0 top-0 h-[320px] w-[320px] rounded-full bg-blue-500/10 blur-3xl" />
+      {/* TOP RADIAL */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.14),transparent_30%)]" />
 
-      <div className="absolute bottom-0 left-0 h-[320px] w-[320px] rounded-full bg-cyan-500/10 blur-3xl" />
+      {/* BOTTOM RADIAL */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(6,182,212,0.08),transparent_30%)]" />
+
+      {/* SUN HAZE */}
+      <div className="absolute right-[-10%] bottom-[-20%] h-[700px] w-[700px] rounded-full bg-red-500/10 blur-[160px]" />
+
+      {/* RIGHT SUN ARC */}
+      <motion.div
+        initial={{
+          opacity: 0,
+          x: 120,
+          y: 120,
+          scale: 0.9,
+        }}
+        animate={{
+          opacity: 1,
+          x: 0,
+          y: [40, -20, 40],
+          scale: [1, 1.03, 1],
+        }}
+        transition={{
+          opacity: {
+            duration: 1.8,
+            ease: "easeOut",
+          },
+          x: {
+            duration: 1.8,
+            ease: "easeOut",
+          },
+          y: {
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+          },
+          scale: {
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          },
+        }}
+        className="
+          pointer-events-none
+          absolute
+          right-[-420px]
+          bottom-[-320px]
+          z-0
+          hidden
+          xl:block
+        "
+      >
+
+        {/* MASSIVE OUTER GLOW */}
+        <div className="absolute inset-0 rounded-full bg-red-500/10 blur-[120px]" />
+
+        {/* MID GLOW */}
+        <div className="absolute inset-0 rounded-full blur-[60px] scale-90" />
+
+        {/* IMAGE */}
+        <img
+          src="/iris-bg.png"
+          alt=""
+          className="
+            relative
+            w-[1800px]
+            max-w-none
+            object-contain
+            opacity-[0.16]
+            blur-[0px]
+            select-none
+          "
+        />
+
+        {/* FADE INTO CONTENT */}
+        <div className="absolute inset-0" />
+
+        {/* EXTRA ATMOSPHERIC FOG */}
+        <div className="absolute left-0 top-0 h-full w-full bg-black/10 blur-[20px]" />
+      </motion.div>
+
+      {/* EXTRA RED GLOW */}
+      <div className="absolute right-[8%] top-[12%] h-[320px] w-[320px] rounded-full bg-[#EC1C24]/6 blur-[60px]" />
+
+      {/* EXTRA CYAN GLOW */}
+      <div className="absolute bottom-[10%] left-[5%] h-[280px] w-[280px] rounded-full bg-cyan-500/10 blur-[60px]" />
 
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
 
@@ -34,7 +118,7 @@ export default function CTA() {
           transition={{
             duration: 0.7,
           }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.3 }}
           className="max-w-xl"
         >
 

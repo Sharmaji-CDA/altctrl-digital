@@ -13,8 +13,6 @@ import {
   Bot,
   Database,
   Globe,
-  // Layers3,
-  // Cpu,
 } from "lucide-react";
 
 import { motion } from "framer-motion";
@@ -91,19 +89,76 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-black text-white">
 
       {/* BG */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(236,28,36,0.12),transparent_45%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.12)_55%,rgba(0,0,0,0.72)_100%)]" />
 
-      {/* GLOWS */}
-      <div className="absolute left-[-120px] top-[100px] h-[320px] w-[320px] rounded-full bg-[#EC1C24]/15 blur-[120px]" />
+      {/* LEFT GLOW */}
+      <div className="absolute left-[-120px] top-[100px] h-[320px] w-[320px] rounded-full bg-[#EC1C24]/6 blur-[70px]" />
 
-      <div className="absolute right-[-120px] top-[160px] h-[320px] w-[320px] rounded-full bg-[#8B5CF6]/15 blur-[120px]" />
+      {/* RIGHT GLOW */}
+      <div className="absolute right-[-120px] top-[160px] h-[320px] w-[320px] rounded-full bg-[#8B5CF6]/6 blur-[70px]" />
 
       {/* GRID */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div className="h-full w-full bg-[linear-gradient(rgba(255,255,255,1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,1)_1px,transparent_1px)] bg-[size:80px_80px]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1400px] px-5 pb-20 pt-32 sm:px-6 lg:px-8">
+      {/* CINEMATIC ARC */}
+      <motion.div
+        animate={{
+          rotate: [120, 150, 120],
+          x: [-80, 80, -80],
+        }}
+        transition={{
+          duration: 18,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="
+          pointer-events-none
+          absolute
+          left-[5%]
+          top-[2%]
+          z-0
+          opacity-30
+          scale-[1.4]
+        "
+      >
+        <img
+          src="/iris-bg.png"
+          alt=""
+          className="
+            w-[4200px]
+            max-w-none
+            object-contain
+            select-none
+            saturate-[1.8]
+            contrast-[1.25]
+            brightness-[0.9]
+          "
+        />
+      </motion.div>
+
+      {/* ARC ATMOSPHERE */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-1/2
+          top-[68%]
+          z-0
+          h-[1400px]
+          w-[1400px]
+          -translate-x-1/2
+          rounded-full
+          bg-[#EC1C24]/10
+          blur-[160px]
+        "
+      />
+
+      {/* DEPTH OVERLAY */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black/30" />
+
+      <div className="relative z-20 mx-auto max-w-[1400px] px-5 pb-20 pt-32 sm:px-6 lg:px-8">
 
         {/* HERO CONTENT */}
         <div className="mx-auto max-w-6xl text-center">
@@ -358,7 +413,7 @@ export default function Hero() {
                   transition={{
                     duration: 0.2,
                   }}
-                  className="group relative w-[280px] overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-md transition-all duration-300 hover:border-white/20 hover:bg-white/[0.05]"
+                  className="group relative w-[280px] overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.05]"
                 >
 
                   {/* HOVER GLOW */}

@@ -62,18 +62,18 @@ const Navbar = () => {
             href="#"
             className="relative z-20 flex items-center"
           >
-            <h1 className="text-[32px] font-black leading-none tracking-[-2px]">
-              
-              <span className="text-white">
-                gini
-              </span>
+            <img
+              src="/logo.png"
+              alt="Gini Iris"
+              className={`
+                w-auto object-contain transition-all duration-500
 
-              <span className="relative text-[#EC1C24]">
-                iris
-
-                <span className="absolute -bottom-1 left-0 h-[2px] w-full rounded-full bg-[#EC1C24]" />
-              </span>
-            </h1>
+                ${scrolled
+                  ? "h-[42px] sm:h-[48px]"
+                  : "h-[50px] sm:h-[58px]"
+                }
+              `}
+            />
           </a>
 
           {/* DESKTOP NAV */}
