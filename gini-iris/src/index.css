@@ -101,3 +101,13 @@ img {
 .pricing-scroll::-webkit-scrollbar-track {
   background: transparent;
 }
+
+/* HIDE SCROLLBAR */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
