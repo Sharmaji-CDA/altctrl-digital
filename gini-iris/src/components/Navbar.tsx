@@ -2,12 +2,6 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navLinks = [
-  { name: "Home", href: "#" },
-  { name: "Services", href: "#services" },
-  { name: "Features", href: "#features" },
-  { name: "Contact", href: "#contact" },
-];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -36,7 +30,7 @@ const Navbar = () => {
   return (
     <>
       {/* NAVBAR */}
-      <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
+      <header className="fixed inset-x-0 top-0 z-50 px-2 pt-4 sm:px-4 lg:px-6">
         
         <motion.div
           initial={{ y: -100, opacity: 0 }}
@@ -76,20 +70,6 @@ const Navbar = () => {
             />
           </a>
 
-          {/* DESKTOP NAV */}
-          <nav className="relative z-20 hidden items-center gap-12 lg:flex xl:gap-14">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="group relative text-[12px] font-sm uppercase tracking-[3px] text-gray-300 transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_12px_rgba(236,28,36,0.5)]"
-              >
-                {link.name}
-
-                <span className="absolute -bottom-2 left-0 h-[2px] w-0 rounded-full bg-[#EC1C24] transition-all duration-500 group-hover:w-full" />
-              </a>
-            ))}
-          </nav>
 
           {/* RIGHT SIDE */}
           <div className="relative z-20 flex items-center gap-4">
@@ -142,27 +122,6 @@ const Navbar = () => {
             <div className="absolute bottom-[-100px] right-[-100px] h-[300px] w-[300px] rounded-full bg-cyan-500/10 blur-[120px]" />
 
             <div className="flex min-h-screen flex-col px-8 pt-36">
-              
-              {/* LINKS */}
-              <div className="flex flex-col gap-8">
-                {navLinks.map((link, index) => (
-                  <motion.a
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    initial={{ opacity: 0, x: -40 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{
-                      delay: index * 0.08,
-                    }}
-                    className="group relative border-b border-white/10 pb-5 text-3xl font-semibold text-white transition-all duration-300 hover:text-[#EC1C24]"
-                  >
-                    {link.name}
-
-                    <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#EC1C24] transition-all duration-500 group-hover:w-full" />
-                  </motion.a>
-                ))}
-              </div>
 
               {/* MOBILE CTA */}
               <motion.button

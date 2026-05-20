@@ -782,11 +782,11 @@ export default function ModernCXSlides() {
 
     return (
 
-        <section id="cx-slides-section" className="relative bg-black min-h-screen overflow-hidden">
+        <section id="cx-slides-section" className="relative bg-[#120F16] min-h-[100svh] overflow-hidden">
 
             {/* BG GRID */}
             <div className="absolute inset-0 opacity-[0.03]">
-                <div className="h-full w-full bg-[linear-gradient(rgba(255,255,255,1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,1)_1px,transparent_1px)] bg-[size:90px_90px]" />
+                <div className="h-full w-full bg-[linear-gradient(rgba(232,183,177,0.14)_1px,transparent_1px),linear-gradient(90deg,rgba(232,183,177,0.14)_1px,transparent_1px)]" />
             </div>
 
             {/* RED GLOW */}
@@ -806,7 +806,7 @@ export default function ModernCXSlides() {
             h-[500px]
             w-[500px]
             rounded-full
-            bg-[#EC1C24]/20
+            bg-[#DF96A7]/25
             blur-[80px]
             "
             />
@@ -828,12 +828,12 @@ export default function ModernCXSlides() {
             h-[500px]
             w-[500px]
             rounded-full
-            bg-violet-500/20
+            bg-[#8A8599]/25
             blur-[70px]
             "
             />
 
-            <div className="relative z-20 flex min-h-screen items-center justify-center px-12 pt-16 pb-16">
+            <div className="relative z-20 flex min-h-screen items-center justify-center px-4 pt-24 pb-24 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-24">
 
                 <AnimatePresence mode="popLayout">
 
@@ -871,10 +871,13 @@ export default function ModernCXSlides() {
                         className="
                     grid
                     w-full
-                    max-w-[1450px]
+                    max-w-[1500px]
                     items-center
-                    gap-16
-                    lg:grid-cols-2
+                    gap-10
+                    lg:gap-14
+                    xl:gap-20
+                    grid-cols-1
+                    xl:grid-cols-2
                     "
                     >
 
@@ -905,7 +908,7 @@ export default function ModernCXSlides() {
                         />
 
                         {/* LEFT */}
-                        <div>
+                        <div className="max-w-[720px]">
 
                             {/* ICON */}
                             <motion.div
@@ -924,8 +927,8 @@ export default function ModernCXSlides() {
                             justify-center
                             rounded-2xl
                             border
-                            border-white/10
-                            bg-white/[0.05]
+                            border-[#E8B7B1]/10
+                            bg-[#1D1824]/70
                             backdrop-blur-xl
                             "
                             >
@@ -954,7 +957,7 @@ export default function ModernCXSlides() {
                             lg:text-[32px]
                             "
                             >
-                                <span className="bg-gradient-to-r from-blue-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+                                <span className="bg-gradient-to-r from-[#F5E1DD] via-[#DF96A7] to-[#8A8599] to-fuchsia-400 bg-clip-text text-transparent">
                                     {activeSlide.title}
                                 </span>
                             </motion.h1>
@@ -963,10 +966,10 @@ export default function ModernCXSlides() {
                             <p
                                 className="
                             mt-8
-                            max-w-[700px]
+                            max-w-[620px]
                             text-[12px]
                             leading-6
-                            text-gray-400
+                            text-[#B8AEB3]
                             lg:text-[15px]
                             "
                             >
@@ -982,12 +985,12 @@ export default function ModernCXSlides() {
                                         className="
                                 rounded-full
                                 border
-                                border-white/10
-                                bg-white/[0.04]
+                                border-[#E8B7B1]/10
+                                bg-[#1D1824]/60
+                                text-[#DCC9CD]
                                 px-4
                                 py-2
                                 text-[10px]
-                                text-gray-300
                                 "
                                     >
                                         {tag}
@@ -1011,14 +1014,14 @@ export default function ModernCXSlides() {
                             items-center
                             gap-3
                             rounded-2xl
-                            bg-[#EC1C24]
+                            bg-gradient-to-r from-[#DF96A7] to-[#8A8599]
+                            shadow-[0_0_30px_rgba(223,150,167,0.35)]
                             px-7
                             py-4
                             text-sm
                             font-semibold
                             tracking-wide
                             text-white
-                            shadow-[0_0_25px_rgba(236,28,36,0.25)]
                             "
                             >
                                 <div
@@ -1056,10 +1059,12 @@ export default function ModernCXSlides() {
                             className="
                         relative
                         overflow-hidden
-                        rounded-[32px]
+                        min-h-[500px]
+                        rounded-[28px]
                         border
-                        border-white/10
-                        bg-white/[0.05]
+                        border-[#E8B7B1]/10
+                        bg-[#1A1622]/75
+                        shadow-[0_20px_80px_rgba(223,150,167,0.08)]
                         p-5
                         sm:p-6
                         lg:p-7
@@ -1086,8 +1091,8 @@ export default function ModernCXSlides() {
                                 justify-center
                                 rounded-2xl
                                 bg-gradient-to-br
-                                from-[#EC1C24]
-                                to-violet-500
+                                from-[#DF96A7]
+                                to-[#8A8599]
                                 shadow-lg
                                 "
                                     >
@@ -1307,8 +1312,8 @@ export default function ModernCXSlides() {
                                     grid
                                     grid-cols-2
                                     gap-3
-                                    sm:grid-cols-2
-                                    lg:grid-cols-4
+                                    md:grid-cols-3
+                                    xl:grid-cols-4
                                 "
                                         >
 
@@ -1341,8 +1346,8 @@ export default function ModernCXSlides() {
                                             overflow-hidden
                                             rounded-2xl
                                             border
-                                            border-white/10
-                                            bg-black/40
+                                            bg-[#16131C]/80
+                                            border-[#E8B7B1]/10
                                             p-2
                                             backdrop-blur-xl
                                             transition-all
@@ -1458,12 +1463,18 @@ export default function ModernCXSlides() {
                     <motion.div
                         className="
                         fixed
-                        bottom-4
+                        bottom-3
+                        sm:bottom-4
                         left-1/2
                         -translate-x-1/2
                         z-[999]
                         w-full
                         px-4
+                        sm:px-6
+                        md:px-8
+                        lg:px-10
+                        xl:px-12
+                        2xl:px-24
                         pointer-events-none
                     "
                     >
@@ -1473,8 +1484,8 @@ export default function ModernCXSlides() {
                             className="
                             mx-auto
                             flex
-                            w-fit
-                            max-w-full
+                            w-full
+                            max-w-[1500px]
                             items-center
                             justify-center
                         "

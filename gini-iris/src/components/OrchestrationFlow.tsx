@@ -23,10 +23,14 @@ const phases = [
       "Traditional AI creates latency and cannot react fast enough during live interactions.",
     solution:
       "Our acoustic kernels process voice and sentiment in real-time before the customer finishes speaking.",
+
+    // SOFT SIGNAL THEME
     color:
-      "from-blue-500/20 to-cyan-500/10 border-blue-500/20",
-    glow: "bg-blue-500/20",
-    iconColor: "text-blue-400",
+      "from-[#6EE7F9]/10 via-[#4FD1C5]/5 to-transparent border-[#6EE7F9]/10",
+
+    glow: "bg-[#6EE7F9]/10",
+
+    iconColor: "text-[#8BE9F7]",
 
     architecture: [
       {
@@ -52,10 +56,14 @@ const phases = [
       "Generic models hallucinate during complex enterprise workflows.",
     solution:
       "Hybrid RAG dynamically routes requests across multiple LLMs based on reasoning complexity.",
+
+    // SOFT SIGNAL THEME
     color:
-      "from-violet-500/20 to-fuchsia-500/10 border-violet-500/20",
-    glow: "bg-violet-500/20",
-    iconColor: "text-violet-400",
+      "from-[#A78BFA]/10 via-[#7DD3FC]/5 to-transparent border-[#A78BFA]/10",
+
+    glow: "bg-[#A78BFA]/10",
+
+    iconColor: "text-[#C4B5FD]",
 
     architecture: [
       {
@@ -81,10 +89,14 @@ const phases = [
       "Unregulated AI may violate business rules or expose sensitive data.",
     solution:
       "Safety kernels validate actions against strict enterprise logic and PII scrubbing pipelines.",
+
+    // SOFT SIGNAL THEME
     color:
-      "from-emerald-500/20 to-cyan-500/10 border-emerald-500/20",
-    glow: "bg-emerald-500/20",
-    iconColor: "text-emerald-400",
+      "from-[#5EEAD4]/10 via-[#67E8F9]/5 to-transparent border-[#5EEAD4]/10",
+
+    glow: "bg-[#5EEAD4]/10",
+
+    iconColor: "text-[#99F6E4]",
 
     architecture: [
       {
@@ -105,16 +117,16 @@ const phases = [
 
 export default function OrchestrationFlow() {
   return (
-    <section className="relative overflow-hidden bg-[#020617] px-4 py-14 text-white sm:px-6 lg:px-8 lg:py-18">
+    <section className="relative overflow-hidden bg-[#050816] px-4 py-14 text-white sm:px-6 lg:px-8 lg:py-18">
 
       {/* BG */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.08),transparent_45%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(103,232,249,0.08),transparent_45%)]" />
 
       {/* LEFT GLOW */}
-      <div className="absolute left-[-180px] top-[200px] h-[260px] w-[260px] rounded-full bg-blue-500/15 blur-[110px]" />
+      <div className="absolute left-[-180px] top-[200px] h-[260px] w-[260px] rounded-full bg-cyan-400/10 blur-[120px]" />
 
       {/* RIGHT GLOW */}
-      <div className="absolute right-[-180px] top-[400px] h-[260px] w-[260px] rounded-full bg-violet-500/15 blur-[110px]" />
+      <div className="absolute right-[-180px] top-[400px] h-[260px] w-[260px] rounded-full bg-violet-400/10 blur-[120px]" />
 
       <div className="relative z-10 mx-auto max-w-[980px]">
 
@@ -199,12 +211,22 @@ export default function OrchestrationFlow() {
                   whileHover={{
                     y: -4,
                   }}
-                  className={`group relative overflow-hidden rounded-[28px] border bg-[#071124]/80 p-5 backdrop-blur-xl transition-all duration-300 hover:bg-[#0A162E] sm:p-6 lg:p-7 ${item.color}`}
+                  className={`group relative overflow-hidden rounded-[28px] border bg-[#081121]/85 p-5 backdrop-blur-xl transition-all duration-300 hover:bg-[#0B1730] sm:p-6 lg:p-7 ${item.color}`}
                 >
 
                   {/* CARD GLOW */}
                   <div
                     className={`absolute inset-0 ${item.glow} opacity-[0.05]`}
+                  />
+
+                  {/* BOTTOM SIGNAL */}
+                  <div
+                    className={`absolute bottom-0 left-0 h-[120px] w-full bg-gradient-to-t ${item.color} opacity-80`}
+                  />
+
+                  {/* SOFT LIGHT */}
+                  <div
+                    className={`absolute -bottom-12 left-1/2 h-[140px] w-[80%] -translate-x-1/2 rounded-full ${item.glow} blur-3xl opacity-30`}
                   />
 
                   {/* LIGHT SWEEP */}

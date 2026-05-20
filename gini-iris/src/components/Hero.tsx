@@ -105,8 +105,8 @@ export default function Hero() {
       {/* CINEMATIC ARC */}
       <motion.div
         animate={{
-          rotate: [120, 150, 120],
-          x: [-80, 80, -80],
+          rotate: [-10, 10, -10],
+          x: [0, 10, 0],
         }}
         transition={{
           duration: 18,
@@ -116,18 +116,18 @@ export default function Hero() {
         className="
           pointer-events-none
           absolute
-          left-[5%]
+          left-[0%]
           top-[2%]
           z-0
           opacity-30
-          scale-[1.4]
+          scale-[1.3]
         "
       >
         <img
           src="/iris-bg.png"
           alt=""
           className="
-            w-[4200px]
+            w-[3000px]
             max-w-none
             object-contain
             select-none

@@ -79,27 +79,27 @@ const stats = [
 
 export default function PlatformOverviewSection() {
   return (
-    <section className="relative overflow-hidden bg-black px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-20">
+    <section className="relative overflow-hidden bg-[#0F0B14] px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-20">
 
       {/* BG */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(236,28,36,0.08),transparent_40%)]" />
 
       {/* GRID */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div className="h-full w-full bg-[linear-gradient(rgba(255,255,255,1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,1)_1px,transparent_1px)] bg-[size:80px_80px]" />
+      <div className="absolute inset-0 opacity-[0.05]">
+        <div className="h-full w-full bg-[linear-gradient(rgba(180,167,189,0.25)_1px,transparent_1px),linear-gradient(90deg,rgba(180,167,189,0.25)_1px,transparent_1px)]" />
       </div>
 
       {/* LEFT GLOW */}
-      <div className="absolute left-[-120px] top-[120px] h-[260px] w-[260px] rounded-full bg-[#EC1C24]/8 blur-[90px]" />
+      <div className="absolute left-[-100px] top-[40px] h-[260px] w-[260px] rounded-full bg-[#8A8599]/20 blur-[90px]" />
 
       {/* RIGHT GLOW */}
-      <div className="absolute right-[-120px] bottom-[100px] h-[260px] w-[260px] rounded-full bg-violet-500/8 blur-[90px]" />
+      <div className="absolute right-[-120px] bottom-[20px] h-[260px] w-[260px] rounded-full bg-[#B497BD]/20 blur-[90px]" />
 
       {/* ARC */}
       <motion.div
         animate={{
-          rotate: [-10, 20, 0],
-          x: [-20, 20, -20],
+          rotate: [-10, 0, -10],
+          x: [-10, 10, -10],
         }}
         transition={{
           duration: 18,
@@ -109,8 +109,8 @@ export default function PlatformOverviewSection() {
         className="
           pointer-events-none
           absolute
-          left-[4%]
-          top-[1%]
+          left-[2%]
+          top-[-16%]
           z-0
           opacity-[0.35]
           scale-[1.01]
@@ -120,9 +120,9 @@ export default function PlatformOverviewSection() {
           src="/iris-bg.png"
           alt=""
           className="
-            w-[2200px]
+            w-[2000px]
             max-w-none
-            rotate-[30deg]
+            rotate-[10deg]
             object-contain
             select-none
             saturate-150
@@ -153,10 +153,10 @@ export default function PlatformOverviewSection() {
               duration: 0.7,
               ease: "easeOut",
             }}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 backdrop-blur-xl"
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#8A8599]/20 bg-[#1B1723]/60 px-4 py-2 backdrop-blur-xl"
           >
 
-            <div className="h-2 w-2 rounded-full bg-[#EC1C24]" />
+            <div className="h-2 w-2 rounded-full bg-[#B497BD]" />
 
             <span className="text-[10px] uppercase tracking-[3px] text-gray-300">
               The CX Command Center
@@ -195,19 +195,19 @@ export default function PlatformOverviewSection() {
             "
           >
 
-            <span className="bg-gradient-to-r from-gray-100 to-gray-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#F5F1FF] to-[#A8A2BA] bg-clip-text text-transparent">
               Unify your Customer Service, Analytics,
             </span>
 
             <br />
 
-            <span className="bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#B497BD] to-[#8A8599] bg-clip-text text-transparent">
                Automation, and AI into a single,
             </span>
 
             <br />
 
-            <span className="bg-gradient-to-r from-gray-400 to-gray-100 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#8A8599] to-[#F5F1FF] bg-clip-text text-transparent">
               powerful platform.
             </span>
           </motion.h2>
@@ -237,7 +237,7 @@ export default function PlatformOverviewSection() {
               max-w-4xl
               text-sm
               leading-8
-              text-gray-400
+              text-[#A8A2BA]
               sm:text-base
               lg:text-[18px]
             "
@@ -297,7 +297,7 @@ export default function PlatformOverviewSection() {
                   rounded-[24px]
                   border
                   ${item.border}
-                  bg-white/[0.03]
+                  bg-[#171320]/70
                   p-5
                   backdrop-blur-xl
                   transition-all

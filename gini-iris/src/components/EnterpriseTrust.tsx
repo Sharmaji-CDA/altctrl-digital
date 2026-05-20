@@ -16,69 +16,82 @@ const securityCards = [
     icon: Shield,
     title: "Zero-Retention PII Masking",
     desc: "Sensitive data is redacted locally before transit.",
-    color: "text-blue-400",
-    glow: "from-blue-500/20 to-blue-500/5",
-    border: "border-blue-500/20",
+
+    // SYNTHETIC ROSE
+    color: "text-rose-300",
+    glow: "from-rose-500/20 via-pink-500/10 to-transparent",
+    border: "border-rose-500/15",
+    softGlow: "bg-rose-500/20",
   },
 
   {
     icon: Target,
     title: "Deterministic Guardrails",
     desc: "LLM outputs are restricted to verified business rules.",
-    color: "text-emerald-400",
-    glow: "from-emerald-500/20 to-emerald-500/5",
-    border: "border-emerald-500/20",
+
+    color: "text-fuchsia-300",
+    glow: "from-fuchsia-500/20 via-pink-500/10 to-transparent",
+    border: "border-fuchsia-500/15",
+    softGlow: "bg-fuchsia-500/20",
   },
 
   {
     icon: Lock,
     title: "Immutable Audit Trails",
     desc: "All actions are securely logged with encrypted traceability.",
-    color: "text-violet-400",
-    glow: "from-violet-500/20 to-violet-500/5",
-    border: "border-violet-500/20",
+
+    color: "text-purple-300",
+    glow: "from-purple-500/20 via-violet-500/10 to-transparent",
+    border: "border-purple-500/15",
+    softGlow: "bg-purple-500/20",
   },
 
   {
     icon: Fingerprint,
     title: "Biometric Verification",
     desc: "Advanced speaker verification across enterprise workflows.",
-    color: "text-pink-400",
-    glow: "from-pink-500/20 to-pink-500/5",
-    border: "border-pink-500/20",
+
+    color: "text-pink-300",
+    glow: "from-pink-500/20 via-rose-500/10 to-transparent",
+    border: "border-pink-500/15",
+    softGlow: "bg-pink-500/20",
   },
 
   {
     icon: Server,
     title: "Hardware Isolation",
     desc: "Dedicated compute kernels ensure strict tenant separation.",
-    color: "text-orange-400",
-    glow: "from-orange-500/20 to-orange-500/5",
-    border: "border-orange-500/20",
+
+    color: "text-red-300",
+    glow: "from-red-500/20 via-rose-500/10 to-transparent",
+    border: "border-red-500/15",
+    softGlow: "bg-red-500/20",
   },
 
   {
     icon: Globe,
     title: "Regional Sovereignty",
     desc: "Deploy globally while maintaining residency compliance.",
-    color: "text-cyan-400",
-    glow: "from-cyan-500/20 to-cyan-500/5",
-    border: "border-cyan-500/20",
+
+    color: "text-orange-200",
+    glow: "from-orange-500/20 via-rose-500/10 to-transparent",
+    border: "border-orange-500/15",
+    softGlow: "bg-orange-500/20",
   },
 ];
 
 export default function EnterpriseTrust() {
   return (
-    <section className="relative overflow-hidden bg-black px-4 py-14 text-white sm:px-6 lg:px-8 lg:py-18">
+    <section className="relative overflow-hidden bg-[#07010A] px-4 py-14 text-white sm:px-6 lg:px-8 lg:py-18">
 
       {/* BG */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(236,28,36,0.08),transparent_45%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(244,63,94,0.10),transparent_45%)]" />
 
       {/* LEFT GLOW */}
-      <div className="absolute left-[-120px] top-[120px] h-[240px] w-[240px] rounded-full bg-[#EC1C24]/12 blur-[110px]" />
+      <div className="absolute left-[-120px] top-[120px] h-[240px] w-[240px] rounded-full bg-rose-500/15 blur-[120px]" />
 
       {/* RIGHT GLOW */}
-      <div className="absolute right-[-120px] bottom-[60px] h-[240px] w-[240px] rounded-full bg-cyan-500/10 blur-[110px]" />
+      <div className="absolute right-[-120px] bottom-[60px] h-[240px] w-[240px] rounded-full bg-fuchsia-500/10 blur-[120px]" />
 
       <div className="relative z-10 mx-auto max-w-[1200px]">
 
@@ -120,12 +133,12 @@ export default function EnterpriseTrust() {
               transition={{
                 duration: 0.6,
               }}
-              className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1.5 backdrop-blur-xl"
+              className="inline-flex items-center gap-2 rounded-full border border-rose-500/20 bg-rose-500/10 px-3 py-1.5 backdrop-blur-xl"
             >
 
-              <div className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <div className="h-1.5 w-1.5 rounded-full bg-rose-400" />
 
-              <span className="text-[9px] font-semibold uppercase tracking-[2px] text-emerald-300">
+              <span className="text-[9px] font-semibold uppercase tracking-[2px] text-rose-300">
                 Mission-Critical Reliability
               </span>
             </motion.div>
@@ -153,7 +166,7 @@ export default function EnterpriseTrust() {
               Enterprise Trust,
               <br />
 
-              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-rose-300 via-pink-300 to-fuchsia-300 bg-clip-text text-transparent">
                 Built-in.
               </span>
             </motion.h2>
@@ -201,11 +214,11 @@ export default function EnterpriseTrust() {
               whileHover={{
                 y: -4,
               }}
-              className="relative mt-7 overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl transition-all duration-300 hover:border-emerald-500/20"
+              className="relative mt-7 overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl transition-all duration-300 hover:border-rose-500/20"
             >
 
               {/* GLOW */}
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/[0.03] to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-br from-rose-500/[0.05] via-pink-500/[0.03] to-transparent" />
 
               {/* LIGHT SWEEP */}
               <motion.div
@@ -223,11 +236,11 @@ export default function EnterpriseTrust() {
               {/* TOP */}
               <div className="relative z-10 flex items-center gap-2">
 
-                <div className="text-emerald-400">
+                <div className="text-rose-300">
                   ❯_
                 </div>
 
-                <p className="text-[11px] font-medium text-emerald-300">
+                <p className="text-[11px] font-medium text-rose-200">
                   node_security_audit_v2.log
                 </p>
               </div>
@@ -253,7 +266,7 @@ export default function EnterpriseTrust() {
               </div>
 
               {/* PROGRESS */}
-              <div className="relative z-10 mt-6 h-[3px] overflow-hidden rounded-full bg-white/10">
+              <div className="h-full w-[40%] rounded-full bg-gradient-to-r from-rose-400 via-pink-400 to-fuchsia-400">
 
                 <motion.div
                   animate={{
@@ -300,6 +313,16 @@ export default function EnterpriseTrust() {
                   }}
                   className={`group relative overflow-hidden rounded-[22px] border bg-white/[0.03] p-4 backdrop-blur-xl transition-all duration-300 hover:bg-white/[0.05] ${card.border}`}
                 >
+
+                  {/* BOTTOM SIGNAL */}
+                  <div
+                    className={`absolute bottom-0 left-0 h-[90px] w-full bg-gradient-to-t ${card.glow} opacity-70`}
+                  />
+
+                  {/* SOFT GLOW */}
+                  <div
+                    className={`absolute -bottom-10 left-1/2 h-[120px] w-[75%] -translate-x-1/2 rounded-full ${card.softGlow} blur-3xl opacity-25`}
+                  />
 
                   {/* GLOW */}
                   <div
