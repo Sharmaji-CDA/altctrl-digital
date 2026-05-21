@@ -19,7 +19,7 @@ import BusinessFocus from "./components/BusinessFocus";
 import PricingScale from "./components/PricingScale";
 import AiContent from "./components/AiContent";
 import ServiceModule from "./components/ServiceModule";
-import DataModule from "./components/DataModule";
+import DataModule from "./components/dataSlides/DataModule";
 
 function App() {
 

@@ -1,0 +1,412 @@
+"use client";
+
+import {
+  Bot,
+  ShoppingCart,
+  ChartNoAxesCombined,
+  Workflow,
+  HeartPulse,
+  Shield,
+  Landmark,
+  BarChart3,
+} from "lucide-react";
+
+import { motion } from "framer-motion";
+import RightSlideWrapper from "./RightSlideWrapper";
+
+const functionAgents = [
+  {
+    icon: Bot,
+    title: "Service Agent",
+    desc:
+      "Automates customer support and resolves issues.",
+  },
+
+  {
+    icon: ShoppingCart,
+    title: "Sales Agent",
+    desc:
+      "Qualifies leads and assists the sales process.",
+  },
+
+  {
+    icon: ChartNoAxesCombined,
+    title: "Analyst Agent",
+    desc:
+      "Processes data and generates insights.",
+  },
+
+  {
+    icon: Workflow,
+    title: "Onboarding Agent",
+    desc:
+      "Guides users through platform adoption.",
+  },
+];
+
+const industryAgents = [
+  {
+    icon: HeartPulse,
+    title: "Healthcare Agent",
+    desc:
+      "Handles appointments and patient workflows.",
+  },
+
+  {
+    icon: Shield,
+    title: "Insurance Agent",
+    desc:
+      "Simplifies claims and policy requests.",
+  },
+
+  {
+    icon: Landmark,
+    title: "Banking Agent",
+    desc:
+      "Supports fraud checks and transactions.",
+  },
+
+  {
+    icon: BarChart3,
+    title: "Telecom Agent",
+    desc:
+      "Manages plans and troubleshooting.",
+  },
+];
+
+export default function AgenticAI() {
+
+  return (
+
+    <RightSlideWrapper>
+
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          duration: 0.8,
+          ease: [0.16, 1, 0.3, 1],
+        }}
+        className="
+        h-full
+        min-h-[500px]
+        overflow-hidden
+        "
+      >
+
+        <div
+          className="
+          relative
+          z-10
+          flex
+          h-full
+          flex-col
+          "
+        >
+
+          {/* HEADER */}
+          <div className="flex items-start gap-2">
+
+            <div
+              className="
+              mt-0.5
+              flex
+              h-5
+              w-5
+              items-center
+              justify-center
+              rounded-md
+              border
+              border-white/10
+              bg-white/[0.05]
+              "
+            >
+              <Bot className="h-2.5 w-2.5 text-white/80" />
+            </div>
+
+            <div>
+
+              <h3
+                className="
+                text-[14px]
+                font-semibold
+                tracking-[-0.2px]
+                text-white
+                leading-none
+
+                sm:text-[16px]
+                "
+              >
+                Specialized AI Workforce
+              </h3>
+
+              <p
+                className="
+                mt-1
+                text-[8px]
+                leading-4
+                text-white/40
+
+                sm:text-[9px]
+                "
+              >
+                Autonomous agents for enterprise workflows.
+              </p>
+
+            </div>
+
+          </div>
+
+          {/* CONTENT */}
+          <div
+            className="
+            mt-3
+            grid
+            grid-cols-1
+            gap-2
+
+            lg:grid-cols-2
+            "
+          >
+
+            {/* LEFT */}
+            <div>
+
+              <p
+                className="
+                mb-2
+                text-center
+                text-[8px]
+                font-medium
+                uppercase
+                tracking-[2px]
+                text-white/35
+
+                sm:text-[9px]
+                "
+              >
+                By Function
+              </p>
+
+              <div className="space-y-2">
+
+                {functionAgents.map((item, index) => {
+
+                  const Icon = item.icon;
+
+                  return (
+
+                    <motion.div
+                      key={index}
+                      initial={{
+                        opacity: 0,
+                        y: 8,
+                      }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                      }}
+                      transition={{
+                        duration: 0.3,
+                        delay: index * 0.03,
+                      }}
+                      whileHover={{
+                        y: -2,
+                      }}
+                      className="
+                      relative
+                      overflow-hidden
+                      flex
+                      items-start
+                      gap-2
+                      rounded-lg
+                      border
+                      border-white/10
+                      bg-white/95
+                      p-2.5
+                      shadow-[0_4px_14px_rgba(0,0,0,0.04)]
+                      "
+                    >
+
+                      {/* ICON */}
+                      <div
+                        className="
+                        flex
+                        h-8
+                        w-8
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-lg
+                        bg-black/[0.04]
+                        "
+                      >
+                        <Icon className="h-4 w-4 text-black/75" />
+                      </div>
+
+                      {/* CONTENT */}
+                      <div>
+
+                        <h4
+                          className="
+                          text-[10px]
+                          font-semibold
+                          text-black/90
+
+                          sm:text-[11px]
+                          "
+                        >
+                          {item.title}
+                        </h4>
+
+                        <p
+                          className="
+                          mt-1
+                          text-[7px]
+                          leading-4
+                          text-black/45
+
+                          sm:text-[8px]
+                          "
+                        >
+                          {item.desc}
+                        </p>
+
+                      </div>
+
+                    </motion.div>
+                  );
+                })}
+
+              </div>
+
+            </div>
+
+            {/* RIGHT */}
+            <div>
+
+              <p
+                className="
+                mb-2
+                text-center
+                text-[8px]
+                font-medium
+                uppercase
+                tracking-[2px]
+                text-white/35
+
+                sm:text-[9px]
+                "
+              >
+                By Industry
+              </p>
+
+              <div className="space-y-2">
+
+                {industryAgents.map((item, index) => {
+
+                  const Icon = item.icon;
+
+                  return (
+
+                    <motion.div
+                      key={index}
+                      initial={{
+                        opacity: 0,
+                        y: 8,
+                      }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                      }}
+                      transition={{
+                        duration: 0.3,
+                        delay: index * 0.03,
+                      }}
+                      whileHover={{
+                        y: -2,
+                      }}
+                      className="
+                      relative
+                      overflow-hidden
+                      flex
+                      items-start
+                      gap-2
+                      rounded-lg
+                      border
+                      border-white/10
+                      bg-white/95
+                      p-2.5
+                      shadow-[0_4px_14px_rgba(0,0,0,0.04)]
+                      "
+                    >
+
+                      {/* ICON */}
+                      <div
+                        className="
+                        flex
+                        h-8
+                        w-8
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-lg
+                        bg-black/[0.04]
+                        "
+                      >
+                        <Icon className="h-4 w-4 text-black/75" />
+                      </div>
+
+                      {/* CONTENT */}
+                      <div>
+
+                        <h4
+                          className="
+                          text-[10px]
+                          font-semibold
+                          text-black/90
+
+                          sm:text-[11px]
+                          "
+                        >
+                          {item.title}
+                        </h4>
+
+                        <p
+                          className="
+                          mt-1
+                          text-[7px]
+                          leading-4
+                          text-black/45
+
+                          sm:text-[8px]
+                          "
+                        >
+                          {item.desc}
+                        </p>
+
+                      </div>
+
+                    </motion.div>
+                  );
+                })}
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </motion.div>
+
+    </RightSlideWrapper>
+  );
+}
