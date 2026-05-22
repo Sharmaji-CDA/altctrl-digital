@@ -3,8 +3,6 @@ import "./index.css";
 import { useEffect } from "react";
 import Lenis from "lenis";
 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import AppRoutes from "./Routes";
 
 function App() {
