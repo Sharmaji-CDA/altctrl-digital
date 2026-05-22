@@ -38,8 +38,8 @@ const Navbar = () => {
           transition={{ duration: 0.8 }}
           className={`relative mx-auto flex max-w-[1400px] items-center justify-between overflow-hidden rounded-[30px] border border-white/10 px-6 transition-all duration-500 ease-out sm:px-8 lg:px-10 ${
             scrolled
-              ? "h-[78px] bg-black/75 shadow-[0_15px_50px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
-              : "h-[88px] bg-black/40 backdrop-blur-xl"
+              ? "h-[50px] bg-black/75 shadow-[0_15px_50px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
+              : "h-[60px] bg-black/40 backdrop-blur-xl"
           }`}
         >
           
@@ -53,7 +53,7 @@ const Navbar = () => {
 
           {/* LOGO */}
           <a
-            href="#"
+            href="/"
             className="relative z-20 flex items-center"
           >
             <img
@@ -63,8 +63,8 @@ const Navbar = () => {
                 w-auto object-contain transition-all duration-500
 
                 ${scrolled
-                  ? "h-[42px] sm:h-[48px]"
-                  : "h-[50px] sm:h-[58px]"
+                  ? "h-[25px] sm:h-[30px]"
+                  : "h-[35px] sm:h-[40px]"
                 }
               `}
             />
@@ -80,7 +80,7 @@ const Navbar = () => {
             </button>
             
             {/* DESKTOP CTA */}
-            <button className="group relative hidden overflow-hidden rounded-full border border-white/10 bg-[#EC1C24] px-7 py-3 text-sm font-semibold uppercase tracking-[2px] text-white transition-all duration-500 hover:scale-105 hover:shadow-[0_0_45px_rgba(236,28,36,0.45)] lg:block">
+            <button className="group relative hidden overflow-hidden rounded-full border border-white/10 bg-[#EC1C24] px-6 py-2 text-sm font-semibold uppercase tracking-[2px] text-white transition-all duration-500 hover:scale-105 hover:shadow-[0_0_45px_rgba(236,28,36,0.45)] lg:block">
               
               {/* MULTI COLOR GRADIENT */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#EC1C24] via-[#ff4d55] to-cyan-500 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
