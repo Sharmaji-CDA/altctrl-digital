@@ -85,22 +85,20 @@ export default function TimeToMarket() {
           duration: 0.8,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="
+        className="flex
+        flex-col
         h-full
-        min-h-[500px]
+        min-h-[400px]
         overflow-hidden
+        rounded-2xl
+        border
+        bg-gradient-to-r
+        from-[#2A7B9B]
+        to-[#EDDD53]
+        p-4
+        backdrop-blur-2xl
         "
       >
-
-        <div
-          className="
-          relative
-          z-10
-          flex
-          h-full
-          flex-col
-          "
-        >
 
           {/* HEADER */}
           <div className="flex items-start gap-2">
@@ -109,8 +107,8 @@ export default function TimeToMarket() {
               className="
               mt-0.5
               flex
-              h-5
-              w-5
+              h-8
+              w-8
               items-center
               justify-center
               rounded-md
@@ -119,7 +117,7 @@ export default function TimeToMarket() {
               bg-white/[0.05]
               "
             >
-              <Rocket className="h-2.5 w-2.5 text-white/80" />
+              <Rocket className="h-5 w-5 text-white/80" />
             </div>
 
             <div>
@@ -497,8 +495,6 @@ export default function TimeToMarket() {
             </p>
 
           </motion.div>
-
-        </div>
 
       </motion.div>
 

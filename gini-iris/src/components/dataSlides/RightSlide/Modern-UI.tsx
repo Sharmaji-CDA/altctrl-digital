@@ -32,23 +32,18 @@ export default function ModernUI() {
 
     <RightSlideWrapper>
 
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: 20,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 0.8,
-          ease: [0.16, 1, 0.3, 1],
-        }}
+      <div
         className="
         h-full
-        min-h-[500px]
+        min-h-[400px]
         overflow-hidden
+        rounded-2xl
+        border
+        bg-gradient-to-r
+        from-[#2A7B9B]
+        to-[#EDDD53]
+        p-4
+        backdrop-blur-2xl
         "
       >
 
@@ -69,8 +64,8 @@ export default function ModernUI() {
               className="
               mt-0.5
               flex
-              h-5
-              w-5
+              h-8
+              w-8
               items-center
               justify-center
               rounded-md
@@ -79,7 +74,7 @@ export default function ModernUI() {
               bg-white/[0.05]
               "
             >
-              <Palette className="h-2.5 w-2.5 text-white/80" />
+              <Palette className="h-5 w-5 text-white/80" />
             </div>
 
             <div>
@@ -91,7 +86,6 @@ export default function ModernUI() {
                 tracking-[-0.2px]
                 text-white
                 leading-none
-
                 sm:text-[16px]
                 "
               >
@@ -156,7 +150,6 @@ export default function ModernUI() {
                   text-[11px]
                   font-semibold
                   text-black/90
-
                   sm:text-[12px]
                   "
                 >
@@ -168,8 +161,7 @@ export default function ModernUI() {
                   mt-1.5
                   text-[7px]
                   leading-4
-                  text-black/45
-
+                  text-black/85
                   sm:text-[8px]
                   "
                 >
@@ -214,7 +206,6 @@ export default function ModernUI() {
                       text-[8px]
                       font-medium
                       text-black/80
-
                       sm:text-[9px]
                       "
                     >
@@ -249,7 +240,6 @@ export default function ModernUI() {
                       text-[8px]
                       font-medium
                       text-black/80
-
                       sm:text-[9px]
                       "
                     >
@@ -292,7 +282,6 @@ export default function ModernUI() {
                 text-[10px]
                 font-medium
                 text-black/85
-
                 sm:text-[11px]
                 "
               >
@@ -325,7 +314,6 @@ export default function ModernUI() {
                   text-[8px]
                   font-semibold
                   text-black/90
-
                   sm:text-[9px]
                   "
                 >
@@ -345,8 +333,7 @@ export default function ModernUI() {
                         items-center
                         gap-1.5
                         text-[7px]
-                        text-black/60
-
+                        text-black/100
                         sm:text-[8px]
                         "
                       >
@@ -376,8 +363,7 @@ export default function ModernUI() {
                   className="
                   text-[8px]
                   font-semibold
-                  text-black/55
-
+                  text-black/85
                   sm:text-[9px]
                   "
                 >
@@ -397,8 +383,7 @@ export default function ModernUI() {
                         items-center
                         gap-1.5
                         text-[7px]
-                        text-black/45
-
+                        text-black/90
                         sm:text-[8px]
                         "
                       >
@@ -461,7 +446,6 @@ export default function ModernUI() {
                   text-[11px]
                   font-semibold
                   text-black/90
-
                   sm:text-[12px]
                   "
                 >
@@ -473,8 +457,7 @@ export default function ModernUI() {
                   mt-1.5
                   text-[7px]
                   leading-4
-                  text-black/45
-
+                  text-black/85
                   sm:text-[8px]
                   "
                 >
@@ -491,7 +474,7 @@ export default function ModernUI() {
 
         </div>
 
-      </motion.div>
+      </div>
 
     </RightSlideWrapper>
   );

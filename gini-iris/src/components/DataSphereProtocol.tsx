@@ -71,7 +71,7 @@ const features = [
 
 export default function DataSphereProtocol() {
   return (
-    <section className="relative overflow-hidden bg-black px-4 py-14 text-white sm:px-6 lg:px-8 lg:py-18">
+    <section className="relative overflow-hidden bg-black px-4 py-14 text-white sm:px-6 lg:px-16 lg:py-20">
 
       {/* BG */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(249,115,22,0.08),transparent_45%)]" />
@@ -85,7 +85,7 @@ export default function DataSphereProtocol() {
       {/* ANGLED BG */}
       <div className="absolute right-[-180px] top-0 hidden h-full w-[40%] rotate-[-10deg] bg-white/[0.02] blur-3xl lg:block" />
 
-      <div className="relative z-10 mx-auto max-w-[1180px]">
+      <div className="mx-auto max-w-[1200px] px-4 lg:px-8">
 
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center xl:gap-14">
 

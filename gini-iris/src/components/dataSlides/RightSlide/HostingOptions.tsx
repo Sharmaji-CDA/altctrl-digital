@@ -67,8 +67,15 @@ export default function HostingOptions() {
         }}
         className="
         h-full
-        min-h-[500px]
+        min-h-[400px]
         overflow-hidden
+        rounded-2xl
+        border
+        bg-gradient-to-r
+        from-[#2A7B9B]
+        to-[#EDDD53]
+        p-4
+        backdrop-blur-2xl
         "
       >
 
@@ -89,8 +96,8 @@ export default function HostingOptions() {
               className="
               mt-0.5
               flex
-              h-5
-              w-5
+              h-8
+              w-8
               items-center
               justify-center
               rounded-md
@@ -99,7 +106,7 @@ export default function HostingOptions() {
               bg-white/[0.05]
               "
             >
-              <Cloud className="h-2.5 w-2.5 text-white/80" />
+              <Cloud className="h-5 w-5 text-white/80" />
             </div>
 
             <div>
@@ -127,7 +134,7 @@ export default function HostingOptions() {
                 sm:text-[9px]
                 "
               >
-                Flexible deployment for every enterprise.
+                Maximum flexibility, from SaaS to self-hosted.
               </p>
 
             </div>
@@ -169,6 +176,7 @@ export default function HostingOptions() {
                   flex
                   h-8
                   w-8
+                  p-2
                   items-center
                   justify-center
                   rounded-lg
@@ -197,11 +205,10 @@ export default function HostingOptions() {
                     mt-0.5
                     text-[7px]
                     text-black/45
-
                     sm:text-[8px]
                     "
                   >
-                    Fully managed cloud deployment.
+                    A fully managed, turnkey solution. We handle the infrastructure, you focus on your business.
                   </p>
 
                 </div>
@@ -209,7 +216,7 @@ export default function HostingOptions() {
               </div>
 
               {/* SECTIONS */}
-              <div className="mt-3 space-y-3">
+              <div className="mt-10 space-y-3">
 
                 {/* ADVANTAGES */}
                 <div>
@@ -223,8 +230,8 @@ export default function HostingOptions() {
                       text-[8px]
                       font-semibold
                       text-emerald-600
-
                       sm:text-[9px]
+                      lg:text-[12px]
                       "
                     >
                       Advantages
@@ -280,8 +287,8 @@ export default function HostingOptions() {
                       text-[8px]
                       font-semibold
                       text-amber-600
-
                       sm:text-[9px]
+                      lg:text-[12px]
                       "
                     >
                       Considerations
@@ -337,8 +344,8 @@ export default function HostingOptions() {
                       text-[8px]
                       font-semibold
                       text-black/80
-
                       sm:text-[9px]
+                      lg:text-[12px]
                       "
                     >
                       Cost Factors
@@ -367,7 +374,6 @@ export default function HostingOptions() {
                             className="
                             text-[7px]
                             text-black/50
-
                             sm:text-[8px]
                             "
                           >
@@ -407,8 +413,9 @@ export default function HostingOptions() {
                 <div
                   className="
                   flex
-                  h-8
-                  w-8
+                  h-10
+                  w-10
+                  p-2
                   items-center
                   justify-center
                   rounded-lg
@@ -441,7 +448,7 @@ export default function HostingOptions() {
                     sm:text-[8px]
                     "
                   >
-                    Full control over infrastructure.
+                    Deploy on your own cloud (AWS, Azure, GCP) or on-premise servers for full data control.
                   </p>
 
                 </div>
@@ -449,7 +456,7 @@ export default function HostingOptions() {
               </div>
 
               {/* SECTIONS */}
-              <div className="mt-3 space-y-3">
+              <div className="mt-10 space-y-3">
 
                 {/* ADVANTAGES */}
                 <div>
@@ -463,8 +470,8 @@ export default function HostingOptions() {
                       text-[8px]
                       font-semibold
                       text-emerald-600
-
                       sm:text-[9px]
+                      lg:text-[12px]
                       "
                     >
                       Advantages
@@ -520,8 +527,8 @@ export default function HostingOptions() {
                       text-[8px]
                       font-semibold
                       text-amber-600
-
                       sm:text-[9px]
+                      lg:text-[12px]
                       "
                     >
                       Considerations
@@ -577,8 +584,8 @@ export default function HostingOptions() {
                       text-[8px]
                       font-semibold
                       text-black/80
-
                       sm:text-[9px]
+                      lg:text-[12px]
                       "
                     >
                       Cost Factors

@@ -82,7 +82,7 @@ const securityCards = [
 
 export default function EnterpriseTrust() {
   return (
-    <section className="relative overflow-hidden bg-[#07010A] px-4 py-14 text-white sm:px-6 lg:px-8 lg:py-18">
+    <section className="relative overflow-hidden bg-[#07010A] px-4 py-14 text-white sm:px-6 lg:px-16 lg:py-20">
 
       {/* BG */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(244,63,94,0.10),transparent_45%)]" />
@@ -93,7 +93,7 @@ export default function EnterpriseTrust() {
       {/* RIGHT GLOW */}
       <div className="absolute right-[-120px] bottom-[60px] h-[240px] w-[240px] rounded-full bg-fuchsia-500/10 blur-[120px]" />
 
-      <div className="relative z-10 mx-auto max-w-[1200px]">
+      <div className="mx-auto max-w-[1200px] px- lg:px-8">
 
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
 
@@ -188,7 +188,7 @@ export default function EnterpriseTrust() {
               transition={{
                 duration: 0.9,
               }}
-              className="mt-5 max-w-[500px] text-[13px] leading-7 text-slate-400"
+              className="mt-5 max-w-[400px] text-[14px] leading-7 text-slate-400"
             >
               Security is built directly into the infrastructure with
               zero-trust architecture across every layer.
@@ -214,7 +214,7 @@ export default function EnterpriseTrust() {
               whileHover={{
                 y: -4,
               }}
-              className="relative mt-7 overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl transition-all duration-300 hover:border-rose-500/20"
+              className="mt-7 rounded-[24px] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl transition-all duration-300 hover:border-rose-500/20"
             >
 
               {/* GLOW */}
@@ -230,11 +230,11 @@ export default function EnterpriseTrust() {
                   repeat: Infinity,
                   ease: "linear",
                 }}
-                className="absolute top-0 h-full w-[80px] rotate-[20deg] bg-white/[0.03] blur-xl"
+                className="absolute top-0 h-full rotate-[20deg] bg-white/[0.03] blur-xl"
               />
 
               {/* TOP */}
-              <div className="relative z-10 flex items-center gap-2">
+              <div className="flex items-center gap-2">
 
                 <div className="text-rose-300">
                   ❯_
@@ -246,7 +246,7 @@ export default function EnterpriseTrust() {
               </div>
 
               {/* LOGS */}
-              <div className="relative z-10 mt-6 space-y-3 font-mono text-[10px] uppercase tracking-[1px] text-slate-500">
+              <div className="mt-6 space-y-3 font-mono text-[10px] uppercase tracking-[1px] text-slate-500">
 
                 <div>
                   [SEC] INITIALIZING ZERO-TRUST HANDSHAKE...
@@ -284,7 +284,7 @@ export default function EnterpriseTrust() {
           </motion.div>
 
           {/* RIGHT */}
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-3 sm:grid-cols-2">
 
             {securityCards.map((card, index) => {
               const Icon = card.icon;
@@ -358,7 +358,7 @@ export default function EnterpriseTrust() {
                     </h3>
 
                     {/* DESC */}
-                    <p className="mt-3 text-[11px] leading-6 text-slate-400">
+                    <p className="mt-2 text-[11px] leading-5 text-slate-400">
                       {card.desc}
                     </p>
                   </div>

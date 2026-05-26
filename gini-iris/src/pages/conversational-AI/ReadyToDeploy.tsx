@@ -5,7 +5,7 @@ import { Sparkles, ArrowRight, FileText } from "lucide-react";
 
 export default function ReadyToDeploy() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#0c0a10] via-[#161220] to-[#221b30] text-purple-100 py-12 px-4 sm:px-6 lg:px-8 lg:h-screen lg:flex lg:flex-col lg:justify-center lg:items-center">
+    <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#0c0a10] via-[#161220] to-[#221b30] text-purple-100 py-12 px-4 sm:px-6 lg:px-8 lg:py-20 lg:flex lg:flex-col lg:justify-center lg:items-center">
       
       {/* Immersive Graphite Lavender Ambient Glow Systems */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
@@ -15,7 +15,7 @@ export default function ReadyToDeploy() {
         <div className="absolute inset-0 opacity-[0.015] bg-[linear-gradient(rgba(168,85,247,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.1)_1px,transparent_1px)] bg-[size:32px_32px]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-3xl text-center flex flex-col items-center justify-center h-full lg:max-h-[500px]">
+      <div className="relative z-10 mx-auto w-full max-w-3xl text-center flex flex-col items-center justify-center h-full">
         
         {/* Micro-Indicator */}
         <motion.div 

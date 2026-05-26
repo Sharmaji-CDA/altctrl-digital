@@ -16,28 +16,28 @@ const securityFeatures = [
     icon: ShieldCheck,
     title: "End-to-End Encryption",
     desc:
-      "TLS 1.2+ and AES-256 encryption protect all data in transit and at rest.",
+      "All data is encrypted in-transit (TLS 1.2+) and at-rest (AES-256), ensuring your information is secure at every stage.",
   },
 
   {
     icon: Fingerprint,
     title: "PII Redaction",
     desc:
-      "Automatically detect and redact sensitive personal information.",
+      "Automatically identify and redact sensitive PII from transcripts and logs. Enforce compliance with script adherence checks.",
   },
 
   {
     icon: DatabaseBackup,
     title: "Data Retention",
     desc:
-      "Archive or permanently purge records using custom retention policies.",
+      "Define custom data retention policies. Automatically archive old interactions and purge data permanently to meet compliance requirements.",
   },
 
   {
     icon: Search,
     title: "Audit Trails",
     desc:
-      "Track user actions, data access, and system events with immutable logs.",
+      "Maintain a complete, immutable log of all user actions, data access, and system changes for comprehensive security and compliance audits.",
   },
 ];
 
@@ -67,22 +67,20 @@ export default function DataSecurity() {
           duration: 0.8,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="
+        className="flex
+        flex-col
         h-full
-        min-h-[500px]
+        min-h-[400px]
         overflow-hidden
+        rounded-2xl
+        border
+        bg-gradient-to-r
+        from-[#2A7B9B]
+        to-[#EDDD53]
+        p-4
+        backdrop-blur-2xl
         "
       >
-
-        <div
-          className="
-          relative
-          z-10
-          flex
-          h-full
-          flex-col
-          "
-        >
 
           {/* HEADER */}
           <div className="flex items-start gap-2">
@@ -91,8 +89,8 @@ export default function DataSecurity() {
               className="
               mt-0.5
               flex
-              h-5
-              w-5
+              h-8
+              w-8
               items-center
               justify-center
               rounded-md
@@ -101,7 +99,7 @@ export default function DataSecurity() {
               bg-white/[0.05]
               "
             >
-              <Lock className="h-2.5 w-2.5 text-white/80" />
+              <Lock className="h-5 w-5 text-white/80" />
             </div>
 
             <div>
@@ -219,8 +217,7 @@ export default function DataSecurity() {
                         mt-1
                         text-[7px]
                         leading-4
-                        text-black/45
-
+                        text-black/30
                         sm:text-[8px]
                         "
                       >
@@ -333,8 +330,6 @@ export default function DataSecurity() {
             </div>
 
           </motion.div>
-
-        </div>
 
       </motion.div>
 

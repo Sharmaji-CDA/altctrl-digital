@@ -3,7 +3,6 @@
 import {
   Cpu,
   Check,
-  Sparkles,
 } from "lucide-react";
 
 import { motion } from "framer-motion";
@@ -87,22 +86,20 @@ export default function MultiAI() {
         transition={{
           duration: 0.8,
         }}
-        className="
+        className="flex
+        flex-col
         h-full
-        min-h-[500px]
+        min-h-[400px]
         overflow-hidden
+        rounded-2xl
+        border
+        bg-gradient-to-r
+        from-[#2A7B9B]
+        to-[#EDDD53]
+        p-4
+        backdrop-blur-2xl
         "
       >
-
-        <div
-          className="
-          relative
-          z-10
-          flex
-          h-full
-          flex-col
-          "
-        >
 
           {/* HEADER */}
           <div className="flex items-start gap-2">
@@ -111,8 +108,8 @@ export default function MultiAI() {
               className="
               mt-0.5
               flex
-              h-5
-              w-5
+              h-8
+              w-8
               items-center
               justify-center
               rounded-md
@@ -121,7 +118,7 @@ export default function MultiAI() {
               bg-white/[0.05]
               "
             >
-              <Cpu className="h-2.5 w-2.5 text-white/80" />
+              <Cpu className="h-5 w-5 text-white/80" />
             </div>
 
             <div>
@@ -163,8 +160,6 @@ export default function MultiAI() {
             grid
             grid-cols-1
             gap-2
-
-            sm:grid-cols-2
             "
           >
 
@@ -190,8 +185,6 @@ export default function MultiAI() {
                     y: -2,
                   }}
                   className="
-                  relative
-                  overflow-hidden
                   rounded-lg
                   border
                   border-white/10
@@ -335,52 +328,6 @@ export default function MultiAI() {
             })}
 
           </div>
-
-          {/* FOOTER */}
-          <motion.div
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-            }}
-            transition={{
-              delay: 0.4,
-            }}
-            className="
-            mt-3
-            flex
-            items-center
-            justify-center
-            gap-1.5
-            rounded-lg
-            border
-            border-white/10
-            bg-white/95
-            px-3
-            py-2.5
-            shadow-[0_4px_14px_rgba(0,0,0,0.04)]
-            "
-          >
-
-            <Sparkles className="h-3 w-3 text-black/60" />
-
-            <p
-              className="
-              text-center
-              text-[8px]
-              font-medium
-              text-black/60
-
-              sm:text-[9px]
-              "
-            >
-              Dynamic routing automatically selects the optimal AI model.
-            </p>
-
-          </motion.div>
-
-        </div>
 
       </motion.div>
 

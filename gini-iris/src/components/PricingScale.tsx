@@ -104,11 +104,11 @@ export default function PricingScale() {
   const scrollRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   return (
-    <section className="relative overflow-hidden bg-black px-4 pt-10 pb-12 text-white">
+    <section className="relative overflow-hidden bg-black px-4 sm:px-8 lg:px-16 pt-10 pb-12 text-white">
       {/* BG */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.08),transparent_40%)]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl">
+      <div className="mx-auto max-w-7xl px-4 lg:px-8">
         {/* HEADER */}
         <div className="mx-auto max-w-3xl text-center space-y-5">
           <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1.5">
@@ -128,16 +128,14 @@ export default function PricingScale() {
         </div>
 
         {/* NOTICE SECTION */}
-        <div className="mx-auto mt-6 max-w-3xl">
-          <div className="flex items-start gap-4 rounded-[32px] border border-blue-100 bg-[#eef3ff] px-6 py-6 shadow-sm">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#f6e7b2]">
-              <Zap size={24} className="text-[#e0a500]" />
-            </div>
-            <p className="max-w-2xl text-[8px] font-bold uppercase leading-6 tracking-[2px] text-slate-600 sm:text-[12px]">
-              Zero minimum commitments. Our automated configuration engine
-              allows you to swap models and scale units with zero friction.
-            </p>
+        <div className="flex items-start gap-4 mt-6 max-w-3xl mx-auto rounded-[28px] border border-blue-100 bg-[#eef3ff] px-4 py-4 shadow-sm">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#f6e7b2]">
+            <Zap size={24} className="text-[#e0a500]" />
           </div>
+          <p className="max-w-2xl text-[8px] font-bold uppercase leading-5 tracking-[2px] text-slate-600 sm:text-[12px]">
+            Zero minimum commitments. Our automated configuration engine
+            allows you to swap models and scale units with zero friction.
+          </p>
         </div>
 
         {/* CARDS */}
@@ -153,7 +151,7 @@ export default function PricingScale() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 // REMOVED: hover:-translate-y-2 (it competed with Framer Motion and broke mouse tracking)
-                className={`group relative flex h-[680px] flex-col overflow-hidden rounded-[28px] border bg-white/[0.03] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/20 ${plan.border}`}
+                className={`group relative flex h-[650px] flex-col overflow-hidden rounded-[28px] border bg-white/[0.03] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/40 ${plan.border}`}
               >
 
                 {/* TOP RIGHT BRAND ARC */}

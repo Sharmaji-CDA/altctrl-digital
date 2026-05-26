@@ -31,7 +31,7 @@ const enterpriseFeatures = [
 
 export default function EnterpriseControl() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#0b0c1e] via-[#090d16] to-[#04050f] text-slate-100 py-6 px-4 sm:px-6 lg:px-8 lg:h-screen lg:flex lg:flex-col lg:justify-center">
+    <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#0b0c1e] via-[#090d16] to-[#04050f] text-slate-100 py-6 px-4 sm:px-6 lg:px-16 lg:py-20 lg:flex lg:flex-col lg:justify-center">
       
       {/* Soft Signal Ambient Radials */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
@@ -41,7 +41,7 @@ export default function EnterpriseControl() {
         <div className="absolute inset-0 opacity-[0.015] bg-[linear-gradient(to_right,#4f46e5_1px,transparent_1px),linear-gradient(to_bottom,#4f46e5_1px,transparent_1px)] bg-[size:36px_36px]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl flex flex-col justify-between h-full lg:max-h-[750px]">
+      <div className="relative z-10 mx-auto w-full max-w-6xl flex flex-col justify-between h-full px-4 lg:px-8">
         
         {/* Header Block Group */}
         <div className="mb-6 lg:mb-8 text-center lg:text-left">

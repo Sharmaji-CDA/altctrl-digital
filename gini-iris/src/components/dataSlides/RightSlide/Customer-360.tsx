@@ -30,8 +30,6 @@ const interactions = [
 
 const aiInsights = [
   "Interested in premium support upgrades.",
-  "High retention probability detected.",
-  "Recent pricing comparison behavior found.",
 ];
 
 export default function Customer360() {
@@ -53,22 +51,21 @@ export default function Customer360() {
           duration: 0.8,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="
+        className="flex
+        flex-col
         h-full
-        min-h-[500px]
+        min-h-[400px]
         overflow-hidden
+        overflow-y-auto
+        rounded-2xl
+        border
+        bg-gradient-to-r
+        from-[#2A7B9B]
+        to-[#EDDD53]
+        p-4
+        backdrop-blur-2xl
         "
       >
-
-        <div
-          className="
-          relative
-          z-10
-          flex
-          h-full
-          flex-col
-          "
-        >
 
           {/* HEADER */}
           <div className="flex items-start gap-2">
@@ -77,8 +74,8 @@ export default function Customer360() {
               className="
               mt-0.5
               flex
-              h-5
-              w-5
+              h-8
+              w-8
               items-center
               justify-center
               rounded-md
@@ -87,7 +84,7 @@ export default function Customer360() {
               bg-white/[0.05]
               "
             >
-              <UserRound className="h-2.5 w-2.5 text-white/80" />
+              <UserRound className="h-5 w-5 text-white/80" />
             </div>
 
             <div>
@@ -99,7 +96,6 @@ export default function Customer360() {
                 tracking-[-0.2px]
                 text-white
                 leading-none
-
                 sm:text-[16px]
                 "
               >
@@ -111,7 +107,6 @@ export default function Customer360() {
                 mt-1
                 text-[8px]
                 text-white/40
-
                 sm:text-[9px]
                 "
               >
@@ -251,7 +246,6 @@ export default function Customer360() {
                   text-[9px]
                   font-medium
                   text-black/90
-
                   sm:text-[10px]
                   "
                 >
@@ -271,18 +265,17 @@ export default function Customer360() {
 
               <FileText className="mt-0.5 h-3 w-3 text-black/45" />
 
-              <div>
+              <div className="flex items-center justify-center gap-2">
 
                 <p
                   className="
                   text-[8px]
                   font-medium
                   text-black/75
-
                   sm:text-[9px]
                   "
                 >
-                  Summary
+                  Summary:
                 </p>
 
                 <p
@@ -291,13 +284,12 @@ export default function Customer360() {
                   text-[7px]
                   leading-3
                   text-black/45
-
                   sm:text-[8px]
                   sm:leading-4
+                  lg:text-[10px]
                   "
                 >
-                  Customer checked billing balance and
-                  payment information.
+                  Navigated to billing and checked their balance.
                 </p>
 
               </div>
@@ -489,14 +481,11 @@ export default function Customer360() {
               text-[9px]
               font-medium
               text-black/90
-
               sm:text-[10px]
               "
             >
               AI Insights
             </h4>
-
-            <div className="mt-2 space-y-1.5">
 
               {aiInsights.map((item, index) => {
 
@@ -531,7 +520,6 @@ export default function Customer360() {
                       text-[7px]
                       leading-3
                       text-black/70
-
                       sm:text-[8px]
                       sm:leading-4
                       "
@@ -543,11 +531,7 @@ export default function Customer360() {
                 );
               })}
 
-            </div>
-
           </motion.div>
-
-        </div>
 
       </motion.div>
 

@@ -19,7 +19,7 @@ const industries = [
 
 export default function IndustryKernels() {
   return (
-    <section className="relative overflow-hidden bg-black px-4 py-14 text-white sm:px-6 lg:px-8 lg:py-18">
+    <section className="relative overflow-hidden bg-black px-4 py-8 text-white sm:px-6 lg:px-16 lg:py-20">
 
       {/* BG */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(236,28,36,0.08),transparent_45%)]" />
@@ -62,7 +62,7 @@ export default function IndustryKernels() {
           pointer-events-none
           absolute
           left-[-220px]
-          bottom-[-180px]
+          bottom-[-150px]
           z-0
           opacity-[0.08]
         "
@@ -80,7 +80,7 @@ export default function IndustryKernels() {
         />
       </div>
 
-      <div className="relative z-20 mx-auto max-w-[1200px]">
+      <div className="mx-auto max-w-[1200px] px-4 lg:px-8">
 
         {/* TOP */}
         <div className="mx-auto max-w-[820px] text-center">

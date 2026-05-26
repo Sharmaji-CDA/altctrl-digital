@@ -78,7 +78,7 @@ const metrics = [
 
 export default function OperationsSection() {
   return (
-    <section className="relative overflow-hidden bg-black px-4 py-14 text-white sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-black px-4 py-20 text-white sm:px-6 lg:px-16">
 
       {/* BG */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.04),transparent_40%)]" />
@@ -88,10 +88,10 @@ export default function OperationsSection() {
 
       <div className="absolute right-[-180px] top-[180px] h-[260px] w-[260px] rounded-full bg-[#8B5CF6]/15 blur-[110px]" />
 
-      <div className="relative z-10 mx-auto grid max-w-[1350px] grid-cols-1 gap-10 lg:grid-cols-[0.75fr_1.25fr]">
+      <div className="mx-auto grid max-w-[1320px] grid-cols-1 px-4 lg:px-8 gap-20 lg:grid-cols-[0.75fr_1.25fr]">
 
         {/* LEFT */}
-        <div>
+        <div className="">
 
           {/* LABEL */}
           <motion.div

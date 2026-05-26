@@ -69,7 +69,7 @@ const features = [
 
 export default function IntelligenceCore() {
   return (
-    <section className="relative overflow-hidden bg-[#061614] px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-20">
+    <section className="relative overflow-hidden bg-[#061614] px-4 py-16 text-white sm:px-6 lg:px-16 lg:py-20">
 
       {/* BG */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(20,184,166,0.14),transparent_50%)]" />
@@ -80,7 +80,7 @@ export default function IntelligenceCore() {
       {/* RIGHT GLOW */}
       <div className="absolute right-[-180px] top-[220px] h-[300px] w-[300px] rounded-full bg-[#7DE6DA]/15 blur-[110px]" />
 
-      <div className="relative z-10 mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-[1280px] px-4 lg:px-8">
 
         {/* TOP */}
         <div className="mx-auto max-w-[760px] text-center">

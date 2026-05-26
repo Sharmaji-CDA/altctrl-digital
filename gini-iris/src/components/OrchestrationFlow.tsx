@@ -117,7 +117,7 @@ const phases = [
 
 export default function OrchestrationFlow() {
   return (
-    <section className="relative overflow-hidden bg-[#050816] px-4 py-14 text-white sm:px-6 lg:px-8 lg:py-18">
+    <section className="relative overflow-hidden bg-[#050816] px-4 py-14 text-white sm:px-6 lg:px-16 lg:py-18">
 
       {/* BG */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(103,232,249,0.08),transparent_45%)]" />
@@ -128,7 +128,7 @@ export default function OrchestrationFlow() {
       {/* RIGHT GLOW */}
       <div className="absolute right-[-180px] top-[400px] h-[260px] w-[260px] rounded-full bg-violet-400/10 blur-[120px]" />
 
-      <div className="relative z-10 mx-auto max-w-[980px]">
+      <div className="mx-auto max-w-[980px] px-4 lg:px-8">
 
         {/* TOP */}
         <div className="text-center">

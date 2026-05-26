@@ -10,7 +10,7 @@ import {
 
 export default function CTA() {
   return (
-    <section className="relative overflow-hidden bg-black px-12 py-16 lg:py-24">
+    <section className="relative overflow-hidden bg-black px-4 sm:px-8 lg:px-16 py-16 lg:py-20">
 
       {/* MAIN BACKGROUND */}
       <div className="absolute inset-0" />
@@ -103,7 +103,7 @@ export default function CTA() {
       {/* EXTRA CYAN GLOW */}
       <div className="absolute bottom-[10%] left-[5%] h-[280px] w-[280px] rounded-full bg-cyan-500/10 blur-[60px]" />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
+      <div className="grid items-center gap-12 lg:grid-cols-2 px-4 lg:px-8">
 
         {/* LEFT */}
         <motion.div
@@ -140,13 +140,13 @@ export default function CTA() {
           </h2>
 
           {/* DESC */}
-          <p className="mt-6 text-base leading-8 text-slate-400 sm:text-lg">
+          <p className="mt-5 text-base leading-7 text-slate-400 sm:text-lg">
             Join 500+ enterprises already automating
             high-complexity workflows with AI infrastructure.
           </p>
 
           {/* FEATURES */}
-          <div className="mt-10 space-y-4">
+          <div className="mt-6 space-y-3">
 
             {/* ITEM */}
             <motion.div

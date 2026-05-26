@@ -212,12 +212,6 @@ export default function Hero() {
       x: direction === "left"
         ? ["0%", "-50%"]
         : ["-50%", "0%"],
-
-      transition: {
-        duration: 95,
-        repeat: Infinity,
-        ease: "linear",
-      },
     });
 
   }, [direction, isPaused]);
@@ -231,12 +225,10 @@ export default function Hero() {
     marqueeControls.stop();
 
     setTimeout(() => {
-
       setIsPaused(false);
-
       setActiveCard(null);
 
-    }, 3500);
+    }, 4000);
   };
 
   const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
@@ -249,16 +241,16 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-black text-white">
+    <section className="relative overflow-hidden bg-black text-white px-4 py-6 sm:py-8 lg:py-20 sm:px-6 lg:px-16">
 
       {/* BG */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.12)_55%,rgba(0,0,0,0.72)_100%)]" />
 
       {/* LEFT GLOW */}
-      <div className="absolute left-[-120px] top-[100px] h-[320px] w-[320px] rounded-full bg-[#EC1C24]/6 blur-[70px]" />
+      <div className="absolute left-[-120px] top-[100px] h-[320px] w-[320px] rounded-full bg-[#EC1C24]/6 blur-3xl" />
 
       {/* RIGHT GLOW */}
-      <div className="absolute right-[-120px] top-[160px] h-[320px] w-[320px] rounded-full bg-[#8B5CF6]/6 blur-[70px]" />
+      <div className="absolute right-[-120px] top-[160px] h-[320px] w-[320px] rounded-full bg-[#8B5CF6]/6 blur-3xl" />
 
       {/* GRID */}
       <div className="absolute inset-0 opacity-[0.03]">
@@ -268,28 +260,27 @@ export default function Hero() {
       {/* CINEMATIC ARC */}
       <motion.div
         animate={{
-          rotate: [-10, 10, -10],
+          rotate: [-20, 0, -20],
         }}
         transition={{
-          duration: 18,
+          duration: 16,
           repeat: Infinity,
-          ease: "easeInOut",
         }}
         className="
           pointer-events-none
           absolute
-          left-[-8%]
-          top-[6%]
+          left-[-6%]
+          top-[10%]
           z-0
           opacity-30
-          scale-[1.1]
+          scale-[1.4]
         "
       >
         <img
           src="/iris-bg.png"
           alt=""
           className="
-            w-[1500px]
+            w-[1300px]
             max-w-none
             object-contain
             select-none
@@ -300,30 +291,13 @@ export default function Hero() {
         />
       </motion.div>
 
-      {/* ARC ATMOSPHERE */}
-      <div
-        className="
-          pointer-events-none
-          absolute
-          left-1/2
-          top-[68%]
-          z-0
-          h-[1400px]
-          w-[1400px]
-          -translate-x-1/2
-          rounded-full
-          bg-[#EC1C24]/10
-          blur-[160px]
-        "
-      />
-
       {/* DEPTH OVERLAY */}
       <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black/30" />
 
-      <div className="relative z-20 mx-auto max-w-[1400px] px-5 pb-20 pt-36 sm:px-6 lg:px-8">
+      <div className="relative z-20 px-5 sm:px-6 lg:px-8">
 
         {/* HERO CONTENT */}
-        <div className="mx-auto max-w-6xl text-center">
+        <div className="mx-auto max-w-6xl py-28 text-center">
 
           {/* BADGE */}
           <motion.div
@@ -342,7 +316,7 @@ export default function Hero() {
             transition={{
               duration: 0.6,
             }}
-            className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 backdrop-blur-xl"
+            className="mb-4 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 backdrop-blur-xl"
           >
 
             <Bot size={16} className="text-gray-300" />
@@ -525,14 +499,6 @@ export default function Hero() {
 
         {/* FEATURE MARQUEE */}
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 40,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
           viewport={{
             once: false,
             amount: 0.15,
@@ -541,14 +507,14 @@ export default function Hero() {
             duration: 0.8,
           }}
           onWheel={handleWheel}
-          className="relative mt-48 overflow-hidden"
+          className="relative py-14 overflow-hidden"
         >
 
           {/* LEFT FADE */}
-          <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-10 sm:w-16 md:w-18 lg:w-22 bg-gradient-to-r from-black to-transparent" />
+          <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-10 sm:w-10 md:w-18 lg:w-22 bg-gradient-to-r from-black to-transparent" />
 
           {/* RIGHT FADE */}
-          <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-10 sm:w-16 lg:w-24 bg-gradient-to-l from-black to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-10 sm:w-10 lg:w-22 bg-gradient-to-l from-black to-transparent" />
 
           {/* TRACK */}
           <motion.div
@@ -556,9 +522,8 @@ export default function Hero() {
             transition={{
               duration: 95,
               repeat: Infinity,
-              ease: "linear",
             }}
-            className="flex w-max gap-5 will-change-transform"
+            className="flex w-max gap-4 will-change-transform"
           >
 
             {[...features, ...features].map((item, index) => {
@@ -567,10 +532,6 @@ export default function Hero() {
                 <motion.div
                   key={index}
                   onClick={() => handleCardClick(index)}
-                  whileHover={{
-                    y: -8,
-                    scale: 1.02,
-                  }}
                   animate={{
                     scale: activeCard === index ? 1.04 : 1,
                   }}
@@ -582,9 +543,9 @@ export default function Hero() {
                     boxShadow:
                       activeCard === index
                         ? item.shadow
-                        : "0 0 20px rgba(255,255,255,0.05)",
+                        : "shadow-md",
                   }}
-                  className={`group relative w-[280px] overflow-hidden rounded-[24px] border border-white/40 ${item.color} p-5 backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.05]`}
+                  className={`group relative w-[260px] overflow-hidden rounded-[24px] border border-white/40 ${item.color} p-5 backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.05]`}
                 >
 
                   {/* HOVER GLOW */}
@@ -675,11 +636,6 @@ export default function Hero() {
                         {item.desc}
                       </p>
                     </div>
-
-                    {/* LINE */}
-                    <div
-                      className={`mt-6 h-[2px] w-full rounded-full bg-gradient-to-r ${item.color}`}
-                    />
                   </div>
                 </motion.div>
               );

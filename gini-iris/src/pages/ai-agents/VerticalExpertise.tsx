@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+
 import {
   Building2,
   TrendingUp,
@@ -12,164 +13,534 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+/* LIGHTWEIGHT MOTION */
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 22,
+  },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
 const verticalAgents = [
   {
     icon: HeartPulse,
     title: "Healthcare Navigator",
-    desc: "Automate appointment scheduling, provide pre-visit instructions, and answer common insurance querie...",
+    desc: "Automate appointment scheduling and insurance assistance.",
   },
+
   {
     icon: ShieldCheck,
     title: "Insurance Claims Agent",
-    desc: "Streamline the claims process with an AI that can handle first notice of loss (FNOL), verify policy...",
+    desc: "Accelerate FNOL processing and policy verification.",
   },
+
   {
     icon: Building,
     title: "Banking Assistant",
-    desc: "Offer secure, instant support for common banking tasks like balance inquiries, transaction history, and...",
+    desc: "Instant support for transactions and customer operations.",
   },
+
   {
     icon: ShoppingCart,
     title: "Retail Concierge",
-    desc: "Provide personalized product recommendations, track order status, and process returns or exchang...",
+    desc: "Personalized recommendations and order management.",
   },
 ];
 
 export default function VerticalExpertise() {
-  return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#0b0c1e] via-[#090d16] to-[#04050f] text-slate-100 py-6 px-4 sm:px-6 lg:px-8 lg:h-screen lg:flex lg:flex-col lg:justify-center">
-      
-      {/* Soft Signal Ambient Radials */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
-        <div className="absolute top-[-10%] right-[20%] w-[500px] h-[500px] rounded-full bg-indigo-500/10 blur-[140px]" />
-        <div className="absolute bottom-[5%] left-[15%] w-[400px] h-[400px] rounded-full bg-violet-500/5 blur-[120px]" />
-        {/* Technical cross grid background pattern */}
-        <div className="absolute inset-0 opacity-[0.015] bg-[linear-gradient(to_right,#4f46e5_1px,transparent_1px),linear-gradient(to_bottom,#4f46e5_1px,transparent_1px)] bg-[size:36px_36px]" />
-      </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl flex flex-col justify-between h-full lg:max-h-[750px]">
-        
-        {/* Header Block Group */}
-        <div className="mb-6 lg:mb-8 text-center lg:text-left">
-          <div className="inline-flex items-center gap-2 mb-2">
-            <Building2 size={12} className="text-indigo-400 animate-pulse" />
-            <span className="text-[10px] font-bold uppercase tracking-[2px] text-indigo-400/90">
-              Agent Layer 03
-            </span>
-          </div>
-          <h1 className="text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Vertical Expertise
-          </h1>
-          <div className="mt-2 flex flex-col sm:flex-row sm:items-center gap-3 justify-center lg:justify-start">
-            <p className="text-xs sm:text-sm text-slate-400 max-w-xl">
-              Domain-specific intelligence tailored for specialized industries.
-            </p>
-            <div className="hidden sm:block h-[1px] flex-1 bg-gradient-to-r from-indigo-950/50 via-slate-800 to-transparent" />
-          </div>
+  return (
+    <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top,#07141a_0%,#050b12_45%,#03060a_100%)] py-10 sm:py-14 lg:px-16 lg:py-20">
+
+      {/* BACKGROUND */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+
+        {/* MAIN GLOW */}
+        <div
+          className="
+            absolute
+            right-[10%]
+            top-[10%]
+            h-[320px]
+            w-[320px]
+            rounded-full
+            bg-cyan-400/10
+            blur-3xl
+            animate-pulse
+          "
+        />
+
+        {/* SECONDARY GLOW */}
+        <div
+          className="
+            absolute
+            bottom-[0%]
+            left-[5%]
+            h-[260px]
+            w-[260px]
+            rounded-full
+            bg-teal-400/10
+            blur-3xl
+            animate-pulse
+          "
+          style={{
+            animationDuration: "7s",
+          }}
+        />
+
+        {/* GRID */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="h-full w-full bg-[linear-gradient(rgba(34,211,238,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.08)_1px,transparent_1px)] bg-[size:34px_34px]" />
         </div>
 
-        {/* 3-Column Asymmetrical Grid Matrix Layout */}
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 items-stretch h-full">
-          
-          {/* Card 1: Outcome Box */}
+        {/* TOP LIGHT */}
+        <div className="absolute inset-x-0 top-0 h-[160px] bg-gradient-to-b from-cyan-400/[0.03] to-transparent" />
+      </div>
+
+      {/* CONTENT */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.15,
+        }}
+        transition={{
+          staggerChildren: 0.08,
+        }}
+        className="relative z-10 mx-auto max-w-[1320px] px-4 sm:px-5 lg:px-6"
+      >
+
+        {/* HEADER */}
+        <div className="mb-7 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-col justify-between rounded-2xl border border-slate-900 bg-slate-950/20 p-6 backdrop-blur-md lg:max-h-[500px]"
+            variants={fadeUp}
+            transition={{
+              duration: 0.45,
+            }}
           >
-            <div>
-              <div className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-400 mb-5 border border-indigo-500/10">
-                <CheckCircle2 size={18} />
+
+            {/* BADGE */}
+            <div
+              className="
+                inline-flex
+                items-center
+                gap-2
+                rounded-full
+                border
+                border-cyan-400/10
+                bg-cyan-400/[0.04]
+                px-4
+                py-2
+                backdrop-blur-md
+              "
+            >
+
+              <Building2
+                size={12}
+                className="text-cyan-300"
+              />
+
+              <span className="text-[9px] font-bold uppercase tracking-[2px] text-cyan-200">
+                Agent Layer 03
+              </span>
+            </div>
+
+            {/* TITLE */}
+            <h1
+              className="
+                mt-4
+                bg-gradient-to-r
+                from-white
+                via-cyan-100
+                to-cyan-300
+                bg-clip-text
+                text-[34px]
+                font-black
+                tracking-[-2px]
+                text-transparent
+                sm:text-[44px]
+                lg:text-[54px]
+              "
+            >
+              Vertical Expertise
+            </h1>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                mt-3
+                max-w-xl
+                text-[14px]
+                leading-[1.8]
+                text-slate-400
+                sm:text-[15px]
+              "
+            >
+              Domain-specific intelligence tailored for specialized industries.
+            </p>
+          </motion.div>
+
+          {/* LINE */}
+          <motion.div
+            variants={fadeUp}
+            transition={{
+              duration: 0.45,
+            }}
+            className="
+              hidden
+              h-[1px]
+              flex-1
+              bg-gradient-to-r
+              from-cyan-400/20
+              via-teal-400/10
+              to-transparent
+              lg:block
+            "
+          />
+        </div>
+
+        {/* GRID */}
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+
+          {/* OUTCOME */}
+          <motion.div
+            variants={fadeUp}
+            transition={{
+              duration: 0.45,
+            }}
+            className="
+              group
+              relative
+              flex
+              flex-col
+              justify-between
+              overflow-hidden
+              rounded-[24px]
+              border
+              border-white/10
+              bg-white/[0.04]
+              p-5
+              backdrop-blur-md
+              transition-all
+              duration-300
+              hover:-translate-y-1
+              hover:border-cyan-400/20
+            "
+          >
+
+            {/* HOVER LIGHT */}
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/[0.04] via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+            <div className="relative z-10 flex h-full flex-col">
+
+              {/* ICON */}
+              <div
+                className="
+                  flex
+                  h-11
+                  w-11
+                  items-center
+                  justify-center
+                  rounded-2xl
+                  border
+                  border-cyan-400/10
+                  bg-cyan-400/10
+                  transition-transform
+                  duration-300
+                  group-hover:scale-105
+                "
+              >
+
+                <CheckCircle2
+                  size={18}
+                  className="text-cyan-300"
+                />
               </div>
-              <h2 className="text-base font-extrabold uppercase tracking-wide text-white">
+
+              <h2 className="mt-5 text-[18px] font-black text-white">
                 Outcome
               </h2>
-              <p className="mt-3 text-xs leading-relaxed text-slate-400">
+
+              <p
+                className="
+                  mt-3
+                  flex-1
+                  text-[13px]
+                  leading-[1.8]
+                  text-slate-400
+                "
+              >
                 Bespoke automation for specialized sectors with zero learning curve.
               </p>
-            </div>
 
-            {/* Badges metadata list footer */}
-            <div className="mt-6 flex flex-wrap gap-1.5">
-              <span className="rounded-md bg-indigo-500/10 px-2 py-1 text-[9px] font-bold uppercase tracking-wider text-indigo-400 border border-indigo-500/10">
-                Pre-trained Logic
-              </span>
-              <span className="rounded-md bg-slate-900 px-2 py-1 text-[9px] font-bold uppercase tracking-wider text-slate-400 border border-slate-800/60">
-                Instant Calibration
-              </span>
-              <span className="rounded-md bg-slate-900 px-2 py-1 text-[9px] font-bold uppercase tracking-wider text-slate-400 border border-slate-800/60">
-                Vertical Gating
-              </span>
-            </div>
-          </motion.div>
+              {/* TAGS */}
+              <div className="mt-6 flex flex-wrap gap-2">
 
-          {/* Card 2: Strategic Central Core Panel */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-            className="flex flex-col justify-between rounded-2xl border border-indigo-500/20 bg-gradient-to-b from-[#0b0d23] to-[#040510] p-6 shadow-[0_0_50px_rgba(79,70,229,0.02)] lg:max-h-[500px]"
-          >
-            <div>
-              <div className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-600/20 text-indigo-400 mb-5 shadow-[0_0_15px_rgba(79,70,229,0.15)] border border-indigo-500/20">
-                <TrendingUp size={18} />
+                <span
+                  className="
+                    rounded-lg
+                    border
+                    border-cyan-400/10
+                    bg-cyan-400/10
+                    px-3
+                    py-1
+                    text-[9px]
+                    font-bold
+                    uppercase
+                    tracking-[1.5px]
+                    text-cyan-200
+                  "
+                >
+                  Pre-trained Logic
+                </span>
+
+                <span
+                  className="
+                    rounded-lg
+                    border
+                    border-white/10
+                    bg-white/[0.04]
+                    px-3
+                    py-1
+                    text-[9px]
+                    font-bold
+                    uppercase
+                    tracking-[1.5px]
+                    text-slate-300
+                  "
+                >
+                  Instant Calibration
+                </span>
               </div>
-              <h2 className="text-base font-extrabold uppercase tracking-wide text-white">
-                ROI Strategy
-              </h2>
-              <p className="mt-3 text-xs leading-relaxed text-slate-300">
-                Leverage pre-trained domain logic to accelerate time-to-value.
-              </p>
-            </div>
-
-            {/* Interactive CTA Link Trigger */}
-            <div className="mt-6">
-              <motion.button
-                whileHover={{ scale: 1.02, y: -1 }}
-                whileTap={{ scale: 0.98 }}
-                className="group flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 px-4 py-2.5 text-xs font-bold text-white transition-all shadow-lg hover:opacity-95 shadow-indigo-950/40"
-              >
-                Explore Industry Models
-                <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-0.5" />
-              </motion.button>
             </div>
           </motion.div>
 
-          {/* Column 3: Feature Description Rows Stack */}
-          <div className="flex flex-col justify-between gap-2 md:col-span-2 lg:col-span-1 lg:max-h-[500px]">
+          {/* ROI STRATEGY */}
+          <motion.div
+            variants={fadeUp}
+            transition={{
+              duration: 0.5,
+            }}
+            className="
+              group
+              relative
+              flex
+              flex-col
+              justify-between
+              overflow-hidden
+              rounded-[24px]
+              border
+              border-cyan-400/10
+              bg-gradient-to-b
+              from-[#08141c]
+              to-[#04070c]
+              p-5
+              transition-all
+              duration-300
+              hover:-translate-y-1
+              hover:border-cyan-400/20
+            "
+          >
+
+            {/* HOVER GLOW */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.10),transparent_70%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+            <div className="relative z-10 flex h-full flex-col">
+
+              <div className="flex-1">
+
+                {/* ICON */}
+                <div
+                  className="
+                    flex
+                    h-11
+                    w-11
+                    items-center
+                    justify-center
+                    rounded-2xl
+                    border
+                    border-cyan-400/10
+                    bg-cyan-400/10
+                    transition-transform
+                    duration-300
+                    group-hover:scale-105
+                  "
+                >
+
+                  <TrendingUp
+                    size={18}
+                    className="text-cyan-300"
+                  />
+                </div>
+
+                <h2 className="mt-5 text-[18px] font-black text-white">
+                  ROI Strategy
+                </h2>
+
+                <p
+                  className="
+                    mt-3
+                    text-[13px]
+                    leading-[1.8]
+                    text-slate-300
+                  "
+                >
+                  Leverage pre-trained domain logic to accelerate time-to-value.
+                </p>
+              </div>
+
+              {/* BUTTON */}
+              <button
+                className="
+                  group/button
+                  mt-6
+                  flex
+                  h-[48px]
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-2xl
+                  border
+                  border-cyan-400/10
+                  bg-gradient-to-r
+                  from-cyan-500
+                  to-teal-500
+                  px-4
+                  text-[12px]
+                  font-bold
+                  uppercase
+                  tracking-[1.2px]
+                  text-white
+                  transition-all
+                  duration-300
+                  hover:-translate-y-0.5
+                  hover:shadow-lg
+                "
+              >
+
+                Explore Industry Models
+
+                <ArrowRight
+                  size={14}
+                  className="
+                    transition-transform
+                    duration-300
+                    group-hover/button:translate-x-1
+                  "
+                />
+              </button>
+            </div>
+          </motion.div>
+
+          {/* FEATURE STACK */}
+          <motion.div
+            variants={fadeUp}
+            transition={{
+              duration: 0.5,
+            }}
+            className="flex flex-col gap-3"
+          >
+
             {verticalAgents.map((item, index) => {
+
               const Icon = item.icon;
+
               return (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, x: 15 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.04, duration: 0.4 }}
-                  whileHover={{ x: 3, backgroundColor: "rgba(79, 70, 229, 0.08)", borderColor: "rgba(79, 70, 229, 0.2)" }}
-                  className="flex items-center gap-3.5 rounded-xl border border-slate-900 bg-slate-950/40 p-2.5 backdrop-blur-sm transition-all duration-300"
+                  variants={fadeUp}
+                  transition={{
+                    delay: index * 0.04,
+                    duration: 0.35,
+                  }}
+                  className="
+                    group
+                    relative
+                    overflow-hidden
+                    rounded-[20px]
+                    border
+                    border-white/10
+                    bg-white/[0.04]
+                    p-3
+                    backdrop-blur-md
+                    transition-all
+                    duration-300
+                    hover:translate-x-1
+                    hover:border-cyan-400/20
+                    hover:bg-cyan-400/[0.04]
+                  "
                 >
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-900 border border-slate-800 text-indigo-400">
-                    <Icon size={13} />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-[11px] font-black uppercase tracking-wider text-white truncate">
-                      {item.title}
-                    </h3>
-                    <p className="text-[11px] leading-tight text-slate-400 truncate-2-lines mt-0.5">
-                      {item.desc}
-                    </p>
+
+                  {/* LIGHT */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/[0.03] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                  <div className="relative z-10 flex items-start gap-3">
+
+                    {/* ICON */}
+                    <div
+                      className="
+                        flex
+                        h-10
+                        w-10
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-xl
+                        border
+                        border-cyan-400/10
+                        bg-cyan-400/10
+                        transition-transform
+                        duration-300
+                        group-hover:scale-105
+                      "
+                    >
+
+                      <Icon
+                        size={14}
+                        className="text-cyan-300"
+                      />
+                    </div>
+
+                    {/* CONTENT */}
+                    <div className="min-w-0">
+
+                      <h3
+                        className="
+                          text-[11px]
+                          font-black
+                          uppercase
+                          tracking-[1.5px]
+                          text-white
+                        "
+                      >
+                        {item.title}
+                      </h3>
+
+                      <p
+                        className="
+                          mt-1
+                          text-[11px]
+                          leading-[1.6]
+                          text-slate-400
+                        "
+                      >
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
                 </motion.div>
               );
             })}
-          </div>
-
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

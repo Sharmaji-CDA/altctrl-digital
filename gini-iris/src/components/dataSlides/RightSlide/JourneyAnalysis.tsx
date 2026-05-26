@@ -71,8 +71,15 @@ export default function JourneyAnalysis() {
         }}
         className="
         h-full
-        min-h-[500px]
+        min-h-[400px]
         overflow-hidden
+        rounded-2xl
+        border
+        bg-gradient-to-r
+        from-[#2A7B9B]
+        to-[#EDDD53]
+        p-4
+        backdrop-blur-2xl
         "
       >
 
@@ -93,8 +100,8 @@ export default function JourneyAnalysis() {
               className="
               mt-0.5
               flex
-              h-5
-              w-5
+              h-8
+              w-8
               items-center
               justify-center
               rounded-md
@@ -103,7 +110,7 @@ export default function JourneyAnalysis() {
               bg-white/[0.05]
               "
             >
-              <Map className="h-2.5 w-2.5 text-white/80" />
+              <Map className="h-5 w-5 text-white/80" />
             </div>
 
             <div>
@@ -142,8 +149,8 @@ export default function JourneyAnalysis() {
           <div
             className="
             relative
-            mt-3
-            space-y-2
+            mt-4
+            space-y-3
             "
           >
 
@@ -151,11 +158,11 @@ export default function JourneyAnalysis() {
             <div
               className="
               absolute
-              left-[10px]
-              top-[10px]
+              left-[15px]
+              top-[1px]
               h-[82%]
               w-[1px]
-              bg-white/10
+              bg-white/20
               "
             />
 
@@ -196,8 +203,8 @@ export default function JourneyAnalysis() {
                     relative
                     z-10
                     flex
-                    h-5
-                    w-5
+                    h-8
+                    w-8
                     shrink-0
                     items-center
                     justify-center
@@ -208,7 +215,7 @@ export default function JourneyAnalysis() {
                     ${item.color}
                     `}
                   >
-                    <Icon className="h-2.5 w-2.5" />
+                    <Icon className="h-4 w-4" />
                   </div>
 
                   {/* CONTENT */}
@@ -219,8 +226,8 @@ export default function JourneyAnalysis() {
                       text-[9px]
                       font-medium
                       text-white
-
                       sm:text-[10px]
+                      lg:text-[12px]
                       "
                     >
                       {item.title}
@@ -232,9 +239,9 @@ export default function JourneyAnalysis() {
                       max-w-[500px]
                       text-[7px]
                       leading-3
-                      text-white/45
-
+                      text-white/55
                       sm:text-[8px]
+                      lg:text-[10px]
                       sm:leading-4
                       "
                     >
@@ -258,15 +265,15 @@ export default function JourneyAnalysis() {
             mt-3
             rounded-lg
             border
-            border-orange-400/20
-            bg-orange-400/[0.08]
+            border-red-500/40
+            bg-red-500/[0.3]
             p-2.5
             "
           >
 
             <div className="flex items-start gap-2">
 
-              <Lightbulb className="mt-0.5 h-3 w-3 text-orange-400" />
+              <Lightbulb className="mt-0.5 h-3 w-3 text-orange-300" />
 
               <div>
 
@@ -274,8 +281,7 @@ export default function JourneyAnalysis() {
                   className="
                   text-[9px]
                   font-medium
-                  text-orange-400
-
+                  text-orange-200
                   sm:text-[10px]
                   "
                 >
@@ -287,9 +293,9 @@ export default function JourneyAnalysis() {
                   mt-1
                   text-[7px]
                   leading-3
-                  text-orange-400/90
-
+                  text-green-800
                   sm:text-[8px]
+                  lg:text-[9px]
                   sm:leading-4
                   "
                 >

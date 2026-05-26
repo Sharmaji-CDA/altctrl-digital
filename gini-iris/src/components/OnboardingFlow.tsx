@@ -73,7 +73,7 @@ const steps = [
 
 export default function OnboardingFlow() {
   return (
-    <section className="relative overflow-hidden bg-black px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-24">
+    <section className="relative overflow-hidden bg-black px-4 py-16 text-white sm:px-6 lg:px-16 lg:py-20">
 
       {/* BG */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(236,28,36,0.08),transparent_45%)]" />
@@ -102,10 +102,10 @@ export default function OnboardingFlow() {
         className="absolute right-[-150px] bottom-[100px] h-[300px] w-[300px] rounded-full bg-cyan-500/10 blur-[120px]"
       />
 
-      <div className="relative z-10 mx-auto max-w-[1300px]">
+      <div className="mx-auto max-w-[1300px] px-4 lg:px-8">
 
         {/* TOP */}
-        <div className="mx-auto max-w-[760px] text-center">
+        <div className="text-center">
 
           {/* BADGE */}
           <motion.div
@@ -199,7 +199,7 @@ export default function OnboardingFlow() {
           </div>
 
           {/* GRID */}
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">
 
             {steps.map((step, index) => {
               const Icon = step.icon;
@@ -230,7 +230,7 @@ export default function OnboardingFlow() {
 
                   {/* CARD */}
                   <div
-                    className={`group relative overflow-hidden rounded-[28px] border bg-white/[0.03] p-5 backdrop-blur-2xl transition-all duration-700 hover:border-white/20 hover:bg-white/[0.05] ${step.border}`}
+                    className={`flex flex-col min-h-[300px] rounded-[28px] border bg-white/[0.03] p-5 backdrop-blur-2xl transition-all duration-700 hover:border-white/40 hover:bg-white/[0.05] ${step.border}`}
                   >
 
                     {/* ACTIVE GLOW */}
@@ -247,78 +247,74 @@ export default function OnboardingFlow() {
                       />
                     )}
 
-                    {/* ICON */}
-                    <div className="relative z-10">
+                    <motion.div
+                      animate={{
+                        boxShadow: [
+                          "0 0 0px currentColor",
+                          "0 0 18px currentColor",
+                          "0 0 0px currentColor",
+                        ],
+                      }}
+                      transition={{
+                        duration: 2.5,
+                        repeat: Infinity,
+                        delay: index * 0.3,
+                      }}
+                      className={`flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br ${step.glow} ${step.color} transition-all duration-500 group-hover:shadow-[0_0_25px_currentColor]`}
+                    >
 
-                      <motion.div
-                        animate={{
-                          boxShadow: [
-                            "0 0 0px currentColor",
-                            "0 0 18px currentColor",
-                            "0 0 0px currentColor",
-                          ],
-                        }}
-                        transition={{
-                          duration: 2.5,
-                          repeat: Infinity,
-                          delay: index * 0.3,
-                        }}
-                        className={`relative flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br ${step.glow} ${step.color} transition-all duration-500 group-hover:shadow-[0_0_25px_currentColor]`}
-                      >
+                      {/* EXTRA GLOW */}
+                      <div
+                        className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${step.glow} opacity-0 blur-2xl transition-all duration-500 group-hover:opacity-100`}
+                      />
 
-                        {/* EXTRA GLOW */}
-                        <div
-                          className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${step.glow} opacity-0 blur-2xl transition-all duration-500 group-hover:opacity-100`}
-                        />
+                      <Icon
+                        size={18}
+                        className="relative z-10 transition-all duration-500 group-hover:scale-110"
+                      />
+                    </motion.div>
 
-                        <Icon
-                          size={22}
-                          className="relative z-10 transition-all duration-500 group-hover:scale-110"
-                        />
-                      </motion.div>
+                    {/* TITLE */}
+                    <h3
+                      className={`mt-6 text-[16px] font-bold ${
+                        step.active
+                          ? "text-cyan-400"
+                          : "text-white"
+                      }`}
+                    >
+                      {step.title}
+                    </h3>
 
-                      {/* TITLE */}
-                      <h3
-                        className={`mt-6 text-[18px] font-bold ${
-                          step.active
-                            ? "text-cyan-400"
-                            : "text-white"
-                        }`}
-                      >
-                        {step.title}
-                      </h3>
+                    {/* DESC */}
+                    <p className="mt-2 text-[12px] leading-5 text-slate-400 sm:text-[12px]">
+                      {step.desc}
+                    </p>
 
-                      {/* DESC */}
-                      <p className="mt-4 text-[12px] leading-6 text-slate-400 sm:text-[12px]">
-                        {step.desc}
-                      </p>
+                    {/* POINTS */}
+                    <div className="mt-4 space-y-2">
 
-                      {/* POINTS */}
-                      <div className="mt-6 space-y-3">
+                      {step.points.map((point, i) => (
+                        <motion.div
+                          key={i}
+                          whileHover={{
+                            x: 4,
+                          }}
+                          className="flex items-center gap-3"
+                        >
 
-                        {step.points.map((point, i) => (
-                          <motion.div
-                            key={i}
-                            whileHover={{
-                              x: 4,
-                            }}
-                            className="flex items-center gap-3"
-                          >
+                          <div
+                            className={`h-2 w-2 rounded-full ${
+                              step.active
+                                ? "bg-cyan-400"
+                                : "bg-slate-500"
+                            }`}
+                          />
 
-                            <div
-                              className={`h-2 w-2 rounded-full ${
-                                step.active
-                                  ? "bg-cyan-400"
-                                  : "bg-slate-500"
-                              }`}
-                            />
-
-                            <p className="text-[10px] font-semibold uppercase tracking-[2px] text-slate-400">
-                              {point}
-                            </p>
-                          </motion.div>
-                        ))}
-                      </div>
+                          <p className="text-[10px] font-semibold uppercase tracking-[2px] text-slate-400">
+                            {point}
+                          </p>
+                        </motion.div>
+                      ))}
                     </div>
                   </div>
                 </motion.div>
@@ -333,7 +329,7 @@ export default function OnboardingFlow() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9 }}
           viewport={{ once: true }}
-          className="mt-14 overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03] p-6 backdrop-blur-2xl"
+          className="mt-10 overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-2xl"
         >
 
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
@@ -344,7 +340,7 @@ export default function OnboardingFlow() {
                 Ready to architect your CX?
               </h3>
 
-              <p className="mt-3 text-[12px] leading-6 text-slate-400 sm:text-[13px]">
+              <p className="mt-3 text-[12px] leading-5 text-slate-400 sm:text-[13px]">
                 Join elite organizations deploying autonomous intelligence.
               </p>
             </div>

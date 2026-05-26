@@ -102,7 +102,7 @@ const modules = [
 
 export default function PlatformModules() {
   return (
-    <section className="relative overflow-hidden bg-black px-4 py-12 text-white sm:px-6 lg:px-8 lg:py-16">
+    <section className="bg-black px-4 py-12 text-white sm:px-6 lg:px-16 lg:py-20">
 
       {/* BG */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(236,28,36,0.08),transparent_45%)]" />
@@ -130,7 +130,7 @@ export default function PlatformModules() {
         className="absolute right-[-80px] bottom-[80px] h-[220px] w-[220px] rounded-full bg-cyan-500/10 blur-[90px]"
       />
 
-      <div className="relative z-10 mx-auto max-w-[1220px]">
+      <div className="mx-auto max-w-[1220px] px-4 lg:px-8">
 
         {/* TOP */}
         <div className="mx-auto max-w-[700px] text-center">
@@ -201,7 +201,7 @@ export default function PlatformModules() {
                 whileHover={{
                   y: -4,
                 }}
-                className={`group relative overflow-hidden rounded-[24px] border bg-white/[0.03] p-5 backdrop-blur-2xl transition-all duration-500 hover:bg-white/[0.05] ${module.border}`}
+                className={`group relative overflow-hidden rounded-[24px] border bg-white/[0.03] p-5 backdrop-blur-2xl transition-all duration-500 hover:bg-white/20 hover:border-white/40 ${module.border}`}
               >
 
                 {/* BG GLOW */}

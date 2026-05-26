@@ -5,7 +5,7 @@ import { Bot, ArrowRight, HelpCircle } from "lucide-react";
 
 export default function SelfServicePowerhouse() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#310410] via-[#5c0920] to-[#1a0208] text-rose-50 py-12 px-4 sm:px-6 lg:px-8 lg:h-screen lg:flex lg:flex-col lg:justify-center lg:items-center">
+    <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#310410] via-[#5c0920] to-[#1a0208] text-rose-50 py-12 px-4 sm:px-6 lg:px-8 lg:py-20 lg:flex lg:flex-col lg:justify-center lg:items-center">
       
       {/* Decorative Technical Vector/Glow Highlights */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
@@ -30,7 +30,7 @@ export default function SelfServicePowerhouse() {
         </svg>
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-4xl text-center flex flex-col items-center justify-center h-full lg:max-h-[550px]">
+      <div className="mt-20 relative z-10 mx-auto w-full max-w-4xl text-center flex flex-col items-center justify-center h-full">
         
         {/* Badge Indicator */}
         <motion.div 

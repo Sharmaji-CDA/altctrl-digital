@@ -42,7 +42,7 @@ const intelligenceFeatures = [
 
 export default function IntelligenceCore() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#280206] via-[#111827] to-[#050001] text-slate-100 py-6 px-4 sm:px-6 lg:px-8 lg:h-screen lg:flex lg:flex-col lg:justify-center">
+    <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#280206] via-[#111827] to-[#050001] text-slate-100 py-6 px-4 sm:px-6 lg:px-16 lg:py-20 lg:flex lg:flex-col lg:justify-center">
       
       {/* Background Vivid Red Ambient Lighting */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
@@ -52,7 +52,7 @@ export default function IntelligenceCore() {
         <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#ef4444_1px,transparent_1px),linear-gradient(to_bottom,#ef4444_1px,transparent_1px)] bg-[size:40px_40px]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl flex flex-col justify-between h-full lg:max-h-[750px]">
+      <div className="relative z-10 mx-auto w-full max-w-6xl flex flex-col justify-between h-full px-4 lg:px-8">
         
         {/* Header Block */}
         <div className="mb-6 lg:mb-8 text-center lg:text-left">

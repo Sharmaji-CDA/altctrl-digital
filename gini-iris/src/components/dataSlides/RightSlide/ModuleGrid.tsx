@@ -10,75 +10,99 @@ import RightSlideWrapper from "./RightSlideWrapper";
 
 const modules = [
   {
-    icon: "https://cdn.lordicon.com/jdgfsfzr.json",
+    icon: "https://cdn.lordicon.com/fikcyfpp.json", // chat/messages
     title: "Interactions",
     desc: "Unify all customer conversations.",
   },
 
   {
-    icon: "https://cdn.lordicon.com/abfverha.json",
+    icon: "https://cdn.lordicon.com/abfverha.json", // quality/check
     title: "Quality",
     desc: "Automate QA across interactions.",
   },
 
   {
-    icon: "https://cdn.lordicon.com/wjyqkiew.json",
+    icon: "https://cdn.lordicon.com/hjeefwhm.json", // emotions/sentiment
     title: "Sentiments",
     desc: "Understand customer emotions.",
   },
 
   {
-    icon: "https://cdn.lordicon.com/ehfubvwr.json",
+    icon: "https://cdn.lordicon.com/qhviklyi.json", // supervisor/monitoring
     title: "Supervisor",
     desc: "Monitor teams in real time.",
   },
 
   {
-    icon: "https://cdn.lordicon.com/slkvcfos.json",
+    icon: "https://cdn.lordicon.com/yyecauzv.json", // workflow/backoffice
     title: "Backoffice",
     desc: "Automate backend workflows.",
   },
 
   {
-    icon: "https://cdn.lordicon.com/qvyppzqz.json",
+    icon: "https://cdn.lordicon.com/wxnxiano.json", // knowledge/book/docs
     title: "Knowledge",
     desc: "Centralized knowledge hub.",
   },
 
   {
-    icon: "https://cdn.lordicon.com/oqdmuxru.json",
+    icon: "https://cdn.lordicon.com/iltqorsz.json", // training/learning
     title: "Training",
     desc: "Improve targeted agent skills.",
   },
 
   {
-    icon: "https://cdn.lordicon.com/kbtmbyzy.json",
+    icon: "https://cdn.lordicon.com/kbtmbyzy.json", // workforce/team
     title: "WFM",
     desc: "Optimize workforce planning.",
   },
 
   {
-    icon: "https://cdn.lordicon.com/iltqorsz.json",
+    icon: "https://cdn.lordicon.com/ljvjsnvh.json", // surveys/forms
     title: "Surveys",
     desc: "Capture customer feedback.",
   },
 
   {
-    icon: "https://cdn.lordicon.com/ujxzdfjx.json",
+    icon: "https://cdn.lordicon.com/dafdkyyt.json", // analytics/chart
     title: "Analytics",
     desc: "Generate actionable insights.",
   },
 
   {
-    icon: "https://cdn.lordicon.com/dxjqoygy.json",
+    icon: "https://cdn.lordicon.com/slkvcfos.json", // AI/tools
     title: "AI Tools",
     desc: "Use enterprise AI workflows.",
   },
 
   {
-    icon: "https://cdn.lordicon.com/osuxyevn.json",
+    icon: "https://cdn.lordicon.com/osuxyevn.json", // integrations/connect
     title: "Integrations",
     desc: "Connect existing ecosystems.",
+  },
+
+  {
+    icon: "https://cdn.lordicon.com/surcxhka.json", // database/data
+    title: "Data",
+    desc: "Access raw data & logs.",
+  },
+
+  {
+    icon: "https://cdn.lordicon.com/kdduutaw.json", // security/access
+    title: "Access",
+    desc: "Manage users, roles and permissions.",
+  },
+
+  {
+    icon: "https://cdn.lordicon.com/rsvfayfn.json", // tenants/cloud
+    title: "Tenants",
+    desc: "Oversee multi-tenants deployments.",
+  },
+
+  {
+    icon: "https://cdn.lordicon.com/nkmsrxys.json", // developer/code/api
+    title: "Developer",
+    desc: "Access developer tools and APIs.",
   },
 ];
 
@@ -101,220 +125,175 @@ export default function ModuleGrid() {
           duration: 0.8,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="
-        h-full
-        min-h-[500px]
-        overflow-hidden
+        className="flex flex-col items-centre justify-centre h-full min-h-[400px] overflow-hidden 
+        rounded-2xl
+        border
+        bg-gradient-to-r
+        from-[#2A7B9B]
+        to-[#EDDD53]
+        p-4
+        backdrop-blur-2xl
         "
       >
 
-        <div
+        {/* HEADER */}
+        <div className="flex items-centre justify-centre gap-4">
+
+          <div
+            className="
+            mt-0.5
+            flex
+            h-8
+            w-8
+            items-center
+            justify-center
+            rounded-md
+            border
+            border-white/10
+            bg-white/[0.05]
+            "
+          >
+            <Sparkles className="h-5 w-5 text-white/80" />
+          </div>
+
+          <div>
+            <h3
+              className="
+              text-[14px]
+              font-semibold
+              tracking-[-0.2px]
+              text-white
+              leading-none
+
+              sm:text-[16px]
+              "
+            >
+              Platform Modules
+            </h3>
+            <p
+              className="
+              mt-1
+              text-[8px]
+              text-white/40
+
+              sm:text-[9px]
+              "
+            >
+              Unified enterprise CX ecosystem.
+            </p>
+          </div>
+
+        </div>
+
+        {/* GRID */}
+        <div  
           className="
-          relative
-          z-10
-          flex
-          h-full
-          flex-col
+          mt-3
+          grid
+          grid-cols-2
+          gap-2
+          sm:grid-cols-4
           "
         >
 
-          {/* HEADER */}
-          <div className="flex items-start gap-2">
+          {modules.map((item, index) => {
 
-            <div
-              className="
-              mt-0.5
-              flex
-              h-5
-              w-5
-              items-center
-              justify-center
-              rounded-md
-              border
-              border-white/10
-              bg-white/[0.05]
-              "
-            >
-              <Sparkles className="h-2.5 w-2.5 text-white/80" />
-            </div>
+            return (
 
-            <div>
-
-              <h3
+              <motion.button
+                key={index}
+                initial={{
+                  opacity: 0,
+                  y: 8,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.3,
+                  delay: index * 0.02,
+                }}
+                whileHover={{
+                  y: -2,
+                }}
                 className="
-                text-[14px]
-                font-semibold
-                tracking-[-0.2px]
-                text-white
-                leading-none
-
-                sm:text-[16px]
+                flex 
+                flex-col
+                items-center
+                justify-center
+                rounded-2xl
+                border
+                border-white/40
+                bg-gradient-to-r
+                from-[#D46A8A]/[0.2]
+                to-[#7C4A87]/40
+                p-1.5
+                transition-all
+                duration-300
+                hover:bg-white/[0.08]
                 "
               >
-                Platform Modules
-              </h3>
 
-              <p
-                className="
-                mt-1
-                text-[8px]
-                text-white/40
-
-                sm:text-[9px]
-                "
-              >
-                Unified enterprise CX ecosystem.
-              </p>
-
-            </div>
-
-          </div>
-
-          {/* GRID */}
-          <div
-            className="
-            mt-3
-            grid
-            grid-cols-2
-            gap-2
-
-            sm:grid-cols-3
-            "
-          >
-
-            {modules.map((item, index) => {
-
-              return (
-
-                <motion.div
-                  key={index}
-                  initial={{
-                    opacity: 0,
-                    y: 8,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 0.3,
-                    delay: index * 0.02,
-                  }}
-                  whileHover={{
-                    y: -2,
-                  }}
-                  className="
-                  group
-                  relative
-                  overflow-hidden
-                  rounded-lg
-                  border
-                  border-white/10
-                  bg-white/[0.05]
-                  p-2.5
-                  backdrop-blur-xl
-                  transition-all
-                  duration-300
-                  hover:bg-white/[0.08]
-                  "
-                >
-
-                  {/* GLOW */}
+                  {/* ICON */}
                   <div
                     className="
-                    absolute
-                    inset-0
-                    opacity-0
-                    transition-opacity
-                    duration-300
-
-                    group-hover:opacity-100
+                    flex
+                    h-6
+                    w-6
+                    items-center
+                    justify-center
+                    rounded-lg
+                    border
+                    border-cyan-400/20
+                    bg-white
                     "
                   >
 
-                    <div
-                      className="
-                      absolute
-                      inset-0
-                      rounded-lg
-                      bg-gradient-to-br
-                      from-cyan-400/10
-                      via-blue-500/5
-                      to-purple-500/10
-                      "
-                    />
+                    <lord-icon
+                      src={item.icon}
+                      trigger="loop"
+                      delay="2000"
+                      colors="primary:black,secondary:black"
+                      style={{
+                        width: "16px",
+                        height: "16px",
+                      }}
+                    >
+                    </lord-icon>
 
                   </div>
 
-                  <div className="relative z-10">
+                  {/* TITLE */}
+                  <h4
+                    className="
+                    mt-2
+                    text-[9px]
+                    font-medium
+                    leading-tight
+                    text-white/90
+                    sm:text-[10px]
+                    "
+                  >
+                    {item.title}
+                  </h4>
 
-                    {/* ICON */}
-                    <div
-                      className="
-                      flex
-                      h-8
-                      w-8
-                      items-center
-                      justify-center
-                      rounded-lg
-                      border
-                      border-cyan-400/20
-                      bg-gradient-to-br
-                      from-cyan-500/10
-                      to-blue-500/10
-                      "
-                    >
+                  {/* DESC */}
+                  <p
+                    className="
+                    mt-1
+                    text-[7px]
+                    leading-3
+                    text-white/65
+                    sm:text-[8px]
+                    "
+                  >
+                    {item.desc}
+                  </p>
 
-                      <lord-icon
-                        src={item.icon}
-                        trigger="loop"
-                        delay="2000"
-                        colors="primary:#ffffff,secondary:#a1a1aa"
-                        style={{
-                          width: "18px",
-                          height: "18px",
-                        }}
-                      >
-                      </lord-icon>
-
-                    </div>
-
-                    {/* TITLE */}
-                    <h4
-                      className="
-                      mt-2
-                      text-[9px]
-                      font-medium
-                      leading-tight
-                      text-white/90
-
-                      sm:text-[10px]
-                      "
-                    >
-                      {item.title}
-                    </h4>
-
-                    {/* DESC */}
-                    <p
-                      className="
-                      mt-1
-                      text-[7px]
-                      leading-4
-                      text-white/45
-
-                      sm:text-[8px]
-                      "
-                    >
-                      {item.desc}
-                    </p>
-
-                  </div>
-
-                </motion.div>
-              );
-            })}
-
-          </div>
+              </motion.button>
+            );
+          })}
 
         </div>
 

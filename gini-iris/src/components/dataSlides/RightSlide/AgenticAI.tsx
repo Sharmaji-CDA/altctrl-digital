@@ -93,313 +93,295 @@ export default function AgenticAI() {
           duration: 0.8,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="
+        className="flex flex-col
         h-full
-        min-h-[500px]
+        min-h-[400px]
         overflow-hidden
+        rounded-2xl
+        border
+        bg-gradient-to-r
+        from-[#2A7B9B]
+        to-[#EDDD53]
+        p-4
+        backdrop-blur-2xl
         "
       >
 
-        <div
-          className="
-          relative
-          z-10
-          flex
-          h-full
-          flex-col
-          "
-        >
+        {/* HEADER */}
+        <div className="flex items-start gap-2">
 
-          {/* HEADER */}
-          <div className="flex items-start gap-2">
+          <div
+            className="
+            mt-0.5
+            flex
+            h-8
+            w-8
+            items-center
+            justify-center
+            rounded-md
+            border
+            border-white/10
+            bg-white/[0.05]
+            "
+          >
+            <Bot className="h-5 w-5 text-white/80" />
+          </div>
 
-            <div
+          <div>
+
+            <h3
               className="
-              mt-0.5
-              flex
-              h-5
-              w-5
-              items-center
-              justify-center
-              rounded-md
-              border
-              border-white/10
-              bg-white/[0.05]
+              text-[14px]
+              font-semibold
+              tracking-[-0.2px]
+              text-white
+              leading-none
+
+              sm:text-[16px]
               "
             >
-              <Bot className="h-2.5 w-2.5 text-white/80" />
-            </div>
+              Specialized AI Workforce
+            </h3>
 
-            <div>
+            <p
+              className="
+              mt-1
+              text-[8px]
+              leading-4
+              text-white/40
 
-              <h3
-                className="
-                text-[14px]
-                font-semibold
-                tracking-[-0.2px]
-                text-white
-                leading-none
-
-                sm:text-[16px]
-                "
-              >
-                Specialized AI Workforce
-              </h3>
-
-              <p
-                className="
-                mt-1
-                text-[8px]
-                leading-4
-                text-white/40
-
-                sm:text-[9px]
-                "
-              >
-                Autonomous agents for enterprise workflows.
-              </p>
-
-            </div>
+              sm:text-[9px]
+              "
+            >
+              Autonomous agents for enterprise workflows.
+            </p>
 
           </div>
 
-          {/* CONTENT */}
-          <div
-            className="
-            mt-3
-            grid
-            grid-cols-1
-            gap-2
+        </div>
 
-            lg:grid-cols-2
-            "
-          >
+        {/* CONTENT */}
+        <div
+          className="
+          mt-3
+          grid
+          grid-cols-1
+          gap-2
+          lg:grid-cols-2
+          "
+        >
 
-            {/* LEFT */}
-            <div>
+          {/* LEFT */}
+          <div className="space-y-2">
 
-              <p
-                className="
-                mb-2
-                text-center
-                text-[8px]
-                font-medium
-                uppercase
-                tracking-[2px]
-                text-white/35
+            <p
+              className="
+              mb-2
+              text-center
+              text-[8px]
+              font-medium
+              uppercase
+              tracking-[2px]
+              text-white/55
+              sm:text-[9px]
+              lg:text-[10px]
+              "
+            >
+              By Function
+            </p>
 
-                sm:text-[9px]
-                "
-              >
-                By Function
-              </p>
+            {functionAgents.map((item, index) => {
 
-              <div className="space-y-2">
+              const Icon = item.icon;
 
-                {functionAgents.map((item, index) => {
+              return (
 
-                  const Icon = item.icon;
+                <motion.div
+                  key={index}
+                  initial={{
+                    opacity: 0,
+                    y: 8,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  transition={{
+                    duration: 0.3,
+                    delay: index * 0.03,
+                  }}
+                  whileHover={{
+                    y: -2,
+                  }}
+                  className="
+                  flex
+                  items-start
+                  gap-2
+                  rounded-lg
+                  border
+                  border-white/10
+                  bg-white/95
+                  p-2.5
+                  shadow-[0_4px_14px_rgba(0,0,0,0.04)]
+                  "
+                >
 
-                  return (
+                  {/* ICON */}
+                  <div
+                    className="
+                    flex
+                    h-8
+                    w-8
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-lg
+                    bg-black/[0.04]
+                    "
+                  >
+                    <Icon className="h-4 w-4 text-black/75" />
+                  </div>
 
-                    <motion.div
-                      key={index}
-                      initial={{
-                        opacity: 0,
-                        y: 8,
-                      }}
-                      animate={{
-                        opacity: 1,
-                        y: 0,
-                      }}
-                      transition={{
-                        duration: 0.3,
-                        delay: index * 0.03,
-                      }}
-                      whileHover={{
-                        y: -2,
-                      }}
+                  {/* CONTENT */}
+                  <div>
+
+                    <h4
                       className="
-                      relative
-                      overflow-hidden
-                      flex
-                      items-start
-                      gap-2
-                      rounded-lg
-                      border
-                      border-white/10
-                      bg-white/95
-                      p-2.5
-                      shadow-[0_4px_14px_rgba(0,0,0,0.04)]
+                      text-[10px]
+                      font-semibold
+                      text-black/90
+                      sm:text-[11px]
+                      lg:text-[13px]
                       "
                     >
+                      {item.title}
+                    </h4>
 
-                      {/* ICON */}
-                      <div
-                        className="
-                        flex
-                        h-8
-                        w-8
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-lg
-                        bg-black/[0.04]
-                        "
-                      >
-                        <Icon className="h-4 w-4 text-black/75" />
-                      </div>
-
-                      {/* CONTENT */}
-                      <div>
-
-                        <h4
-                          className="
-                          text-[10px]
-                          font-semibold
-                          text-black/90
-
-                          sm:text-[11px]
-                          "
-                        >
-                          {item.title}
-                        </h4>
-
-                        <p
-                          className="
-                          mt-1
-                          text-[7px]
-                          leading-4
-                          text-black/45
-
-                          sm:text-[8px]
-                          "
-                        >
-                          {item.desc}
-                        </p>
-
-                      </div>
-
-                    </motion.div>
-                  );
-                })}
-
-              </div>
-
-            </div>
-
-            {/* RIGHT */}
-            <div>
-
-              <p
-                className="
-                mb-2
-                text-center
-                text-[8px]
-                font-medium
-                uppercase
-                tracking-[2px]
-                text-white/35
-
-                sm:text-[9px]
-                "
-              >
-                By Industry
-              </p>
-
-              <div className="space-y-2">
-
-                {industryAgents.map((item, index) => {
-
-                  const Icon = item.icon;
-
-                  return (
-
-                    <motion.div
-                      key={index}
-                      initial={{
-                        opacity: 0,
-                        y: 8,
-                      }}
-                      animate={{
-                        opacity: 1,
-                        y: 0,
-                      }}
-                      transition={{
-                        duration: 0.3,
-                        delay: index * 0.03,
-                      }}
-                      whileHover={{
-                        y: -2,
-                      }}
+                    <p
                       className="
-                      relative
-                      overflow-hidden
-                      flex
-                      items-start
-                      gap-2
-                      rounded-lg
-                      border
-                      border-white/10
-                      bg-white/95
-                      p-2.5
-                      shadow-[0_4px_14px_rgba(0,0,0,0.04)]
+                      mt-1
+                      text-[7px]
+                      leading-3
+                      text-black/45
+                      sm:text-[8px]
+                      lg:text-[10px]
                       "
                     >
+                      {item.desc}
+                    </p>
 
-                      {/* ICON */}
-                      <div
-                        className="
-                        flex
-                        h-8
-                        w-8
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-lg
-                        bg-black/[0.04]
-                        "
-                      >
-                        <Icon className="h-4 w-4 text-black/75" />
-                      </div>
+                  </div>
 
-                      {/* CONTENT */}
-                      <div>
+                </motion.div>
+              );
+            })}
 
-                        <h4
-                          className="
-                          text-[10px]
-                          font-semibold
-                          text-black/90
+          </div>
 
-                          sm:text-[11px]
-                          "
-                        >
-                          {item.title}
-                        </h4>
+          {/* RIGHT */}
+          <div className="space-y-2">
 
-                        <p
-                          className="
-                          mt-1
-                          text-[7px]
-                          leading-4
-                          text-black/45
+            <p
+              className="
+              mb-2
+              text-center
+              text-[8px]
+              font-medium
+              uppercase
+              tracking-[2px]
+              text-white/55
+              sm:text-[9px]
+              lg:text-[10px]
+              "
+            >
+              By Industry
+            </p>
 
-                          sm:text-[8px]
-                          "
-                        >
-                          {item.desc}
-                        </p>
+            {industryAgents.map((item, index) => {
 
-                      </div>
+              const Icon = item.icon;
 
-                    </motion.div>
-                  );
-                })}
+              return (
 
-              </div>
+                <motion.div
+                  key={index}
+                  initial={{
+                    opacity: 0,
+                    y: 8,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  transition={{
+                    duration: 0.3,
+                    delay: index * 0.03,
+                  }}
+                  whileHover={{
+                    y: -2,
+                  }}
+                  className="
+                  flex
+                  items-start
+                  gap-2
+                  rounded-lg
+                  border
+                  border-white/10
+                  bg-white/95
+                  p-2.5
+                  shadow-[0_4px_14px_rgba(0,0,0,0.04)]
+                  "
+                >
 
-            </div>
+                  {/* ICON */}
+                  <div
+                    className="
+                    flex
+                    h-8
+                    w-8
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-lg
+                    bg-black/[0.04]
+                    "
+                  >
+                    <Icon className="h-4 w-4 text-black/75" />
+                  </div>
+
+                  {/* CONTENT */}
+                  <div>
+
+                    <h4
+                      className="
+                      text-[10px]
+                      font-semibold
+                      text-black/90
+                      sm:text-[11px]
+                      lg:text-[13px]
+                      "
+                    >
+                      {item.title}
+                    </h4>
+
+                    <p
+                      className="
+                      mt-1
+                      text-[7px]
+                      leading-3
+                      text-black/45
+                      sm:text-[8px]
+                      lg:text-[10px]
+                      "
+                    >
+                      {item.desc}
+                    </p>
+
+                  </div>
+
+                </motion.div>
+              );
+            })}
 
           </div>
 

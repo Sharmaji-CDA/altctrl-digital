@@ -63,7 +63,7 @@ const partners = [
 
 export default function PartnerEcosystem() {
   return (
-    <section className="relative overflow-hidden bg-black px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+    <section className="relative overflow-hidden bg-black px-4 py-12 sm:px-6 lg:px-16 lg:py-16">
 
       {/* BG */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.08),transparent_45%)]" />
@@ -92,7 +92,7 @@ export default function PartnerEcosystem() {
         className="absolute right-[-80px] bottom-[20px] h-[220px] w-[220px] rounded-full bg-[#EC1C24]/10 blur-[90px]"
       />
 
-      <div className="relative z-10 mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-[1200px] px-4 lg:px8">
 
         {/* TOP TEXT */}
         <motion.div
@@ -141,7 +141,7 @@ export default function PartnerEcosystem() {
                 whileHover={{
                   y: -4,
                 }}
-                className={`group relative overflow-hidden rounded-[22px] border bg-white/[0.03] px-5 py-5 backdrop-blur-2xl transition-all duration-500 hover:bg-white/[0.05] ${partner.border}`}
+                className={`group relative overflow-hidden rounded-[22px] border bg-white/[0.03] px-3 py-5 backdrop-blur-2xl transition-all duration-500 hover:bg-white/[0.05] ${partner.border}`}
               >
 
                 {/* BG GLOW */}

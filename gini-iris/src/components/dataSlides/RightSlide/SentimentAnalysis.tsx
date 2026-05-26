@@ -66,22 +66,20 @@ export default function SentimentAnalysis() {
           duration: 0.8,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="
+        className="flex
+        flex-col
         h-full
-        min-h-[500px]
+        min-h-[400px]
         overflow-hidden
+        rounded-2xl
+        border
+        bg-gradient-to-r
+        from-[#2A7B9B]
+        to-[#EDDD53]
+        p-4
+        backdrop-blur-2xl
         "
       >
-
-        <div
-          className="
-          relative
-          z-10
-          flex
-          h-full
-          flex-col
-          "
-        >
 
           {/* HEADER */}
           <div className="flex items-start gap-2">
@@ -90,8 +88,8 @@ export default function SentimentAnalysis() {
               className="
               mt-0.5
               flex
-              h-5
-              w-5
+              h-8
+              w-8
               items-center
               justify-center
               rounded-md
@@ -100,7 +98,7 @@ export default function SentimentAnalysis() {
               bg-white/[0.05]
               "
             >
-              <Smile className="h-2.5 w-2.5 text-white/80" />
+              <Smile className="h-5 w-5 text-white/80" />
             </div>
 
             <div>
@@ -112,7 +110,6 @@ export default function SentimentAnalysis() {
                 tracking-[-0.2px]
                 text-white
                 leading-none
-
                 sm:text-[16px]
                 "
               >
@@ -124,7 +121,6 @@ export default function SentimentAnalysis() {
                 mt-1
                 text-[8px]
                 text-white/40
-
                 sm:text-[9px]
                 "
               >
@@ -238,7 +234,7 @@ export default function SentimentAnalysis() {
             whileHover={{
               y: -2,
             }}
-            className="
+            className="flex flex-col gap-1
             mt-2
             rounded-lg
             border
@@ -254,19 +250,11 @@ export default function SentimentAnalysis() {
               text-[11px]
               font-medium
               text-black/90
-
               sm:text-[12px]
               "
             >
               Parameter Scoring
             </h4>
-
-            <div
-              className="
-              mt-2
-              space-y-1.5
-              "
-            >
 
               {metrics.map((item, index) => {
 
@@ -277,23 +265,52 @@ export default function SentimentAnalysis() {
                     {/* LABEL ROW */}
                     <div
                       className="
-                      mb-1
                       flex
                       items-center
-                      justify-between
+                      gap-2
                       "
                     >
 
                       <p
-                        className="
+                        className="w-[70px]
                         text-[8px]
                         text-black/65
-
                         sm:text-[9px]
                         "
                       >
                         {item.label}
                       </p>
+
+                      {/* BAR */}
+                      <div
+                        className="
+                        w-full
+                        h-[5px]
+                        overflow-hidden
+                        rounded-full
+                        bg-black/[0.06]
+                        "
+                      >
+
+                        <motion.div
+                          initial={{
+                            width: 0,
+                          }}
+                          animate={{
+                            width: item.width,
+                          }}
+                          transition={{
+                            duration: 1,
+                            delay: index * 0.08,
+                          }}
+                          className="
+                          h-full
+                          rounded-full
+                          bg-black/90
+                          "
+                        />
+
+                      </div>
 
                       <p
                         className="
@@ -309,41 +326,10 @@ export default function SentimentAnalysis() {
 
                     </div>
 
-                    {/* BAR */}
-                    <div
-                      className="
-                      h-[5px]
-                      overflow-hidden
-                      rounded-full
-                      bg-black/[0.06]
-                      "
-                    >
-
-                      <motion.div
-                        initial={{
-                          width: 0,
-                        }}
-                        animate={{
-                          width: item.width,
-                        }}
-                        transition={{
-                          duration: 1,
-                          delay: index * 0.08,
-                        }}
-                        className="
-                        h-full
-                        rounded-full
-                        bg-black/90
-                        "
-                      />
-
-                    </div>
-
                   </div>
                 );
               })}
 
-            </div>
           </motion.div>
 
           {/* HIGHLIGHTS */}
@@ -462,8 +448,6 @@ export default function SentimentAnalysis() {
             </div>
 
           </motion.div>
-
-        </div>
 
       </motion.div>
 

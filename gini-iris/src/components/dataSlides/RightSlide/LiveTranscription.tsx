@@ -56,344 +56,340 @@ export default function LiveTranscription() {
           duration: 0.8,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="
+        className="flex
+        flex-col
         h-full
-        min-h-[500px]
+        min-h-[400px]
         overflow-hidden
+        rounded-2xl
+        border
+        bg-gradient-to-r
+        from-[#2A7B9B]
+        to-[#EDDD53]
+        p-4
+        backdrop-blur-2xl
         "
       >
 
-        <div
+        {/* HEADER */}
+        <div className="flex items-start gap-2">
+
+          <div
+            className="
+            mt-0.5
+            flex
+            h-8
+            w-8
+            items-center
+            justify-center
+            rounded-md
+            border
+            border-white/10
+            bg-white/[0.05]
+            "
+          >
+            <FileText className="h-5 w-5 text-white/80" />
+          </div>
+
+          <div>
+
+            <h3
+              className="
+              text-[14px]
+              font-semibold
+              tracking-[-0.2px]
+              text-white
+              leading-none
+
+              sm:text-[16px]
+              "
+            >
+              Live Transcription & Analysis
+            </h3>
+
+            <p
+              className="
+              mt-1
+              text-[8px]
+              text-white/40
+
+              sm:text-[9px]
+              "
+            >
+              Real-time speech-to-text insights.
+            </p>
+
+          </div>
+        </div>
+
+        {/* CHAT PANEL */}
+        <motion.div
+          whileHover={{
+            y: -2,
+          }}
           className="
-          relative
-          z-10
-          flex
-          h-full
-          flex-col
+          mt-3
+          overflow-hidden
+          rounded-lg
+          border
+          border-white/10
+          bg-white/95
+          shadow-[0_4px_14px_rgba(0,0,0,0.04)]
           "
         >
 
-          {/* HEADER */}
-          <div className="flex items-start gap-2">
-
-            <div
-              className="
-              mt-0.5
-              flex
-              h-5
-              w-5
-              items-center
-              justify-center
-              rounded-md
-              border
-              border-white/10
-              bg-white/[0.05]
-              "
-            >
-              <FileText className="h-2.5 w-2.5 text-white/80" />
-            </div>
-
-            <div>
-
-              <h3
-                className="
-                text-[14px]
-                font-semibold
-                tracking-[-0.2px]
-                text-white
-                leading-none
-
-                sm:text-[16px]
-                "
-              >
-                Live Transcription & Analysis
-              </h3>
-
-              <p
-                className="
-                mt-1
-                text-[8px]
-                text-white/40
-
-                sm:text-[9px]
-                "
-              >
-                Real-time speech-to-text insights.
-              </p>
-
-            </div>
-          </div>
-
-          {/* CHAT PANEL */}
-          <motion.div
-            whileHover={{
-              y: -2,
-            }}
+          {/* MESSAGES */}
+          <div
             className="
-            mt-3
-            overflow-hidden
-            rounded-lg
-            border
-            border-white/10
-            bg-white/95
-            shadow-[0_4px_14px_rgba(0,0,0,0.04)]
+            space-y-3
+            p-2.5
             "
           >
 
-            {/* MESSAGES */}
-            <div
-              className="
-              space-y-2
-              p-2.5
-              "
-            >
+            {conversations.map((item, index) => {
 
-              {conversations.map((item, index) => {
+              return (
 
-                return (
+                <motion.div
+                  key={index}
+                  initial={{
+                    opacity: 0,
+                    y: 8,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  transition={{
+                    duration: 0.3,
+                    delay: index * 0.05,
+                  }}
+                  className={`
+                  flex
+                  items-start
+                  gap-2
 
-                  <motion.div
-                    key={index}
-                    initial={{
-                      opacity: 0,
-                      y: 8,
-                    }}
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                    }}
-                    transition={{
-                      duration: 0.3,
-                      delay: index * 0.05,
-                    }}
-                    className={`
-                    flex
-                    items-start
-                    gap-2
+                  ${
+                    item.type === "bot"
+                      ? "justify-end"
+                      : "justify-start"
+                  }
+                  `}
+                >
 
-                    ${
-                      item.type === "bot"
-                        ? "justify-end"
-                        : "justify-start"
-                    }
-                    `}
-                  >
+                  {/* USER */}
+                  {item.type === "user" && (
 
-                    {/* USER */}
-                    {item.type === "user" && (
+                    <>
 
-                      <>
+                      <div
+                        className="
+                        mt-0.5
+                        flex
+                        h-7
+                        w-7
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-full
+                        bg-black/[0.05]
+                        "
+                      >
+                        <User className="h-5 w-5 text-black/60" />
+                      </div>
 
-                        <div
+                      <div
+                        className="
+                        max-w-[82%]
+                        rounded-lg
+                        bg-black/[0.04]
+                        px-2.5
+                        py-2
+                        "
+                      >
+
+                        <p
                           className="
-                          mt-0.5
-                          flex
-                          h-5
-                          w-5
-                          shrink-0
-                          items-center
-                          justify-center
-                          rounded-full
-                          bg-black/[0.05]
+                          text-[7px]
+                          leading-3
+                          text-black/75
+                          sm:text-[8px]
+                          sm:leading-4
+                          lg:text-[10px]
                           "
                         >
-                          <User className="h-2.5 w-2.5 text-black/60" />
-                        </div>
+                          "{item.text}"
+                        </p>
 
-                        <div
+                      </div>
+
+                    </>
+                  )}
+
+                  {/* BOT */}
+                  {item.type === "bot" && (
+
+                    <>
+
+                      <div
+                        className="
+                        max-w-[82%]
+                        rounded-lg
+                        bg-[#111116]
+                        px-2.5
+                        py-2
+                        "
+                      >
+
+                        <p
                           className="
-                          max-w-[82%]
-                          rounded-lg
-                          bg-black/[0.04]
-                          px-2.5
-                          py-2
+                          text-[7px]
+                          font-medium
+                          leading-3
+                          text-white
+                          sm:text-[8px]
+                          sm:leading-4
+                          lg:text-[10px]
                           "
                         >
+                          "{item.text}"
+                        </p>
 
-                          <p
-                            className="
-                            text-[7px]
-                            leading-3
-                            text-black/75
+                      </div>
 
-                            sm:text-[8px]
-                            sm:leading-4
-                            "
-                          >
-                            "{item.text}"
-                          </p>
+                      <div
+                        className="
+                        mt-0.5
+                        flex
+                        h-7
+                        w-7
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-full
+                        bg-black/[0.05]
+                        "
+                      >
+                        <Bot className="h-5 w-5 text-black/60" />
+                      </div>
 
-                        </div>
+                    </>
+                  )}
 
-                      </>
-                    )}
+                </motion.div>
+              );
+            })}
 
-                    {/* BOT */}
-                    {item.type === "bot" && (
+          </div>
 
-                      <>
+          {/* ANALYSIS */}
+          <div
+            className="
+            border-t
+            border-black/10
+            px-2.5
+            py-3
+            "
+          >
 
-                        <div
-                          className="
-                          max-w-[82%]
-                          rounded-lg
-                          bg-[#111116]
-                          px-2.5
-                          py-2
-                          "
-                        >
+            {/* TITLE */}
+            <div className="flex items-center gap-1.5">
 
-                          <p
-                            className="
-                            text-[7px]
-                            font-medium
-                            leading-3
-                            text-white
+              <Sparkles className="h-3 w-3 text-black/70" />
 
-                            sm:text-[8px]
-                            sm:leading-4
-                            "
-                          >
-                            "{item.text}"
-                          </p>
+              <p
+                className="
+                text-[9px]
+                font-medium
+                text-black/80
 
-                        </div>
-
-                        <div
-                          className="
-                          mt-0.5
-                          flex
-                          h-5
-                          w-5
-                          shrink-0
-                          items-center
-                          justify-center
-                          rounded-full
-                          bg-black/[0.05]
-                          "
-                        >
-                          <Bot className="h-2.5 w-2.5 text-black/60" />
-                        </div>
-
-                      </>
-                    )}
-
-                  </motion.div>
-                );
-              })}
+                sm:text-[10px]
+                "
+              >
+                Live Analysis
+              </p>
 
             </div>
 
-            {/* ANALYSIS */}
+            {/* TAGS */}
             <div
               className="
-              border-t
-              border-black/10
-              px-2.5
-              py-2
+              mt-2
+              flex
+              flex-wrap
+              gap-1.5
               "
             >
 
-              {/* TITLE */}
-              <div className="flex items-center gap-1.5">
-
-                <Sparkles className="h-3 w-3 text-black/70" />
-
-                <p
-                  className="
-                  text-[9px]
-                  font-medium
-                  text-black/80
-
-                  sm:text-[10px]
-                  "
-                >
-                  Live Analysis
-                </p>
-
-              </div>
-
-              {/* TAGS */}
+              {/* TAG */}
               <div
                 className="
-                mt-2
+                rounded-full
+                border
+                border-black/10
+                bg-black/[0.03]
+                px-2
+                py-1
+                text-[7px]
+                font-medium
+                text-black/75
+
+                sm:text-[8px]
+                "
+              >
+                🎯 Order Status
+              </div>
+
+              {/* TAG */}
+              <div
+                className="
+                rounded-full
+                border
+                border-black/10
+                bg-black/[0.03]
+                px-2
+                py-1
+                text-[7px]
+                font-medium
+                text-black/75
+
+                sm:text-[8px]
+                "
+              >
+                📦 Order# 582-1985
+              </div>
+
+              {/* TAG */}
+              <div
+                className="
                 flex
-                flex-wrap
-                gap-1.5
+                items-center
+                gap-1
+                rounded-full
+                border
+                border-emerald-500/20
+                bg-emerald-500/10
+                px-2
+                py-1
+                text-[7px]
+                font-medium
+                text-emerald-600
+
+                sm:text-[8px]
                 "
               >
 
-                {/* TAG */}
-                <div
-                  className="
-                  rounded-full
-                  border
-                  border-black/10
-                  bg-black/[0.03]
-                  px-2
-                  py-1
-                  text-[7px]
-                  font-medium
-                  text-black/75
+                <BadgeCheck className="h-2.5 w-2.5" />
 
-                  sm:text-[8px]
-                  "
-                >
-                  🎯 Order Status
-                </div>
-
-                {/* TAG */}
-                <div
-                  className="
-                  rounded-full
-                  border
-                  border-black/10
-                  bg-black/[0.03]
-                  px-2
-                  py-1
-                  text-[7px]
-                  font-medium
-                  text-black/75
-
-                  sm:text-[8px]
-                  "
-                >
-                  📦 Order# 582-1985
-                </div>
-
-                {/* TAG */}
-                <div
-                  className="
-                  flex
-                  items-center
-                  gap-1
-                  rounded-full
-                  border
-                  border-emerald-500/20
-                  bg-emerald-500/10
-                  px-2
-                  py-1
-                  text-[7px]
-                  font-medium
-                  text-emerald-600
-
-                  sm:text-[8px]
-                  "
-                >
-
-                  <BadgeCheck className="h-2.5 w-2.5" />
-
-                  Resolved
-
-                </div>
+                Resolved
 
               </div>
 
             </div>
 
-          </motion.div>
+          </div>
 
-        </div>
+        </motion.div>
 
       </motion.div>
 

@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <>
       {/* NAVBAR */}
-      <header className="fixed inset-x-0 top-0 z-50 px-2 pt-4 sm:px-4 lg:px-6">
+      <header className="fixed inset-x-0 top-0 z-50 px-2 py-4 sm:px-4 lg:px-6">
         
         <motion.div
           initial={{ y: -100, opacity: 0 }}
@@ -38,13 +38,13 @@ const Navbar = () => {
           transition={{ duration: 0.8 }}
           className={`relative mx-auto flex max-w-[1400px] items-center justify-between overflow-hidden rounded-[30px] border border-white/10 px-6 transition-all duration-500 ease-out sm:px-8 lg:px-10 ${
             scrolled
-              ? "h-[50px] bg-black/75 shadow-[0_15px_50px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
-              : "h-[60px] bg-black/40 backdrop-blur-xl"
+              ? "py-1.5 bg-black/75 shadow-[0_15px_50px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
+              : "py-1.5 bg-black/40 backdrop-blur-xl"
           }`}
         >
           
           {/* CINEMATIC GRADIENT */}
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(236,28,36,0.08),transparent,rgba(6,182,212,0.06))]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(236,28,36,0.08),transparent,rgba(245,39,62,0.41))]" />
 
           {/* GLOW */}
           <div className="absolute left-0 top-0 h-32 w-32 rounded-full bg-[#EC1C24]/10 blur-[80px]" />
@@ -60,11 +60,11 @@ const Navbar = () => {
               src="/logo.png"
               alt="Gini Iris"
               className={`
-                w-auto object-contain transition-all duration-500
+                w-auto object-contain transition-all duration-300
 
                 ${scrolled
-                  ? "h-[25px] sm:h-[30px]"
-                  : "h-[35px] sm:h-[40px]"
+                  ? "h-[35px] sm:h-[45px]"
+                  : "h-[40px] sm:h-[50px]"
                 }
               `}
             />
@@ -75,12 +75,12 @@ const Navbar = () => {
           <div className="relative z-20 flex items-center gap-4">
 
             {/* LOGIN BUTTON */}
-            <button className="hidden rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-[11px] font-medium uppercase tracking-[2px] text-gray-300 backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06] hover:text-white lg:block">
+            {/* <button className="hidden rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-[11px] font-medium uppercase tracking-[2px] text-gray-300 backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06] hover:text-white lg:block">
               Login
-            </button>
+            </button> */}
             
             {/* DESKTOP CTA */}
-            <button className="group relative hidden overflow-hidden rounded-full border border-white/10 bg-[#EC1C24] px-6 py-2 text-sm font-semibold uppercase tracking-[2px] text-white transition-all duration-500 hover:scale-105 hover:shadow-[0_0_45px_rgba(236,28,36,0.45)] lg:block">
+            <button className="overflow-hidden rounded-full border border-white/10 bg-[#EC1C24] px-4 py-2 text-[8px] sm:text[9px] lg:text-[10px] font-semibold uppercase tracking-[2px] text-white transition-all duration-500 hover:scale-105 hover:shadow-[0_0_45px_rgba(236,28,36,0.45)] lg:block">
               
               {/* MULTI COLOR GRADIENT */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#EC1C24] via-[#ff4d55] to-cyan-500 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />

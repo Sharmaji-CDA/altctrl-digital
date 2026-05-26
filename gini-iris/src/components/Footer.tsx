@@ -3,9 +3,10 @@
 import { ArrowRight } from "lucide-react";
 import { FaTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Footer() {
+
   // 1. Defined structured data for column navigation links
   const modernCxLinks = [
     { name: "Platform Overview", href: "/products" },
@@ -18,7 +19,7 @@ export default function Footer() {
   const resourceLinks = [
     { name: "Use Cases", href: "/use-cases" },
     { name: "CX Talks Blog", href: "/blog" },
-    { name: "Tech Resources", href: "/resources" },
+    { name: "Tech Resources", href: "/tech-resources" },
     { name: "Documentation", href: "/docs" },
   ];
 
@@ -42,7 +43,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative overflow-hidden border-t border-white/5 bg-[#020617] px-4 pt-14 text-white sm:px-6 lg:px-8">
+    <footer className="relative overflow-hidden border-t border-white/5 bg-[#020617] px-4 pt-14 sm:px-6 lg:px-8">
       {/* BG */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.08),transparent_45%)]" />
 
@@ -104,12 +105,15 @@ export default function Footer() {
             <div className="mt-5 space-y-4">
               {modernCxLinks.map((item, index) => (
                 <motion.div key={index} whileHover={{ x: 4 }}>
-                  <Link
+                  <NavLink
                     to={item.href}
-                    className="block text-[13px] text-slate-400 transition-all duration-300 hover:text-white"
+                    style={({ isActive }) => ({
+                      color: isActive ? "#F54927" : "#94a3b8",
+                    })}
+                    className="inline-flex items-center text-[13px] font-medium transition-all duration-300 hover:text-white"
                   >
                     {item.name}
-                  </Link>
+                  </NavLink>
                 </motion.div>
               ))}
             </div>
@@ -121,12 +125,15 @@ export default function Footer() {
             <div className="mt-5 space-y-4">
               {resourceLinks.map((item, index) => (
                 <motion.div key={index} whileHover={{ x: 4 }}>
-                  <Link
+                  <NavLink
                     to={item.href}
-                    className="block text-[13px] text-slate-400 transition-all duration-300 hover:text-white"
+                    style={({ isActive }) => ({
+                      color: isActive ? "#F54927" : "#94a3b8",
+                    })}
+                    className="inline-flex items-center text-[13px] font-medium transition-all duration-300 hover:text-white"
                   >
                     {item.name}
-                  </Link>
+                  </NavLink>
                 </motion.div>
               ))}
             </div>
@@ -138,12 +145,15 @@ export default function Footer() {
             <div className="mt-5 space-y-4">
               {companyLinks.map((item, index) => (
                 <motion.div key={index} whileHover={{ x: 4 }}>
-                  <Link
+                  <NavLink
                     to={item.href}
-                    className="block text-[13px] text-slate-400 transition-all duration-300 hover:text-white"
+                    style={({ isActive }) => ({
+                      color: isActive ? "#F54927" : "#94a3b8",
+                    })}
+                    className="inline-flex items-center text-[13px] font-medium transition-all duration-300 hover:text-white"
                   >
                     {item.name}
-                  </Link>
+                  </NavLink>
                 </motion.div>
               ))}
             </div>

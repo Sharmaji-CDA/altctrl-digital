@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+
 import {
   Cpu,
   TrendingUp,
@@ -12,164 +13,516 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+/* LIGHTWEIGHT MOTION */
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 22,
+  },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
 const reasoningAgents = [
   {
     icon: UserPlus,
     title: "Onboarding Specialist Agent",
-    desc: "Guide new users through your platform with interactive tutorials, contextual help, and proactive...",
+    desc: "Guide users with contextual onboarding and proactive tutorials.",
   },
+
   {
     icon: GitBranch,
     title: "Workflow Automator",
-    desc: "Handle multi-step backend processes, such as refund processing or account changes, triggered b...",
+    desc: "Automate backend operations and approval workflows.",
   },
+
   {
     icon: Briefcase,
     title: "HR Assistant Agent",
-    desc: "Answer common employee questions about company policies, benefits, and internal procedure...",
+    desc: "Handle employee support and policy automation.",
   },
+
   {
     icon: Share2,
     title: "Social Media Manager",
-    desc: "Monitor social channels for brand mentions, identify high-priority posts, and draft appropriate public...",
+    desc: "Monitor brand signals and automate engagement flows.",
   },
 ];
 
 export default function ReasoningStack() {
-  return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#090d16] via-[#0f172a] to-[#1e293b] text-slate-100 py-6 px-4 sm:px-6 lg:px-8 lg:h-screen lg:flex lg:flex-col lg:justify-center">
-      
-      {/* Immersive Neural Slate Ambient Aura Patterns */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-25">
-        <div className="absolute top-[-10%] right-[20%] w-[550px] h-[550px] rounded-full bg-slate-400/10 blur-[140px]" />
-        <div className="absolute bottom-[5%] left-[15%] w-[400px] h-[400px] rounded-full bg-blue-500/5 blur-[120px]" />
-        {/* Engineering blueprint cross alignment grid */}
-        <div className="absolute inset-0 opacity-[0.015] bg-[linear-gradient(to_right,#64748b_1px,transparent_1px),linear-gradient(to_bottom,#64748b_1px,transparent_1px)] bg-[size:36px_36px]" />
-      </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl flex flex-col justify-between h-full lg:max-h-[750px]">
-        
-        {/* Title Block Header Group */}
-        <div className="mb-6 lg:mb-8 text-center lg:text-left">
-          <div className="inline-flex items-center gap-2 mb-2">
-            <Cpu size={12} className="text-slate-400认 animate-pulse" />
-            <span className="text-[10px] font-bold uppercase tracking-[2px] text-slate-400/90">
-              Agent Layer 02
-            </span>
-          </div>
-          <h1 className="text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Reasoning Stack
-          </h1>
-          <div className="mt-2 flex flex-col sm:flex-row sm:items-center gap-3 justify-center lg:justify-start">
-            <p className="text-xs sm:text-sm text-slate-400 max-w-xl">
-              Advanced logic for complex decision making and workflow analysis.
-            </p>
-            <div className="hidden sm:block h-[1px] flex-1 bg-gradient-to-r from-slate-800/60 via-slate-700/20 to-transparent" />
-          </div>
+  return (
+    <section className="relative overflow-hidden bg-[#060816] py-10 sm:py-14 lg:px-16">
+
+      {/* BACKGROUND */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+
+        {/* PRIMARY GLOW */}
+        <div
+          className="
+            absolute
+            left-[-10%]
+            top-[-10%]
+            h-[320px]
+            w-[320px]
+            rounded-full
+            bg-cyan-400/10
+            blur-3xl
+            animate-pulse
+          "
+        />
+
+        {/* SECONDARY GLOW */}
+        <div
+          className="
+            absolute
+            bottom-[-10%]
+            right-[-5%]
+            h-[260px]
+            w-[260px]
+            rounded-full
+            bg-violet-500/10
+            blur-3xl
+            animate-pulse
+          "
+          style={{
+            animationDuration: "7s",
+          }}
+        />
+
+        {/* CENTER LIGHT */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03),transparent_70%)]" />
+
+        {/* GRID */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="h-full w-full bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:34px_34px]" />
         </div>
 
-        {/* 3-Column Asymmetrical Grid System */}
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 items-stretch h-full">
-          
-          {/* Card 1: Outcome Panel */}
+        {/* TOP LIGHT */}
+        <div className="absolute inset-x-0 top-0 h-[140px] bg-gradient-to-b from-cyan-400/[0.03] to-transparent" />
+      </div>
+
+      {/* CONTENT */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.15,
+        }}
+        transition={{
+          staggerChildren: 0.08,
+        }}
+        className="relative z-10 mx-auto max-w-[1350px] px-4 sm:px-5 lg:px-6"
+      >
+
+        {/* HEADER */}
+        <div className="mb-6 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-col justify-between rounded-2xl border border-slate-800/80 bg-slate-900/10 p-6 backdrop-blur-md lg:max-h-[500px]"
+            variants={fadeUp}
+            transition={{
+              duration: 0.45,
+            }}
           >
-            <div>
-              <div className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-slate-800 text-slate-300 mb-5 border border-slate-700/50">
-                <CheckCircle2 size={18} />
+
+            {/* BADGE */}
+            <div
+              className="
+                inline-flex
+                items-center
+                gap-2
+                rounded-full
+                border
+                border-white/10
+                bg-white/[0.04]
+                px-3
+                py-2
+                backdrop-blur-md
+              "
+            >
+
+              <Cpu
+                size={11}
+                className="text-cyan-300"
+              />
+
+              <span className="text-[8px] font-bold uppercase tracking-[2px] text-cyan-200">
+                Agent Layer 02
+              </span>
+            </div>
+
+            {/* TITLE */}
+            <h1
+              className="
+                mt-4
+                bg-gradient-to-r
+                from-white
+                via-slate-200
+                to-slate-400
+                bg-clip-text
+                text-[34px]
+                font-black
+                leading-[0.95]
+                tracking-[-2px]
+                text-transparent
+                sm:text-[44px]
+                lg:text-[56px]
+              "
+            >
+              Reasoning Stack
+            </h1>
+
+            {/* DESCRIPTION */}
+            <p
+              className="
+                mt-4
+                max-w-2xl
+                text-[13px]
+                leading-[1.8]
+                text-slate-400
+                sm:text-[15px]
+              "
+            >
+              Advanced logic for complex decision making and workflow analysis.
+            </p>
+          </motion.div>
+
+          {/* LINE */}
+          <motion.div
+            variants={fadeUp}
+            transition={{
+              duration: 0.45,
+            }}
+            className="
+              hidden
+              h-[1px]
+              flex-1
+              bg-gradient-to-r
+              from-cyan-400/30
+              via-slate-700/10
+              to-transparent
+              lg:block
+            "
+          />
+        </div>
+
+        {/* GRID */}
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+
+          {/* OUTCOME */}
+          <motion.div
+            variants={fadeUp}
+            transition={{
+              duration: 0.45,
+            }}
+            className="
+              group
+              relative
+              overflow-hidden
+              rounded-[26px]
+              border
+              border-white/10
+              bg-white/[0.04]
+              p-5
+              backdrop-blur-md
+              transition-all
+              duration-300
+              hover:-translate-y-1
+              hover:border-cyan-400/20
+            "
+          >
+
+            {/* LIGHT */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/[0.04] via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+            <div className="relative z-10 flex h-full flex-col">
+
+              {/* ICON */}
+              <div
+                className="
+                  flex
+                  h-12
+                  w-12
+                  items-center
+                  justify-center
+                  rounded-2xl
+                  border
+                  border-white/10
+                  bg-white/[0.06]
+                  transition-transform
+                  duration-300
+                  group-hover:scale-105
+                "
+              >
+
+                <CheckCircle2
+                  size={20}
+                  className="text-cyan-200"
+                />
               </div>
-              <h2 className="text-base font-extrabold uppercase tracking-wide text-white">
+
+              <h2 className="mt-5 text-[22px] font-black text-white">
                 Outcome
               </h2>
-              <p className="mt-3 text-xs leading-relaxed text-slate-400">
-                Eliminate human error in regulated workflows and data processing.
+
+              <p className="mt-3 flex-1 text-[13px] leading-[1.8] text-slate-400">
+                Eliminate human error in regulated workflows and secure mission-critical automation pipelines.
               </p>
-            </div>
 
-            {/* Micro Tags Metadata List */}
-            <div className="mt-6 flex flex-wrap gap-1.5">
-              <span className="rounded-md bg-slate-800/50 px-2 py-1 text-[9px] font-bold uppercase tracking-wider text-slate-300 border border-slate-700/40">
-                Deterministic Gating
-              </span>
-              <span className="rounded-md bg-slate-900 px-2 py-1 text-[9px] font-bold uppercase tracking-wider text-slate-400 border border-slate-800/50">
-                Zero Error Threshold
-              </span>
-              <span className="rounded-md bg-slate-900 px-2 py-1 text-[9px] font-bold uppercase tracking-wider text-slate-400 border border-slate-800/50">
-                Audit Bound Logs
-              </span>
-            </div>
-          </motion.div>
+              {/* TAGS */}
+              <div className="mt-5 flex flex-wrap gap-2">
 
-          {/* Card 2: Strategic ROI Center Core Panel */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-            className="flex flex-col justify-between rounded-2xl border border-slate-700/30 bg-gradient-to-b from-[#111625] to-[#070a10] p-6 shadow-[0_0_50px_rgba(148,163,184,0.02)] lg:max-h-[500px]"
-          >
-            <div>
-              <div className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-slate-800/80 text-white mb-5 border border-slate-600/40 shadow-md">
-                <TrendingUp size={18} />
+                <span
+                  className="
+                    rounded-xl
+                    border
+                    border-cyan-400/20
+                    bg-cyan-400/10
+                    px-3
+                    py-2
+                    text-[9px]
+                    font-bold
+                    uppercase
+                    tracking-[1.3px]
+                    text-cyan-200
+                  "
+                >
+                  Deterministic Logic
+                </span>
+
+                <span
+                  className="
+                    rounded-xl
+                    border
+                    border-violet-400/20
+                    bg-violet-400/10
+                    px-3
+                    py-2
+                    text-[9px]
+                    font-bold
+                    uppercase
+                    tracking-[1.3px]
+                    text-violet-200
+                  "
+                >
+                  Audit Safe
+                </span>
               </div>
-              <h2 className="text-base font-extrabold uppercase tracking-wide text-white">
-                ROI Strategy
-              </h2>
-              <p className="mt-3 text-xs leading-relaxed text-slate-300">
-                Embed automated reasoning directly into backend system logic.
-              </p>
-            </div>
-
-            {/* Interactive Action CTA Trigger Link */}
-            <div className="mt-6">
-              <motion.button
-                whileHover={{ scale: 1.02, y: -1 }}
-                whileTap={{ scale: 0.98 }}
-                className="group flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 border border-slate-600/50 px-4 py-2.5 text-xs font-bold text-white transition-all shadow-md hover:from-slate-600 hover:via-slate-700"
-              >
-                Analyze Agent Logic
-                <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-0.5" />
-              </motion.button>
             </div>
           </motion.div>
 
-          {/* Column 3: Stacked Feature Agent Rows */}
-          <div className="flex flex-col justify-between gap-2 md:col-span-2 lg:col-span-1 lg:max-h-[500px]">
+          {/* ROI */}
+          <motion.div
+            variants={fadeUp}
+            transition={{
+              duration: 0.5,
+            }}
+            className="
+              group
+              relative
+              overflow-hidden
+              rounded-[26px]
+              border
+              border-white/10
+              bg-gradient-to-br
+              from-[#0f172a]
+              via-[#101827]
+              to-[#060816]
+              p-5
+              transition-all
+              duration-300
+              hover:-translate-y-1
+              hover:border-cyan-400/20
+            "
+          >
+
+            {/* GLOW */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.10),transparent_65%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+            <div className="relative z-10 flex h-full flex-col">
+
+              <div className="flex-1">
+
+                {/* ICON */}
+                <div
+                  className="
+                    flex
+                    h-12
+                    w-12
+                    items-center
+                    justify-center
+                    rounded-2xl
+                    border
+                    border-cyan-400/20
+                    bg-cyan-400/10
+                    transition-transform
+                    duration-300
+                    group-hover:scale-105
+                  "
+                >
+
+                  <TrendingUp
+                    size={20}
+                    className="text-cyan-200"
+                  />
+                </div>
+
+                <h2 className="mt-5 text-[22px] font-black text-white">
+                  ROI Strategy
+                </h2>
+
+                <p className="mt-3 text-[13px] leading-[1.8] text-slate-300">
+                  Deploy reasoning systems directly into backend orchestration for operational scale and decision precision.
+                </p>
+              </div>
+
+              {/* BUTTON */}
+              <button
+                className="
+                  group/button
+                  mt-6
+                  flex
+                  h-[46px]
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-2xl
+                  bg-gradient-to-r
+                  from-cyan-500
+                  via-blue-500
+                  to-violet-500
+                  px-5
+                  text-[11px]
+                  font-black
+                  uppercase
+                  tracking-[1.2px]
+                  text-white
+                  transition-all
+                  duration-300
+                  hover:-translate-y-0.5
+                  hover:shadow-lg
+                "
+              >
+
+                Analyze Agent Logic
+
+                <ArrowRight
+                  size={13}
+                  className="
+                    transition-transform
+                    duration-300
+                    group-hover/button:translate-x-1
+                  "
+                />
+              </button>
+            </div>
+          </motion.div>
+
+          {/* AGENTS */}
+          <motion.div
+            variants={fadeUp}
+            transition={{
+              duration: 0.5,
+            }}
+            className="flex flex-col gap-3"
+          >
+
             {reasoningAgents.map((item, index) => {
+
               const Icon = item.icon;
+
               return (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, x: 15 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.04, duration: 0.4 }}
-                  whileHover={{ x: 3, backgroundColor: "rgba(148, 163, 184, 0.06)", borderColor: "rgba(148, 163, 184, 0.2)" }}
-                  className="flex items-center gap-3.5 rounded-xl border border-slate-900 bg-slate-950/40 p-2.5 backdrop-blur-sm transition-all duration-300"
+                  variants={fadeUp}
+                  transition={{
+                    duration: 0.35,
+                    delay: index * 0.04,
+                  }}
+                  className="
+                    group
+                    relative
+                    overflow-hidden
+                    rounded-[22px]
+                    border
+                    border-white/10
+                    bg-white/[0.04]
+                    p-3
+                    backdrop-blur-md
+                    transition-all
+                    duration-300
+                    hover:translate-x-1
+                    hover:border-cyan-400/20
+                  "
                 >
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-900 border border-slate-800 text-slate-300">
-                    <Icon size={13} />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-[11px] font-black uppercase tracking-wider text-white truncate">
-                      {item.title}
-                    </h3>
-                    <p className="text-[11px] leading-tight text-slate-400 truncate-2-lines mt-0.5">
-                      {item.desc}
-                    </p>
+
+                  {/* LIGHT */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/[0.03] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                  <div className="relative z-10 flex items-start gap-3">
+
+                    {/* ICON */}
+                    <div
+                      className="
+                        flex
+                        h-10
+                        w-10
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-xl
+                        border
+                        border-white/10
+                        bg-[#111827]
+                        transition-transform
+                        duration-300
+                        group-hover:scale-105
+                      "
+                    >
+
+                      <Icon
+                        size={15}
+                        className="text-cyan-200"
+                      />
+                    </div>
+
+                    {/* CONTENT */}
+                    <div>
+
+                      <h3
+                        className="
+                          text-[10px]
+                          font-black
+                          uppercase
+                          tracking-[1.4px]
+                          text-white
+                        "
+                      >
+                        {item.title}
+                      </h3>
+
+                      <p
+                        className="
+                          mt-1.5
+                          text-[11px]
+                          leading-[1.65]
+                          text-slate-400
+                        "
+                      >
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
                 </motion.div>
               );
             })}
-          </div>
-
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

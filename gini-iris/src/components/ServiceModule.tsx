@@ -12,6 +12,10 @@ import {
 
 import { motion } from "framer-motion";
 
+/* =========================================================
+   DATA
+========================================================= */
+
 const stats = [
   {
     icon: Boxes,
@@ -77,109 +81,204 @@ const stats = [
   },
 ];
 
+/* =========================================================
+   LIGHTWEIGHT MOTION
+========================================================= */
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 22,
+  },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
 export default function PlatformOverviewSection() {
+
   return (
-    <section className="relative overflow-hidden bg-[#0F0B14] px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-20">
+    <section
+      className="
+        relative
+        overflow-hidden
+        bg-[#0F0B14]
+        px-4
+        py-16
+        text-white
+        sm:px-6
+        lg:px-16
+        lg:py-20
+      "
+    >
 
-      {/* BG */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(236,28,36,0.08),transparent_40%)]" />
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 overflow-hidden">
 
-      {/* GRID */}
-      <div className="absolute inset-0 opacity-[0.05]">
-        <div className="h-full w-full bg-[linear-gradient(rgba(180,167,189,0.25)_1px,transparent_1px),linear-gradient(90deg,rgba(180,167,189,0.25)_1px,transparent_1px)]" />
-      </div>
+        {/* TOP GRADIENT */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(236,28,36,0.08),transparent_40%)]" />
 
-      {/* LEFT GLOW */}
-      <div className="absolute left-[-100px] top-[40px] h-[260px] w-[260px] rounded-full bg-[#8A8599]/20 blur-[90px]" />
+        {/* GRID */}
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div className="h-full w-full bg-[linear-gradient(rgba(180,167,189,0.25)_1px,transparent_1px),linear-gradient(90deg,rgba(180,167,189,0.25)_1px,transparent_1px)] bg-[size:50px_50px]" />
+        </div>
 
-      {/* RIGHT GLOW */}
-      <div className="absolute right-[-120px] bottom-[20px] h-[260px] w-[260px] rounded-full bg-[#B497BD]/20 blur-[90px]" />
-
-      {/* ARC */}
-      <motion.div
-        animate={{
-          rotate: [-10, 0, -10],
-          x: [-10, 10, -10],
-        }}
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="
-          pointer-events-none
-          absolute
-          left-[2%]
-          top-[-16%]
-          z-0
-          opacity-[0.35]
-          scale-[1.01]
-        "
-      >
-        <img
-          src="/iris-bg.png"
-          alt=""
+        {/* LEFT GLOW */}
+        <div
           className="
-            w-[2000px]
-            max-w-none
-            rotate-[10deg]
-            object-contain
-            select-none
-            saturate-150
+            absolute
+            left-[-100px]
+            top-[40px]
+            h-[260px]
+            w-[260px]
+            rounded-full
+            bg-[#8A8599]/15
+            blur-[100px]
+            animate-pulse
           "
         />
-      </motion.div>
 
-      <div className="relative z-20 mx-auto max-w-[1350px]">
+        {/* RIGHT GLOW */}
+        <div
+          className="
+            absolute
+            bottom-[20px]
+            right-[-120px]
+            h-[260px]
+            w-[260px]
+            rounded-full
+            bg-[#B497BD]/15
+            blur-[100px]
+            animate-pulse
+          "
+          style={{
+            animationDuration: "7s",
+          }}
+        />
+
+        {/* IMAGE AMBIENT 1 */}
+        <div
+          className="
+            pointer-events-none
+            absolute
+            left-[-3%]
+            top-[-5%]
+            hidden
+            lg:block
+          "
+        >
+
+          <img
+            src="/iris-bg.png"
+            alt=""
+            className="
+              w-[700px]
+              object-contain
+              opacity-[0.18]
+              blur-[2px]
+              saturate-150
+              brightness-125
+            "
+          />
+        </div>
+
+        {/* IMAGE AMBIENT 2 */}
+        <div
+          className="
+            pointer-events-none
+            absolute
+            bottom-[30%]
+            right-[1%]
+            hidden
+            lg:block
+          "
+        >
+
+          <img
+            src="/iris-bg.png"
+            alt=""
+            className="
+              w-[400px]
+              rotate-90
+              object-contain
+              opacity-[0.22]
+              blur-[3px]
+              saturate-150
+              brightness-125
+            "
+          />
+        </div>
+
+        {/* CENTER VIGNETTE */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20" />
+      </div>
+
+      {/* CONTENT */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.15,
+        }}
+        transition={{
+          staggerChildren: 0.08,
+        }}
+        className="
+          relative
+          z-20
+          mx-auto
+          max-w-[1350px]
+          px-4
+          sm:px-6
+          lg:px-8
+        "
+      >
 
         {/* TOP */}
         <div className="mx-auto max-w-5xl text-center">
 
           {/* BADGE */}
           <motion.div
-            initial={{
-              opacity: 0,
-              y: -20,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: false,
-              amount: 0.3,
-            }}
+            variants={fadeUp}
             transition={{
-              duration: 0.7,
-              ease: "easeOut",
+              duration: 0.45,
             }}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#8A8599]/20 bg-[#1B1723]/60 px-4 py-2 backdrop-blur-xl"
+            className="
+              mb-5
+              inline-flex
+              items-center
+              gap-2
+              rounded-full
+              border
+              border-[#8A8599]/20
+              bg-[#1B1723]/60
+              px-4
+              py-2
+              backdrop-blur-xl
+            "
           >
 
             <div className="h-2 w-2 rounded-full bg-[#B497BD]" />
 
-            <span className="text-[10px] uppercase tracking-[3px] text-gray-300">
+            <span
+              className="
+                text-[10px]
+                tracking-[3px]
+                text-gray-300
+              "
+            >
               The CX Command Center
             </span>
           </motion.div>
 
           {/* HEADING */}
           <motion.h2
-            initial={{
-              opacity: 0,
-              y: 40,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: false,
-              amount: 0.3,
-            }}
+            variants={fadeUp}
             transition={{
-              duration: 0.8,
-              ease: "easeOut",
+              duration: 0.55,
             }}
             className="
               mx-auto
@@ -189,47 +288,34 @@ export default function PlatformOverviewSection() {
               font-black
               leading-[1]
               tracking-[-2px]
-              sm:text-[32px]
-              md:text-[40px]
-              lg:text-[48px]
+              sm:text-[38px]
+              md:text-[44px]
+              lg:text-[54px]
             "
           >
 
             <span className="bg-gradient-to-r from-[#F5F1FF] to-[#A8A2BA] bg-clip-text text-transparent">
-              Unify your Customer Service, Analytics,
+              Unify your Customer Service,
             </span>
 
             <br />
 
             <span className="bg-gradient-to-r from-[#B497BD] to-[#8A8599] bg-clip-text text-transparent">
-               Automation, and AI into a single,
+              Analytics, Automation, and AI
             </span>
 
             <br />
 
             <span className="bg-gradient-to-r from-[#8A8599] to-[#F5F1FF] bg-clip-text text-transparent">
-              powerful platform.
+              into one intelligent platform.
             </span>
           </motion.h2>
 
           {/* DESCRIPTION */}
           <motion.p
-            initial={{
-              opacity: 0,
-              y: 30,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: false,
-              amount: 0.3,
-            }}
+            variants={fadeUp}
             transition={{
-              delay: 0.1,
-              duration: 0.8,
-              ease: "easeOut",
+              duration: 0.6,
             }}
             className="
               mx-auto
@@ -243,17 +329,15 @@ export default function PlatformOverviewSection() {
             "
           >
             AltCtrl.Digital is the AI-native command center for modern
-            customer experience. We break down silos between your
-            communication channels, operational data, and advanced AI
-            capabilities, empowering your teams to work smarter and
-            deliver exceptional service.
+            customer experience operations — unifying communication,
+            workflows, analytics, and AI intelligence in one platform.
           </motion.p>
         </div>
 
         {/* STATS */}
         <div
           className="
-            mt-12
+            mt-14
             grid
             grid-cols-1
             gap-4
@@ -264,31 +348,16 @@ export default function PlatformOverviewSection() {
         >
 
           {stats.map((item, index) => {
+
             const Icon = item.icon;
 
             return (
               <motion.div
                 key={item.label}
-                initial={{
-                  opacity: 0,
-                  y: index % 2 === 0 ? 60 : -60,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: false,
-                  amount: 0.2,
-                }}
+                variants={fadeUp}
                 transition={{
-                  duration: 0.8,
-                  delay: index * 0.06,
-                  ease: "easeOut",
-                }}
-                whileHover={{
-                  y: -6,
-                  scale: 1.02,
+                  duration: 0.4,
+                  delay: index * 0.04,
                 }}
                 className={`
                   group
@@ -302,10 +371,12 @@ export default function PlatformOverviewSection() {
                   backdrop-blur-xl
                   transition-all
                   duration-300
+                  hover:-translate-y-1
+                  hover:border-white/10
                 `}
               >
 
-                {/* HOVER GLOW */}
+                {/* HOVER LIGHT */}
                 <div
                   className={`
                     absolute
@@ -326,24 +397,28 @@ export default function PlatformOverviewSection() {
                   <div
                     className={`
                       flex
-                      h-12
-                      w-12
+                      h-11
+                      w-11
                       items-center
                       justify-center
                       rounded-2xl
                       bg-gradient-to-br
                       ${item.color}
                       ${item.iconColor}
+                      transition-transform
+                      duration-300
+                      group-hover:scale-105
                     `}
                   >
-                    <Icon size={20} />
+
+                    <Icon size={17} />
                   </div>
 
                   {/* VALUE */}
                   <h3
                     className={`
-                      mt-5
-                      text-[28px]
+                      mt-3
+                      text-[20px]
                       font-black
                       tracking-[-1px]
                       ${item.iconColor}
@@ -353,7 +428,14 @@ export default function PlatformOverviewSection() {
                   </h3>
 
                   {/* LABEL */}
-                  <p className="mt-2 text-[13px] leading-6 text-gray-400">
+                  <p
+                    className="
+                      mt-1
+                      text-[12px]
+                      leading-5
+                      text-gray-400
+                    "
+                  >
                     {item.label}
                   </p>
                 </div>
@@ -361,7 +443,7 @@ export default function PlatformOverviewSection() {
             );
           })}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

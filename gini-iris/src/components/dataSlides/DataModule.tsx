@@ -68,7 +68,7 @@ const slides = [
     title:
       "Deliver Seamless, Context-Aware Service Across Every Channel.",
     description:
-      "Engage with customers seamlessly across voice, chat, email, and social media.",
+      "Engage with customers seamlessly across voice, chat, email, and social media. Our omni-channel platform provides a single, unified interface for agents, ensuring consistent and context-aware service without switching screens.",
     tags: [
       "+15pt CSAT",
       "-20% Repeat Contacts",
@@ -80,7 +80,7 @@ const slides = [
     icon: Bot,
     title: "Deploy a Specialized AI Workforce.",
     description:
-      "Design, build, and deploy autonomous AI agents tailored for specific tasks.",
+      "Design, build, and deploy autonomous AI agents tailored for specific tasks. Automate workflows, boost efficiency, and scale your operations like never before.",
     tags: [
       "Autonomous Workflows",
       "Reduced Manual Effort",
@@ -93,7 +93,7 @@ const slides = [
     title:
       "Transform Quality Assurance from a Chore to a Strategy.",
     description:
-      "Automatically score and analyze customer interactions for quality and compliance.",
+      "Automatically score and analyze 100% of your customer interactions for quality and compliance. Move beyond random sampling and get objective, data-driven insights to provide targeted coaching that truly improves agent performance.",
     tags: [
       "100% Interaction Coverage",
       "-75% Manual QA Effort",
@@ -106,7 +106,7 @@ const slides = [
     title:
       "Go Beyond Positive or Negative to Truly Understand.",
     description:
-      "Deep sentiment analysis engine for customer understanding.",
+      "Our deep sentiment analysis engine deciphers not just polarity, but also the intensity of emotions like frustration, confusion, and gratitude. Understand customer effort and predict loyalty with unparalleled accuracy.",
     tags: [
       "-15% Churn Risk",
       "Identify Key Drivers",
@@ -118,7 +118,7 @@ const slides = [
     icon: Copy,
     title: "Capture Every Word in Real-Time.",
     description:
-      "State-of-the-art transcription engine with speaker separation.",
+      "Our state-of-the-art transcription engine converts spoken conversations into accurate, speaker-separated text instantly. This provides the foundation for all downstream AI analysis and agent assistance features.",
     tags: [
       ">95% Accuracy",
       "Real-Time Data Foundation",
@@ -131,7 +131,7 @@ const slides = [
     title:
       "Build Expert Agents, Not Just Script-Readers.",
     description:
-      "Create and track hyper-targeted training modules.",
+      "Create, assign, and track hyper-targeted training modules and evaluations directly within the platform. Address knowledge gaps identified by AI and watch your team's performance and confidence soar.",
     tags: [
       "-25% Ramp-up Time",
       "Targeted Skill Growth",
@@ -144,7 +144,7 @@ const slides = [
     title:
       "Empower Agents with an AI Co-Pilot That Works in Real-Time.",
     description:
-      "Context-aware assistance with smart replies and recommendations.",
+      "Provide your team with instant, context-aware assistance. From smart replies and procedural guidance to knowledge suggestions and real-time alerts for churn risk or upsell opportunities, our co-pilot is always on.",
     tags: [
       "-25% Average Handle Time",
       "+15% First Call Resolution",
@@ -157,7 +157,7 @@ const slides = [
     title:
       "See the Full Picture of Your Customer's Experience.",
     description:
-      "Analyze customer journeys and optimize interaction flows.",
+      "Analyze and visualize end-to-end customer journeys across all touchpoints. Identify friction points, predict potential drop-offs, and get AI-powered recommendations to optimize every step of the interaction flow.",
     tags: [
       "-20% Customer Effort",
       "+10pt NPS Score",
@@ -170,7 +170,7 @@ const slides = [
     title:
       "Get the Complete Story on Every Customer.",
     description:
-      "Customer 360° View consolidates all interactions and data.",
+      "Our Customer 360° View consolidates every interaction, transaction, and data point into a single, comprehensive profile. Empower your agents with the context they need to provide truly personalized service.",
     tags: [
       "-35% Info Search Time",
       "Personalized Interaction",
@@ -183,7 +183,7 @@ const slides = [
     title:
       "Optimize Your Workforce with Intelligent Forecasting.",
     description:
-      "Leverage Workforce Management tools to optimize staffing.",
+      "Leverage our Workforce Management (WFM) tools to predict future contact volumes, create optimal agent schedules, and monitor real-time adherence, ensuring you always have the right people in the right place at the right time.",
     tags: [
       "95% Forecast Accuracy",
       "+15% Agent Productivity",
@@ -196,7 +196,7 @@ const slides = [
     title:
       "Turn Data Into Decisions with Powerful Analytics.",
     description:
-      "Deep actionable insights into customer and agent performance.",
+      "Go beyond basic reporting. Our analytics suite provides deep, actionable insights into agent performance, customer satisfaction, and operational efficiency. Identify trends, spot opportunities, and drive continuous improvement.",
     tags: [
       "Root Cause Analysis",
       "Predictive Trend Reports",
@@ -209,7 +209,7 @@ const slides = [
     title:
       "Access Every Piece of Data with Searchable Logs.",
     description:
-      "Comprehensive searchable logs for audits and reporting.",
+      "Every event, every interaction, and every analysis is captured and stored in a comprehensive data log. Easily search, filter, and export raw data for custom reporting, compliance audits, or further analysis.",
     tags: [
       "Full Data Transparency",
       "Easy Compliance Audits",
@@ -222,7 +222,7 @@ const slides = [
     title:
       "Connect Your Entire Ecosystem, Effortlessly.",
     description:
-      "Integrate seamlessly with CRMs, telephony, and external systems.",
+      "Our platform is built for interoperability. With a vast library of pre-built connectors and a robust API, you can seamlessly integrate with your existing CRM, telephony, and knowledge base systems to create a single source of truth.",
     tags: [
       "Unified Data Model",
       "No More Silos",
@@ -235,7 +235,7 @@ const slides = [
     title:
       "Harness the Power of the Best AI Models.",
     description:
-      "Support for Google, OpenAI, Anthropic and more.",
+      "Stay at the forefront of innovation. Our platform supports multiple AI providers, including Google, OpenAI, and Anthropic. This ensures you can always leverage the best-in-class models for any task, without being locked into a single vendor.",
     tags: [
       "Future Proof AI",
       "Vendor-Agnostic",
@@ -248,7 +248,7 @@ const slides = [
     title:
       "A Beautiful, Intuitive Interface Users Will Love.",
     description:
-      "Modern customizable UI built for usability and speed.",
+      "We believe powerful software doesn't have to be complicated. Our modern user interface is designed for usability and can be customized with multiple themes and layouts to fit your brand and workflow.",
     tags: [
       "+25% User Adoption",
       "-15% Training Time",
@@ -261,7 +261,7 @@ const slides = [
     title:
       "Built on a Robust, Scalable Architecture.",
     description:
-      "Enterprise-grade multi-layer architecture.",
+      "Our platform's multi-layered architecture ensures security, reliability, and scalability. From the presentation layer to data persistence, every component is designed for enterprise-grade performance and maintainability.",
     tags: [
       "99.99% Uptime",
       "Scales on Demand",
@@ -274,7 +274,7 @@ const slides = [
     title:
       "Go from Idea to Implementation at Record Speed.",
     description:
-      "Low-code tooling and rapid deployment workflows.",
+      "With a rich library of pre-built components, low-code tools, and a flexible architecture, our platform dramatically reduces development time. Launch new features and automated workflows faster than ever before.",
     tags: [
       "-80% Development Time",
       "Rapid Prototyping",
@@ -287,7 +287,7 @@ const slides = [
     title:
       "Enterprise-Grade Security and Encryption.",
     description:
-      "End-to-end encryption and granular security controls.",
+      "Protect your customer and company data with end-to-end encryption, granular access controls, and comprehensive audit logs. Our platform is built to meet rigorous compliance standards like GDPR, HIPAA, and SOC 2.",
     tags: [
       "Full-Audit Trail",
       "Role-Based Access",
@@ -300,7 +300,7 @@ const slides = [
     title:
       "Your Choice of Voice Technology.",
     description:
-      "Flexible cloud and browser-native voice technologies.",
+      "Flexibility is key. Choose between high-performance cloud-based STT/TTS from providers like Google or leverage cost-effective, real-time browser-native APIs. Mix and match to find the perfect balance of cost and quality.",
     tags: [
       "Flexible Voice Tech",
       "Cost Optimization",
@@ -313,7 +313,7 @@ const slides = [
     title:
       "Flexible Hosting, SaaS Simplicity.",
     description:
-      "Deploy on SaaS or self-hosted infrastructure.",
+      "Deploy on your own cloud infrastructure for maximum control or use our managed SaaS offering for a turnkey solution. Our platform is designed to provide the same powerful capabilities, no matter how you choose to host it.",
     tags: [
       "SaaS or Self-Hosted",
       "Data Sovereignty",
@@ -371,7 +371,7 @@ export default function DataModule() {
           : prev + 1
       );
 
-    }, 9000);
+    }, 10000);
 
     return () => clearInterval(interval);
 
@@ -388,7 +388,7 @@ export default function DataModule() {
 
       setIsPaused(false);
 
-    }, 12000);
+    }, 15000);
 
     return () => clearTimeout(timeout);
 
@@ -485,9 +485,9 @@ export default function DataModule() {
       id="cx-slides-section"
       className="
       relative
-      min-h-[100svh]
       overflow-hidden
       bg-[#0F0710]
+      px-4 py-6 sm:py-15 lg:py-20 sm:px-6 lg:px-16
       "
     >
 
@@ -556,45 +556,21 @@ export default function DataModule() {
         min-h-screen
         items-center
         justify-center
-
         px-4
-        py-24
-
         sm:px-6
-        lg:px-10
-        xl:px-12
-        2xl:px-24
+        lg:px-8
+        xl:px-10
+        2xl:px-20
         "
       >
 
-        <AnimatePresence mode="popLayout">
+        <AnimatePresence mode="popLayout" initial={false}>
 
           <motion.div
-
             key={currentSlide}
-
-            initial={{
-              opacity: 0,
-              y: 40,
-              scale: 0.96,
-            }}
-
-            animate={{
-              opacity: 1,
-              y: 0,
-              scale: 1,
-            }}
-
-            exit={{
-              opacity: 0,
-              y: -30,
-              scale: 1.02,
-            }}
-
-            transition={{
-              duration: 1.2,
-              ease: [0.16, 1, 0.3, 1],
-            }}
+            initial="initial"
+            animate="animate"
+            exit="exit"
 
             className="
             relative
@@ -602,42 +578,51 @@ export default function DataModule() {
             w-full
             max-w-[1500px]
             items-center
-
-            gap-10
-
+            gap-14
             xl:grid-cols-2
             "
           >
 
             {/* LEFT */}
-            <div className="max-w-[720px]">
+            <motion.div
+              variants={{
+                initial: { opacity: 0, x: -30, scale: 0.99 },
+                animate: { 
+                  opacity: 1, 
+                  x: 0, 
+                  scale: 1,
+                  transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] }
+                },
+                exit: { 
+                  opacity: 0, 
+                  x: -20,
+                  transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] }
+                }
+              }} 
+              className="max-w-[720px]">
 
               {/* ICON */}
-              <motion.div
-                animate={{
-                  rotate: [0, 8, -8, 0],
-                }}
-                transition={{
-                  duration: 0.6,
-                }}
+              <div
                 className="
-                mb-8
+                mb-6
                 flex
-                h-16
-                w-16
+                h-10
+                w-10
                 items-center
                 justify-center
-                rounded-2xl
+                rounded-full
                 border
                 border-[#7A294A]/20
-                bg-[#18101C]/80
-                backdrop-blur-xl
+                bg-gradient-to-r
+                from-[#FFF1F4]
+                via-[#D46A8A]
+                to-[#7C4A87]
                 "
               >
 
-                <Icon className="h-7 w-7 text-white" />
+                <Icon className="h-4 w-4 text-white" />
 
-              </motion.div>
+              </div>
 
               {/* TITLE */}
               <h1
@@ -646,10 +631,8 @@ export default function DataModule() {
                 font-black
                 leading-[0.95]
                 tracking-[-2px]
-
-                sm:text-[42px]
-
-                lg:text-[62px]
+                sm:text-[36px]
+                lg:text-[46px]
                 "
               >
 
@@ -671,12 +654,11 @@ export default function DataModule() {
               {/* DESC */}
               <p
                 className="
-                mt-8
+                mt-4
                 max-w-[620px]
                 text-[13px]
-                leading-7
+                leading-5
                 text-[#B7A9B1]
-
                 sm:text-[15px]
                 "
               >
@@ -684,7 +666,7 @@ export default function DataModule() {
               </p>
 
               {/* TAGS */}
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-4 flex flex-wrap gap-2">
 
                 {activeSlide.tags.map(
                   (tag, index) => (
@@ -694,15 +676,20 @@ export default function DataModule() {
                       className="
                       rounded-full
                       border
-                      border-[#7A294A]/20
-                      bg-[#18101C]/70
-
-                      px-4
+                      border-transparent
+                      bg-gradient-to-r
+                      from-[#2A7B9B]
+                      to-[#EDDD53]
+                      px-3
                       py-2
-
                       text-[10px]
                       text-[#D8C3CB]
                       "
+                      style={{
+                        backgroundImage: 'linear-gradient(#18101C, #18101C), linear-gradient(to right, #2A7B9B, #EDDD53)',
+                        backgroundOrigin: 'border-box',
+                        backgroundClip: 'padding-box, border-box',
+                      }}
                     >
                       {tag}
                     </div>
@@ -716,12 +703,9 @@ export default function DataModule() {
                 whileHover={{
                   scale: 1.04,
                 }}
-                whileTap={{
-                  scale: 0.96,
-                }}
                 className="
                 relative
-                mt-10
+                mt-6
                 flex
                 items-center
                 gap-3
@@ -730,16 +714,13 @@ export default function DataModule() {
                 bg-gradient-to-r
                 from-[#B1456B]
                 to-[#6E4779]
-
                 px-7
                 py-4
-
                 text-sm
                 font-semibold
                 tracking-wide
                 text-white
-
-                shadow-[0_0_40px_rgba(177,69,107,0.22)]
+                shadow-lg
                 "
               >
 
@@ -748,7 +729,6 @@ export default function DataModule() {
                   absolute
                   inset-0
                   translate-x-[-100%]
-                  animate-[shimmer_2.5s_infinite]
                   bg-gradient-to-r
                   from-transparent
                   via-white/20
@@ -762,32 +742,28 @@ export default function DataModule() {
 
               </motion.button>
 
-            </div>
+            </motion.div>
 
             {/* RIGHT */}
-            <div className="relative min-h-[500px]">
-
-              <motion.div
-                key={currentSlide}
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                  scale: 0.98,
+            <motion.div
+                variants={{
+                  initial: { opacity: 0, x: 40, scale: 0.95, rotateY: 8 },
+                  animate: { 
+                    opacity: 1, 
+                    x: 0, 
+                    scale: 1, 
+                    rotateY: 0,
+                    transition: { duration: 0.95, ease: [0.16, 1, 0.3, 1], delay: 0.05 }
+                  },
+                  exit: { 
+                    opacity: 0, 
+                    x: 20, 
+                    scale: 0.98,
+                    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
+                  }
                 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                }}
-                exit={{
-                  opacity: 0,
-                  y: -20,
-                  scale: 0.98,
-                }}
-                transition={{
-                  duration: 0.9,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
+                style={{ perspective: 1200 }} // Gives the subtle rotation a high-end 3D feel
+                className="min-h-[400px]"
               >
 
                 {currentSlide === 0 && <ModuleGrid />}
@@ -812,164 +788,135 @@ export default function DataModule() {
                 {currentSlide === 19 && <TranscriptionTTS />}
                 {currentSlide === 20 && <HostingOptions />}
 
-              </motion.div>
-
-            </div>
+            </motion.div>
 
           </motion.div>
 
-        </AnimatePresence>
+          {/* NAVIGATION */}
+          {showNavigation && (
 
-      </div>
-
-      {/* NAVIGATION */}
-      <AnimatePresence>
-
-        {showNavigation && (
-
-          <motion.div
-            className="
-            fixed
-            bottom-3
-            left-1/2
-            z-[999]
-            w-full
-            -translate-x-1/2
-
-            px-4
-
-            sm:px-6
-            lg:px-10
-            xl:px-12
-            2xl:px-24
-            "
-          >
-
-            <div
+            <motion.div
               className="
-              mx-auto
-              flex
-              max-w-[1500px]
-              justify-center
+              fixed
+              bottom-3
+              left-1/2
+              z-[999]
+              w-full
+              -translate-x-1/2
+              px-4
+              sm:px-6
+              lg:px-10
+              xl:px-12
+              2xl:px-24
               "
             >
 
               <div
-                id="slides-navigation"
                 className="
+                mx-auto
                 flex
-                items-center
-                gap-2
-                overflow-x-auto
-                rounded-full
-                border
-                border-white/10
-                bg-[#120A14]/70
-
-                px-2
-                py-2
-
-                backdrop-blur-2xl
-                scrollbar-hide
+                max-w-[1400px]
+                justify-center
                 "
               >
 
-                {navigationItems.map(
-                  (slide, index) => (
+                <div
+                  id="slides-navigation"
+                  className="
+                  flex
+                  items-center
+                  gap-2
+                  overflow-x-auto
+                  rounded-full
+                  border
+                  border-white/10
+                  bg-[#120A14]/70
+                  px-2
+                  py-1.5
+                  backdrop-blur-2xl
+                  scrollbar-hide
+                  "
+                >
 
-                    <motion.button
-                      key={index}
+                  {navigationItems.map(
+                    (slide, index) => (
 
-                      onClick={() => {
+                      <motion.button
+                        key={index}
+                        onClick={() => {
+                          setCurrentSlide(index);
+                          setIsPaused(true);
+                        }}
 
-                        setCurrentSlide(index);
-
-                        setIsPaused(true);
-
-                      }}
-
-                      whileHover={{
-                        y: -3,
-                        scale: 1.05,
-                      }}
-
-                      whileTap={{
-                        scale: 0.95,
-                      }}
-
-                      className={`
-                      relative
-                      shrink-0
-                      overflow-hidden
-                      rounded-full
-                      border
-
-                      px-4
-                      py-2.5
-
-                      text-[11px]
-                      font-medium
-
-                      transition-all
-                      duration-500
-
-                      ${
-                        currentSlide === index
-                          ? `
-                          border-white/20
-                          bg-[#E8D7DD]
-                          text-[#2A1620]
-                          `
-                          : `
-                          border-white/5
-                          bg-[#1A1118]/70
-                          text-[#A58D97]
-                          hover:text-white
-                          `
-                      }
-                      `}
-                    >
-
-                      <span
-                        className="
+                        className={`
                         relative
-                        z-10
-                        flex
-                        items-center
-                        gap-2
-                        "
+                        shrink-0
+                        overflow-hidden
+                        rounded-full
+                        border
+                        px-2
+                        py-2
+                        text-[11px]
+                        font-medium
+                        transition-all
+                        duration-500
+
+                        ${
+                          currentSlide === index
+                            ? `
+                            border-white/20
+                            bg-[#E8D7DD]
+                            text-[#2A1620]
+                            `
+                            : `
+                            border-white/15
+                            bg-[#1A1118]/70
+                            text-[#A58D97]
+                            hover:text-white
+                            `
+                        }
+                        `}
                       >
 
                         <span
-                          className={`
-                          h-1.5
-                          w-1.5
-                          rounded-full
+                          className="
+                          flex
+                          items-center
+                          gap-2
+                          "
+                        >
+                          <span
+                            className={`
+                            h-1.5
+                            w-1.5
+                            rounded-full
 
-                          ${
-                            currentSlide === index
-                              ? "bg-[#2A1620]"
-                              : "bg-[#7A5C68]"
-                          }
-                          `}
-                        />
+                            ${
+                              currentSlide === index
+                                ? "bg-[#2A1620]"
+                                : "bg-[#7A5C68]"
+                            }
+                            `}
+                          />
 
-                        {slide}
+                          {slide}
 
-                      </span>
+                        </span>
 
-                    </motion.button>
-                  )
-                )}
+                      </motion.button>
+                    )
+                  )}
+
+                </div>
 
               </div>
 
-            </div>
+            </motion.div>
+          )}
 
-          </motion.div>
-        )}
+        </AnimatePresence>
 
-      </AnimatePresence>
+      </div>
 
     </section>
   );

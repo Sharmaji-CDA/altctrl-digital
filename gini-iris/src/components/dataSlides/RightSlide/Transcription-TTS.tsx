@@ -91,22 +91,20 @@ export default function TranscriptionTTS() {
           duration: 0.8,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="
+        className="flex
+        flex-col
         h-full
-        min-h-[500px]
+        min-h-[400px]
         overflow-hidden
+        rounded-2xl
+        border
+        bg-gradient-to-r
+        from-[#2A7B9B]
+        to-[#EDDD53]
+        p-4
+        backdrop-blur-2xl
         "
       >
-
-        <div
-          className="
-          relative
-          z-10
-          flex
-          h-full
-          flex-col
-          "
-        >
 
           {/* HEADER */}
           <div className="flex items-start gap-2">
@@ -115,8 +113,8 @@ export default function TranscriptionTTS() {
               className="
               mt-0.5
               flex
-              h-5
-              w-5
+              h-8
+              w-8
               items-center
               justify-center
               rounded-md
@@ -125,7 +123,7 @@ export default function TranscriptionTTS() {
               bg-white/[0.05]
               "
             >
-              <AudioWaveform className="h-2.5 w-2.5 text-white/80" />
+              <AudioWaveform className="h-5 w-5 text-white/80" />
             </div>
 
             <div>
@@ -167,7 +165,6 @@ export default function TranscriptionTTS() {
             grid
             grid-cols-1
             gap-2
-
             lg:grid-cols-2
             "
           >
@@ -223,7 +220,6 @@ export default function TranscriptionTTS() {
                     mt-0.5
                     text-[7px]
                     text-black/45
-
                     sm:text-[8px]
                     "
                   >
@@ -260,7 +256,6 @@ export default function TranscriptionTTS() {
                         text-[9px]
                         font-semibold
                         text-black/85
-
                         sm:text-[10px]
                         "
                       >
@@ -271,9 +266,8 @@ export default function TranscriptionTTS() {
                         className="
                         mt-1
                         text-[7px]
-                        leading-4
+                        leading-3
                         text-black/45
-
                         sm:text-[8px]
                         "
                       >
@@ -327,7 +321,6 @@ export default function TranscriptionTTS() {
                     text-[11px]
                     font-semibold
                     text-black/90
-
                     sm:text-[12px]
                     "
                   >
@@ -339,7 +332,6 @@ export default function TranscriptionTTS() {
                     mt-0.5
                     text-[7px]
                     text-black/45
-
                     sm:text-[8px]
                     "
                   >
@@ -376,7 +368,6 @@ export default function TranscriptionTTS() {
                         text-[9px]
                         font-semibold
                         text-black/85
-
                         sm:text-[10px]
                         "
                       >
@@ -387,9 +378,8 @@ export default function TranscriptionTTS() {
                         className="
                         mt-1
                         text-[7px]
-                        leading-4
+                        leading-3
                         text-black/45
-
                         sm:text-[8px]
                         "
                       >
@@ -417,7 +407,7 @@ export default function TranscriptionTTS() {
             border
             border-white/10
             bg-white/95
-            p-3
+            p-2
             shadow-[0_4px_14px_rgba(0,0,0,0.04)]
             "
           >
@@ -497,8 +487,6 @@ export default function TranscriptionTTS() {
             </div>
 
           </motion.div>
-
-        </div>
 
       </motion.div>
 

@@ -44,22 +44,20 @@ export default function QualityAssurence() {
           duration: 0.8,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="
+        className="flex
+        flex-col
         h-full
-        min-h-[500px]
+        min-h-[400px]
         overflow-hidden
+        rounded-2xl
+        border
+        bg-gradient-to-r
+        from-[#2A7B9B]
+        to-[#EDDD53]
+        p-4
+        backdrop-blur-2xl
         "
       >
-
-        <div
-          className="
-          relative
-          z-10
-          flex
-          h-full
-          flex-col
-          "
-        >
 
           {/* HEADER */}
           <div className="flex items-start gap-2">
@@ -68,8 +66,8 @@ export default function QualityAssurence() {
               className="
               mt-0.5
               flex
-              h-5
-              w-5
+              h-8
+              w-8
               items-center
               justify-center
               rounded-md
@@ -78,7 +76,7 @@ export default function QualityAssurence() {
               bg-white/[0.05]
               "
             >
-              <BadgeCheck className="h-2.5 w-2.5 text-white/80" />
+              <BadgeCheck className="h-5 w-5 text-white/80" />
             </div>
 
             <div>
@@ -142,7 +140,6 @@ export default function QualityAssurence() {
                 text-center
                 text-[8px]
                 text-black/45
-
                 sm:text-[9px]
                 "
               >
@@ -157,7 +154,6 @@ export default function QualityAssurence() {
                 font-black
                 leading-none
                 text-black/90
-
                 sm:text-[28px]
                 "
               >
@@ -196,7 +192,6 @@ export default function QualityAssurence() {
                 <p
                   className="
                   text-[8px]
-
                   sm:text-[9px]
                   "
                 >
@@ -213,7 +208,6 @@ export default function QualityAssurence() {
                 font-black
                 leading-none
                 text-red-400
-
                 sm:text-[28px]
                 "
               >
@@ -274,7 +268,6 @@ export default function QualityAssurence() {
                   text-[9px]
                   font-medium
                   text-white/75
-
                   sm:text-[10px]
                   "
                 >
@@ -286,14 +279,13 @@ export default function QualityAssurence() {
                   mt-1
                   text-[7px]
                   leading-3
-                  text-white/45
-
+                  text-black/65
                   sm:text-[8px]
                   sm:leading-4
                   "
                 >
 
-Practice actively listening to the customer's needs and verbally acknowledge their concerns to build rapport and ensure understanding before proceeding with the scheduling process. For example, acknowledging his chest pain and palpitations explicitly would enhance the interaction.
+                  Practice actively listening to the customer's needs and verbally acknowledge their concerns to build rapport and ensure understanding before proceeding with the scheduling process. For example, acknowledging his chest pain and palpitations explicitly would enhance the interaction.
                 </p>
 
               </div>
@@ -318,8 +310,7 @@ Practice actively listening to the customer's needs and verbally acknowledge the
                   mt-1
                   text-[7px]
                   leading-3
-                  text-white/45
-
+                  text-black/65
                   sm:text-[8px]
                   sm:leading-4
                   "
@@ -414,8 +405,6 @@ Practice actively listening to the customer's needs and verbally acknowledge the
 
             </div>
           </motion.div>
-
-        </div>
 
       </motion.div>
 

@@ -41,8 +41,15 @@ export default function WorkforceManag() {
         }}
         className="
         h-full
-        min-h-[500px]
+        min-h-[400px]
         overflow-hidden
+        rounded-2xl
+        border
+        bg-gradient-to-r
+        from-[#2A7B9B]
+        to-[#EDDD53]
+        p-4
+        backdrop-blur-2xl
         "
       >
 
@@ -63,8 +70,8 @@ export default function WorkforceManag() {
               className="
               mt-0.5
               flex
-              h-5
-              w-5
+              h-8
+              w-8
               items-center
               justify-center
               rounded-md
@@ -73,7 +80,7 @@ export default function WorkforceManag() {
               bg-white/[0.05]
               "
             >
-              <CalendarDays className="h-2.5 w-2.5 text-white/80" />
+              <CalendarDays className="h-5 w-5 text-white/80" />
             </div>
 
             <div>
@@ -85,7 +92,6 @@ export default function WorkforceManag() {
                 tracking-[-0.2px]
                 text-white
                 leading-none
-
                 sm:text-[16px]
                 "
               >
@@ -140,7 +146,6 @@ export default function WorkforceManag() {
                 <p
                   className="
                   text-[8px]
-
                   sm:text-[9px]
                   "
                 >
@@ -532,15 +537,15 @@ export default function WorkforceManag() {
             mt-2
             rounded-lg
             border
-            border-orange-400/20
-            bg-orange-400/[0.08]
+            border-red-400/60
+            bg-red-400/[0.4]
             p-2.5
             "
           >
 
             <div className="flex items-start gap-2">
 
-              <TrendingUp className="mt-0.5 h-3 w-3 text-orange-400" />
+              <TrendingUp className="mt-0.5 h-3 w-3 text-orange-200" />
 
               <div>
 
@@ -548,8 +553,7 @@ export default function WorkforceManag() {
                   className="
                   text-[9px]
                   font-medium
-                  text-orange-400
-
+                  text-orange-200
                   sm:text-[10px]
                   "
                 >
@@ -561,8 +565,7 @@ export default function WorkforceManag() {
                   mt-1
                   text-[7px]
                   leading-3
-                  text-orange-400/90
-
+                  text-orange-200
                   sm:text-[8px]
                   sm:leading-4
                   "

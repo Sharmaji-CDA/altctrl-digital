@@ -42,7 +42,7 @@ const mockDeviceChannels = [Bot, Monitor, Phone, Video, Mail, Smartphone];
 
 export default function AnatomyOfFlow() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#090d16] via-[#0f172a] to-[#1e293b] text-slate-100 py-8 px-4 sm:px-6 lg:px-8 lg:h-screen lg:flex lg:flex-col lg:justify-center">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#090d16] via-[#0f172a] to-[#1e293b] text-slate-100 py-8 px-4 sm:px-6 lg:px-16 lg:py-20 lg:flex lg:flex-col lg:justify-center">
       
       {/* Background Neural Matrix Overlay */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
@@ -51,7 +51,7 @@ export default function AnatomyOfFlow() {
         <div className="absolute inset-0 opacity-[0.015] bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:20px_20px]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl h-full lg:max-h-[640px] flex flex-col justify-between">
+      <div className="relative z-10 mx-auto w-full max-w-6xl h-full px-4 lg:px-8 flex flex-col justify-between">
         
         {/* Core Layout Grid split into Copy + Mockup Interaction */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center h-full">

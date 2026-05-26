@@ -1,24 +1,19 @@
 "use client";
 
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 import {
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
-
-import {
-  Sparkles,
-  ArrowRight,
+  Code2,
+  Rocket,
   Terminal,
+  ArrowUpRight,
 } from "lucide-react";
 
 /* LIGHTWEIGHT MOTION */
 const fadeUp = {
   hidden: {
     opacity: 0,
-    y: 20,
+    y: 24,
   },
 
   visible: {
@@ -27,83 +22,25 @@ const fadeUp = {
   },
 };
 
-export default function ReadyToScale() {
-
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  /* PARALLAX */
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
-  /* LIGHTWEIGHT PARALLAX */
-  const backgroundY = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["-3%", "3%"]
-  );
+export default function ArchitectsBlueprint() {
 
   return (
-    <section
-      ref={containerRef}
-      className="
-        relative
-        overflow-hidden
-        bg-[radial-gradient(circle_at_top,#26151f_0%,#17141d_45%,#0b0d14_100%)]
-        py-14
-        sm:py-20
-        md:py-24
-      "
-    >
+    <section className="relative overflow-hidden bg-[#090204] py-14 sm:py-16 lg:py-20">
 
       {/* BACKGROUND */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
 
-        {/* PARALLAX IMAGE */}
-        <motion.div
-          style={{
-            y: backgroundY,
-          }}
-          className="
-            absolute
-            left-1/2
-            top-[28%]
-            h-[70%]
-            w-[72%]
-            -translate-x-1/2
-            mix-blend-screen
-            opacity-45
-          "
-        >
-
-          <img
-            src="/iris-bg.png"
-            alt="Synthetic Aura Network Mesh"
-            className="
-              h-full
-              w-full
-              scale-105
-              object-cover
-              object-center
-              brightness-[0.72]
-              contrast-[1.05]
-            "
-          />
-        </motion.div>
-
-        {/* MAIN GLOW */}
+        {/* MAIN RED GLOW */}
         <div
           className="
             absolute
             left-1/2
-            top-[40%]
+            top-[30%]
             h-[360px]
             w-[360px]
             -translate-x-1/2
-            -translate-y-1/2
             rounded-full
-            bg-[#ff4e72]/10
+            bg-red-500/10
             blur-3xl
             animate-pulse
           "
@@ -113,8 +50,8 @@ export default function ReadyToScale() {
         <div
           className="
             absolute
-            right-[10%]
-            top-[15%]
+            right-[-5%]
+            top-[10%]
             h-[260px]
             w-[260px]
             rounded-full
@@ -123,22 +60,41 @@ export default function ReadyToScale() {
             animate-pulse
           "
           style={{
-            animationDuration: "7s",
+            animationDuration: "6s",
           }}
         />
 
-        {/* VIGNETTE */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#06070d] via-transparent to-[#06070d] opacity-90" />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-[#06070d] via-transparent to-[#06070d] opacity-70" />
-
-        {/* GRID */}
-        <div className="absolute inset-0 opacity-[0.015]">
-          <div className="h-full w-full bg-[linear-gradient(rgba(255,78,114,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,78,114,0.08)_1px,transparent_1px)] bg-[size:36px_36px]" />
+        {/* SIGNAL GRID */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="h-full w-full bg-[radial-gradient(rgba(239,68,68,0.6)_1px,transparent_1px)] [background-size:24px_24px]" />
         </div>
 
+        {/* WIREFRAME */}
+        <svg
+          className="absolute inset-0 h-full w-full text-red-500/[0.03]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="0"
+            y1="20%"
+            x2="100%"
+            y2="40%"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+
+          <line
+            x1="100%"
+            y1="10%"
+            x2="0"
+            y2="80%"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+        </svg>
+
         {/* TOP LIGHT */}
-        <div className="absolute inset-x-0 top-0 h-[140px] bg-gradient-to-b from-[#ff4e72]/[0.03] to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-[160px] bg-gradient-to-b from-red-500/[0.03] to-transparent" />
       </div>
 
       {/* CONTENT */}
@@ -147,7 +103,7 @@ export default function ReadyToScale() {
         whileInView="visible"
         viewport={{
           once: true,
-          amount: 0.2,
+          amount: 0.15,
         }}
         transition={{
           staggerChildren: 0.08,
@@ -156,8 +112,9 @@ export default function ReadyToScale() {
           relative
           z-10
           mx-auto
+          mt-20
           flex
-          max-w-4xl
+          max-w-5xl
           flex-col
           items-center
           px-4
@@ -171,7 +128,7 @@ export default function ReadyToScale() {
         <motion.div
           variants={fadeUp}
           transition={{
-            duration: 0.4,
+            duration: 0.45,
           }}
           className="
             inline-flex
@@ -179,91 +136,103 @@ export default function ReadyToScale() {
             gap-2
             rounded-full
             border
-            border-white/10
-            bg-[#0e1017]/80
+            border-red-500/10
+            bg-white/[0.04]
             px-4
             py-2
             backdrop-blur-md
           "
         >
 
-          <Sparkles
+          <Code2
             size={11}
-            className="text-[#ff4e72]"
+            className="text-red-400"
           />
 
-          <span
-            className="
-              text-[9px]
-              font-bold
-              uppercase
-              tracking-[2px]
-              text-slate-300
-            "
-          >
-            Agentic Infrastructure v3.5
+          <span className="text-[9px] tracking-[2px] text-red-200">
+            Developer Intelligence v4.0
           </span>
         </motion.div>
 
-        {/* TITLE */}
+        {/* HEADING */}
         <motion.div
           variants={fadeUp}
           transition={{
             duration: 0.5,
           }}
-          className="mt-8 max-w-3xl"
+          className="mt-7 max-w-4xl"
         >
 
           <h1
             className="
-              bg-gradient-to-b
-              from-white
-              via-slate-100
-              to-slate-300/80
-              bg-clip-text
-              text-[40px]
+              text-[42px]
               font-black
-              leading-tight
-              tracking-tight
-              text-transparent
-              sm:text-[54px]
-              md:text-[66px]
+              leading-[1]
+              tracking-[-2px]
+              sm:text-[56px]
+              md:text-[72px]
             "
           >
-            Ready to Scale?
+
+            <span
+              className="
+                bg-gradient-to-b
+                from-white
+                via-slate-100
+                to-red-300
+                bg-clip-text
+                text-transparent
+              "
+            >
+              The Architect's
+            </span>
+
+            <br />
+
+            <span
+              className="
+                bg-gradient-to-r
+                from-red-500
+                via-rose-400
+                to-orange-300
+                bg-clip-text
+                text-transparent
+              "
+            >
+              Blueprint.
+            </span>
           </h1>
 
           {/* DESCRIPTION */}
           <p
             className="
               mx-auto
-              mt-5
-              max-w-xl
+              mt-6
+              max-w-2xl
               text-[13px]
-              leading-[1.8]
+              leading-[1.9]
               text-slate-400
               sm:text-[15px]
-              md:text-[16px]
+              md:text-[18px]
             "
           >
 
-            Deploy your specialized workforce with{" "}
+            Your central hub for in-depth technical documentation,
 
             <span
               className="
                 bg-gradient-to-r
-                from-[#ff4e72]
-                via-rose-300
-                to-white
+                from-red-400
+                to-rose-300
                 bg-clip-text
                 font-extrabold
                 text-transparent
               "
             >
-              AltCtrl Agents
+              {" "}API references
             </span>
 
-            .
+            , and architectural guides for the platform.
           </p>
         </motion.div>
 
@@ -274,12 +243,12 @@ export default function ReadyToScale() {
             duration: 0.55,
           }}
           className="
-            mt-10
+            mt-9
             flex
             w-full
             max-w-[420px]
             flex-col
-            gap-3.5
+            gap-3
             sm:flex-row
             sm:max-w-none
             sm:justify-center
@@ -297,32 +266,38 @@ export default function ReadyToScale() {
               justify-center
               gap-2
               rounded-2xl
-              bg-white
-              px-6
+              border
+              border-red-500/20
+              bg-gradient-to-r
+              from-red-600
+              via-rose-500
+              to-red-500
+              px-5
               text-[12px]
               font-black
               uppercase
               tracking-[1.5px]
-              text-[#06070d]
+              text-white
               transition-all
               duration-300
               hover:-translate-y-0.5
-              hover:bg-slate-50
               hover:shadow-lg
               sm:w-auto
             "
           >
 
-            Request Demo Deployment
-
-            <ArrowRight
+            <Rocket
               size={13}
               className="
+                text-red-100
                 transition-transform
                 duration-300
-                group-hover:translate-x-1
+                group-hover:-translate-y-0.5
+                group-hover:translate-x-0.5
               "
             />
+
+            Quickstart
           </button>
 
           {/* SECONDARY BUTTON */}
@@ -337,30 +312,44 @@ export default function ReadyToScale() {
               gap-2
               rounded-2xl
               border
-              border-slate-800
-              bg-[#0c0e17]/80
-              px-6
+              border-white/10
+              bg-white/[0.05]
+              px-5
               text-[12px]
               font-bold
               uppercase
               tracking-[1.5px]
-              text-slate-300
+              text-red-200
               backdrop-blur-md
               transition-all
               duration-300
               hover:-translate-y-0.5
-              hover:border-[#ff4e72]/30
-              hover:bg-[#ff4e72]/[0.06]
+              hover:border-red-500/20
+              hover:bg-gradient-to-r
+              hover:from-red-500/10
+              hover:to-rose-500/10
               sm:w-auto
             "
           >
 
             <Terminal
               size={13}
-              className="text-[#ff4e72]"
+              className="text-red-300"
             />
 
-            Architecture Docs
+            SDK Reference
+
+            <ArrowUpRight
+              size={13}
+              className="
+                opacity-50
+                transition-all
+                duration-300
+                group-hover:-translate-y-0.5
+                group-hover:translate-x-0.5
+                group-hover:opacity-100
+              "
+            />
           </button>
         </motion.div>
       </motion.div>

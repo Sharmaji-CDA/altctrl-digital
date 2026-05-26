@@ -42,14 +42,14 @@ const rightListItems = [
 
 export default function IntelligenceCore() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#030712] text-slate-100 py-6 px-4 sm:px-6 lg:px-8 lg:py-20 lg:flex lg:flex-col lg:justify-center">
+    <section className="relative w-full overflow-hidden bg-[#030712] text-slate-100 py-6 px-4 sm:px-6 lg:px-16 lg:py-20 lg:flex lg:flex-col lg:justify-center">
       {/* Background Ambient Quantum Teal Glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
         <div className="absolute top-[-10%] left-[20%] w-[400px] h-[400px] rounded-full bg-teal-500/10 blur-[120px]" />
         <div className="absolute bottom-[10%] right-[10%] w-[350px] h-[350px] rounded-full bg-emerald-500/5 blur-[100px]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl flex flex-col justify-between h-full lg:max-h-[750px]">
+      <div className="relative z-10 mx-auto w-full max-w-6xl flex flex-col justify-between h-full px-4 lg:px-8">
         {/* Header Block */}
         <div className="mb-6 lg:mb-8 text-center lg:text-left">
           <div className="inline-flex items-center gap-2 mb-2">

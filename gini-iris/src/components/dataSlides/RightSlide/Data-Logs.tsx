@@ -98,8 +98,15 @@ export default function DataLogs() {
         }}
         className="
         h-full
-        min-h-[500px]
+        min-h-[400px]
         overflow-hidden
+        rounded-2xl
+        border
+        bg-gradient-to-r
+        from-[#2A7B9B]
+        to-[#EDDD53]
+        p-4
+        backdrop-blur-2xl
         "
       >
 
@@ -120,8 +127,8 @@ export default function DataLogs() {
               className="
               mt-0.5
               flex
-              h-5
-              w-5
+              h-8
+              w-8
               items-center
               justify-center
               rounded-md
@@ -130,7 +137,7 @@ export default function DataLogs() {
               bg-white/[0.05]
               "
             >
-              <Database className="h-2.5 w-2.5 text-white/80" />
+              <Database className="h-5 w-5 text-white/80" />
             </div>
 
             <div>

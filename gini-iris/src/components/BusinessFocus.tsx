@@ -42,7 +42,7 @@ const cards = [
 
 export default function BusinessFocus() {
   return (
-    <section className="relative overflow-hidden bg-black px-4 py-14 text-white sm:px-6 lg:px-8 lg:py-18">
+    <section className="overflow-hidden bg-black px-4 py-14 text-white sm:px-6 lg:px-16 lg:py-20">
 
       {/* BG */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.08),transparent_40%)]" />
@@ -56,10 +56,10 @@ export default function BusinessFocus() {
       {/* ANGLED BG */}
       <div className="absolute right-[-180px] top-0 hidden h-full w-[40%] rotate-[-10deg] bg-white/[0.02] blur-3xl lg:block" />
 
-      <div className="relative z-10 mx-auto max-w-[1180px]">
+      <div className="mx-auto max-w-[1200px] px-4 lg:px-8">
 
         {/* TOP */}
-        <div className="mx-auto max-w-[850px] text-center">
+        <div className="text-center">
 
           {/* BADGE */}
           <motion.div
@@ -158,7 +158,7 @@ export default function BusinessFocus() {
         </div>
 
         {/* CARDS */}
-        <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
 
           {cards.map((card, index) => {
             const Icon = card.icon;
@@ -185,7 +185,7 @@ export default function BusinessFocus() {
                 whileHover={{
                   y: -5,
                 }}
-                className={`group relative overflow-hidden rounded-[28px] border bg-white/[0.03] p-7 backdrop-blur-xl transition-all duration-300 hover:bg-white/[0.05] hover:shadow-[0_0_40px_rgba(255,255,255,0.03)] ${card.border}`}
+                className={`group relative overflow-hidden rounded-[28px] border bg-white/[0.03] p-6 backdrop-blur-xl transition-all duration-300 hover:bg-white/[0.05] hover:border-white/40 hover:shadow-[0_0_40px_rgba(255,255,255,0.03)] ${card.border}`}
               >
 
                 {/* BG GLOW */}
@@ -218,7 +218,7 @@ export default function BusinessFocus() {
                   />
 
                   <Icon
-                    size={28}
+                    size={24}
                     className="relative z-10 transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>

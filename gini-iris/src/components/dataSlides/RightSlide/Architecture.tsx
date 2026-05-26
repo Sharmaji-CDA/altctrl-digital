@@ -88,22 +88,20 @@ export default function Architecture() {
           duration: 0.8,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="
+        className="flex
+        flex-col
         h-full
-        min-h-[500px]
+        min-h-[400px]
         overflow-hidden
+        rounded-2xl
+        border
+        bg-gradient-to-r
+        from-[#2A7B9B]
+        to-[#EDDD53]
+        p-4
+        backdrop-blur-2xl
         "
       >
-
-        <div
-          className="
-          relative
-          z-10
-          flex
-          h-full
-          flex-col
-          "
-        >
 
           {/* HEADER */}
           <div className="flex items-start gap-2">
@@ -112,8 +110,8 @@ export default function Architecture() {
               className="
               mt-0.5
               flex
-              h-5
-              w-5
+              h-8
+              w-8
               items-center
               justify-center
               rounded-md
@@ -122,7 +120,7 @@ export default function Architecture() {
               bg-white/[0.05]
               "
             >
-              <Layers3 className="h-2.5 w-2.5 text-white/80" />
+              <Layers3 className="h-5 w-5 text-white/80" />
             </div>
 
             <div>
@@ -157,131 +155,116 @@ export default function Architecture() {
 
           </div>
 
-          {/* STACK */}
-          <div
-            className="
-            mt-3
-            space-y-1.5
-            "
-          >
 
-            {layers.map((item, index) => {
+          {layers.map((item, index) => {
 
-              const Icon = item.icon;
+            const Icon = item.icon;
 
-              return (
+            return (
 
+              <motion.div
+                key={index}
+                initial={{
+                  opacity: 0,
+                  y: 8,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.35,
+                  delay: index * 0.05,
+                }}
+                whileHover={{
+                  y: -2,
+                }}
+                className="mt-1
+                rounded-lg
+                border
+                border-white/10
+                bg-white/95
+                p-2.5
+                shadow-[0_4px_14px_rgba(0,0,0,0.04)]
+                "
+              >
+
+                {/* GLOW */}
                 <motion.div
-                  key={index}
-                  initial={{
-                    opacity: 0,
-                    y: 8,
-                  }}
                   animate={{
-                    opacity: 1,
-                    y: 0,
+                    opacity: [0.04, 0.08, 0.04],
                   }}
                   transition={{
-                    duration: 0.35,
-                    delay: index * 0.05,
-                  }}
-                  whileHover={{
-                    y: -2,
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: index * 0.2,
                   }}
                   className="
-                  relative
-                  overflow-hidden
-                  rounded-lg
-                  border
-                  border-white/10
-                  bg-white/95
-                  p-2.5
-                  shadow-[0_4px_14px_rgba(0,0,0,0.04)]
+                  absolute
+                  inset-0
+                  bg-gradient-to-r
+                  from-black/[0.02]
+                  to-transparent
+                  "
+                />
+
+                <div
+                  className="
+                  flex
+                  items-start
+                  gap-2
                   "
                 >
 
-                  {/* GLOW */}
-                  <motion.div
-                    animate={{
-                      opacity: [0.04, 0.08, 0.04],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      delay: index * 0.2,
-                    }}
-                    className="
-                    absolute
-                    inset-0
-                    bg-gradient-to-r
-                    from-black/[0.02]
-                    to-transparent
-                    "
-                  />
-
+                  {/* ICON */}
                   <div
                     className="
-                    relative
-                    z-10
                     flex
-                    items-start
-                    gap-2
+                    h-8
+                    w-8
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-lg
+                    bg-black/[0.04]
                     "
                   >
+                    <Icon className="h-4 w-4 text-black/75" />
+                  </div>
 
-                    {/* ICON */}
-                    <div
+                  {/* CONTENT */}
+                  <div>
+
+                    <h4
                       className="
-                      flex
-                      h-8
-                      w-8
-                      shrink-0
-                      items-center
-                      justify-center
-                      rounded-lg
-                      bg-black/[0.04]
+                      text-[10px]
+                      font-semibold
+                      text-black/90
+                      sm:text-[11px]
                       "
                     >
-                      <Icon className="h-4 w-4 text-black/75" />
-                    </div>
+                      {item.title}
+                    </h4>
 
-                    {/* CONTENT */}
-                    <div>
+                    <p
+                      className="
+                      text-[7px]
+                      leading-4
+                      text-black/45
 
-                      <h4
-                        className="
-                        text-[10px]
-                        font-semibold
-                        text-black/90
-
-                        sm:text-[11px]
-                        "
-                      >
-                        {item.title}
-                      </h4>
-
-                      <p
-                        className="
-                        mt-1
-                        text-[7px]
-                        leading-4
-                        text-black/45
-
-                        sm:text-[8px]
-                        "
-                      >
-                        {item.desc}
-                      </p>
-
-                    </div>
+                      sm:text-[8px]
+                      "
+                    >
+                      {item.desc}
+                    </p>
 
                   </div>
 
-                </motion.div>
-              );
-            })}
+                </div>
 
-          </div>
+              </motion.div>
+            );
+          })}
 
           {/* DIVIDER */}
           <div className="mt-3 h-px w-full bg-white/10" />
@@ -308,7 +291,6 @@ export default function Architecture() {
               uppercase
               tracking-[2px]
               text-white/35
-
               sm:text-[9px]
               "
             >
@@ -345,7 +327,7 @@ export default function Architecture() {
                     border
                     border-white/10
                     bg-white/95
-                    p-2.5
+                    p-2
                     text-center
                     shadow-[0_4px_14px_rgba(0,0,0,0.04)]
                     "
@@ -359,7 +341,6 @@ export default function Architecture() {
                       text-[7px]
                       font-medium
                       text-black/75
-
                       sm:text-[8px]
                       "
                     >
@@ -373,8 +354,6 @@ export default function Architecture() {
             </div>
 
           </motion.div>
-
-        </div>
 
       </motion.div>
 
