@@ -18,7 +18,6 @@ import {
   Shield,
   PhoneCall,
   Terminal,
-  ArrowRight,
 } from "lucide-react";
 
 /* LIGHTWEIGHT MOTION */
